@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\parke\\source\\repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj": {}
+    "C:\\Users\\nateg\\Source\\Repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj": {}
   },
   "projects": {
-    "C:\\Users\\parke\\source\\repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj": {
+    "C:\\Users\\nateg\\Source\\Repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\parke\\source\\repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
+        "projectUniqueName": "C:\\Users\\nateg\\Source\\Repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
         "projectName": "WhaleWars",
-        "projectPath": "C:\\Users\\parke\\source\\repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
-        "packagesPath": "C:\\Users\\parke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\parke\\source\\repos\\Whale_Wars\\WhaleWars\\obj\\",
+        "projectPath": "C:\\Users\\nateg\\Source\\Repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
+        "packagesPath": "C:\\Users\\nateg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nateg\\Source\\Repos\\Whale_Wars\\WhaleWars\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\parke\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\nateg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

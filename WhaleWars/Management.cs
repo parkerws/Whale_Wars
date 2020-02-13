@@ -63,14 +63,12 @@ namespace WhaleWars
         public static Whale GameStart(Whale UserChoice)
         {
             Console.WriteLine("Please input a name\n");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("Please chose a class\n");
-            string pick = Console.ReadLine();
+            string name = Console.ReadLine();            
             Console.WriteLine("Please chose a class\n" +
                 "1.) Fighter\n" +
                 "2.) Ranger\n" +
                 "3.) Mage\n");
+            string pick = Console.ReadLine();
             int ClassPicker = Convert.ToInt32(pick);
 
             switch (ClassPicker)
