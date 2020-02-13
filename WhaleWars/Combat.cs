@@ -27,10 +27,8 @@ namespace WhaleWars
                 EnemyAI(target, user);                                                                    //#
             }                                                                                             //#
             //###############################################################################################
-        } 
-        
-        
-       
+        }       
+               
         public static int EnemyAI(Whale user, Whale target)
         {
             Random r = new Random();

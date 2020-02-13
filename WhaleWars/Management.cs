@@ -74,8 +74,8 @@ namespace WhaleWars
             switch (ClassPicker)
             {
                 case int n when n == 1: { UserChoice = new Whale(name, CharClass.fighter, 10, 5, 5); return UserChoice; }
-                case int n when n == 2: { UserChoice = new Whale(name, CharClass.ranger, 10, 6, 4); return UserChoice; }
-                case int n when n == 3: { UserChoice = new Whale(name, CharClass.mage, 10, 7, 2); return UserChoice; }
+                case int n when n == 2: { UserChoice = new Whale(name, CharClass.ranger, 10, 4, 6); return UserChoice; }
+                case int n when n == 3: { UserChoice = new Whale(name, CharClass.mage, 10, 2, 7); return UserChoice; }
                 default: break;
             }
             return UserChoice;
