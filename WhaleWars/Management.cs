@@ -67,6 +67,10 @@ namespace WhaleWars
 
             Console.WriteLine("Please chose a class\n");
             string pick = Console.ReadLine();
+            Console.WriteLine("Please chose a class\n" +
+                "1.) Fighter\n" +
+                "2.) Ranger\n" +
+                "3.) Mage\n");
             int ClassPicker = Convert.ToInt32(pick);
 
             switch (ClassPicker)
