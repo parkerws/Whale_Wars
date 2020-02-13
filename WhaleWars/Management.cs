@@ -15,7 +15,6 @@ namespace WhaleWars
             { UserChoice = GameStart(UserChoice); }
 
             ConsoleInterface.HUD(UserChoice.Name, "Planet", 0, UserChoice.Health, UserChoice.Offense, UserChoice.Defense);
-
         }
         public static void title()
         {
