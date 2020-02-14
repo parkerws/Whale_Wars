@@ -11,7 +11,7 @@ namespace WhaleWars
         public int Offense { get; set;}
         public CharClass CC { get; set;}
 
-        
+
         public Whale(string _name, CharClass cc, int _health, int _defense, int _offense)
         {
             Name = _name;
