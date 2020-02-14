@@ -1,16 +1,15 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace WhaleWars 
+namespace WhaleWars
 {
     public class Whale
     {
-        public string Name { get; set;}
-        public int Health  { get; set;}
-        public int Defense { get; set;}
-        public int Offense { get; set;}
-        public CharClass CC { get; set;}
-
+        public string Name { get; set; }
+        public int Health { get; set; }
+        public int Defense { get; set; }
+        public int Offense { get; set; }
+        public CharClass CC { get; set; }
 
         public Whale(string _name, CharClass cc, int _health, int _defense, int _offense)
         {
@@ -22,27 +21,49 @@ namespace WhaleWars
         } //Creates an easily referenced intializer so you dont have to type out each property of the given Whale
 
         private List<Item> inventory = new List<Item>();
-        private Weapon equippedWeapon;  //ready weapon
+        private List<Weapon> Armory = new List<Weapon>();
+
         public void SetWeapon(WeaponList weapon) // equip weapon if in inventory
         {
+            Armory.Add(Weapon.CreateWeapon(weapon));
+            Offense += Armory.Last().Damage;
+            Defense += Armory.Last().Defense;
+        }
 
-            equippedWeapon = Weapon.CreateWeapon(weapon);
+        public string GetWeapons()
+        {
+            string outString = "";
+            foreach (Weapon ouchie in Armory)
+            {
+                outString += ouchie.Name + "\n";
+            }
 
-            Offense += equippedWeapon.Damage;
+            return outString;
+        }
 
-            //TODO: Needs finaggling to check for weapons. 
-            //foreach (Item item in inventory)
-            //{
-            //    if (item.Equals(weapon))
-            //    {
-            //        equippedWeapon = weapon;
-            //    }
-            //    else
-            //    {
-            //        equippedWeapon = null;
-            //    }
-            //}
-    }
+        public void SetArmor(CharClass cc)
+        {
+            switch (cc)
+            {
+                case CharClass.fighter:
+                    Plating plate = new Plating();
+                    Defense += plate.defenseModifier;
+                    break;
+
+                case CharClass.ranger:
+                    Chainmail chainmail = new Chainmail();
+                    Defense += chainmail.defenseModifier;
+                    break;
+
+                case CharClass.mage:
+                    Cloth shirt = new Cloth();
+                    Defense += shirt.defenseModifier;
+                    break;
+
+            }
+        }
+
+        public void GetStats() { }
 
         public string GetInventory()
         {
@@ -58,6 +79,7 @@ namespace WhaleWars
         {
             inventory.Add(item);
         }
+
         public void RemoveItem(Item item) // to remove on-time use items..
         {
             inventory.Remove(item);

@@ -58,7 +58,7 @@ namespace WhaleWars
         
         static void Welcome()
         {
-            Typewrite("A Group-One production.\n\t\t\t\t\t\t\t\t A Chartese Desentery Ameoba Game.\n", TYPESPEED);
+            Typewrite("A Group-One production.\n\t\t\t\t\t\t\t\t A Chartreuse Dysentery Amoeba Game.\n", TYPESPEED);
         }
 
         public static Whale GameStart(Whale UserChoice)
