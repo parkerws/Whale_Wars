@@ -19,14 +19,14 @@ namespace WhaleWars
             switch (Input)
             {
                 case int n when n == 1: return Fighter.Lung(user, target);
-                case int n when n == 2: return ShieldSlam(user, target);
-                case int n when n == 3: return Execute(user, target);
-                case int n when n == 4: return Berserk(user);
+                case int n when n == 2: return Fighter.ShieldSlam(user, target);
+                case int n when n == 3: return Fighter.Execute(user, target);
+                case int n when n == 4: return Fighter.Berserk(user);
             }
 
-            return BassicAtk(user, target);
+            return BasicAtk(user, target);
         }
-        public static int BassicAtk(Whale user, Whale target)
+        public static int BasicAtk(Whale user, Whale target)
         {
             target.Health -= (user.Offense - target.Defense);
             return target.Health;
