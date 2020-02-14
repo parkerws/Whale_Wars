@@ -22,7 +22,7 @@ namespace WhaleWars
         public static string NameGenerator()
         {
             Random r = new Random();
-            string[] namegen1 = { "Bowhead", "Bryde", "Minke", "Eden", "Fin", "Omura", "Sei", "Hector", "Long Finn", "Dusky", "Snubfin", "Tucuxi", "Bottlenose" };
+            string[] namegen1 = { "Bowhead", "Bryde", "Minke", "Eden", "Fin", "Omura", "Sei", "Hector", "Long Finn", "Dusky", "Snubfin", "Tucuxi", "Bottlenose", "Narwhal" };
             string[] namegen2 = {"Plague", "Tormented", "Hindered", "Blind", "Haunted", "Killer", "Savage", "Powerfull", "omnipotent", "Loved" };
             int name1 = r.Next(namegen1.Length);
             int name2 = r.Next(namegen2.Length);

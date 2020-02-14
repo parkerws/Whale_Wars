@@ -7,7 +7,7 @@ namespace WhaleWars
 	{
         
         //Used as a test battle between two entities.
-        public static void Battle(Whale user, Whale target)
+        public static void Battle(Whale user, Enemies target)
         {
             //This section is only used for the HUD location. 
             Planet sumPlanet = new Planet("Blowholia Prime", PlanetType.ocean, 5, 4, Sector.Blowholia);
@@ -24,12 +24,12 @@ namespace WhaleWars
                 if (user.CC == CharClass.ranger) { Ranger.RangerMoves(user, target); }
                 Thread.Sleep(2300);                                                                       
                 ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); 
-                EnemyAI(target, user);                                                                    
+                EnemyAI(user, target);                                                                    
             }                                                                                             
            
         }       
                
-        public static int EnemyAI(Whale user, Whale target)
+        public static int EnemyAI(Whale user, Enemies target)
         {
             Random r = new Random();
             int ai = r.Next(1, 5);

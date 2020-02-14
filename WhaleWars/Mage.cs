@@ -54,7 +54,7 @@ namespace WhaleWars
             Console.WriteLine("You are surrounded with a purple barrier.");
             user.Defense += 20;
             return user.Defense;
-        } //Increases Defense                                  
+        } //Increases Defense                               
         
     }
 }
