@@ -10,23 +10,21 @@ namespace WhaleWars
         public static void Battle(Whale user, Whale target)
         {
             //This section is only used for the HUD location. 
-            //############################################################################################
-            Planet sumPlanet = new Planet("Blowholia Prime", PlanetType.ocean, 5, 4, Sector.Blowholia);//#
-            string Location = sumPlanet.Name;                                                          //#
-            int turn = 0;                                                                              //#
-            //############################################################################################
+            Planet sumPlanet = new Planet("Blowholia Prime", PlanetType.ocean, 5, 4, Sector.Blowholia);
+            string Location = sumPlanet.Name;                                                          
+            int turn = 0;                                                                              
+         
 
-            //While loop used to simulate a fight. 
-            //###############################################################################################
-            while (user.Health > 0 && target.Health > 0)                                                  //#
-            {                                                                                             //#
-                ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); //#
-                Mage.MageMoves(user, target);                                                             //#
-                Thread.Sleep(2300);                                                                       //#
-                ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); //#
-                EnemyAI(target, user);                                                                    //#
-            }                                                                                             //#
-            //###############################################################################################
+            //While loop used to simulate a fight.
+            while (user.Health > 0 && target.Health > 0)                                                  
+            {                                                                                             
+                ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); 
+                Mage.MageMoves(user, target);                                                             
+                Thread.Sleep(2300);                                                                       
+                ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); 
+                EnemyAI(target, user);                                                                    
+            }                                                                                             
+           
         }       
                
         public static int EnemyAI(Whale user, Whale target)
