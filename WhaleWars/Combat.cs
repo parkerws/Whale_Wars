@@ -40,6 +40,7 @@ namespace WhaleWars
                 case int n when n == 2: return Mage.FireBall(user, target);
                 case int n when n == 3: return Mage.BloodSyphon(user, target);
                 case int n when n == 4: return Mage.ArcaneShield(user);
+                default: break;
             }
 
             return Mage.Wand(user, target);

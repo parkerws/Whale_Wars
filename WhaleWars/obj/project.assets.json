@@ -8,25 +8,24 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\dicta\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Cryptlogic\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\MSSA\\VS Projects\\WhaleWars\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
+      "projectUniqueName": "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
       "projectName": "WhaleWars",
-      "projectPath": "E:\\MSSA\\VS Projects\\WhaleWars\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
-      "packagesPath": "C:\\Users\\dicta\\.nuget\\packages\\",
-      "outputPath": "E:\\MSSA\\VS Projects\\WhaleWars\\Whale_Wars\\WhaleWars\\obj\\",
+      "projectPath": "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
+      "packagesPath": "C:\\Users\\Cryptlogic\\.nuget\\packages\\",
+      "outputPath": "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\dicta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Cryptlogic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
