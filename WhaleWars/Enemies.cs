@@ -9,7 +9,7 @@ namespace WhaleWars
         public Enemies(string _name, CharClass cc, int _health, int _defense, int _offense)
              :base (_name, cc, _health, _defense, _offense){}
 
-        public  static object EnemyGenerator()
+        public  static Enemies EnemyGenerator()
         {
             Random r = new Random();
          int H =  r.Next(10, 21);
@@ -26,7 +26,7 @@ namespace WhaleWars
             string[] namegen2 = {"Plague ", "Tormented ", "Hindered " };
             int name1 = r.Next(namegen1.Length);
             int name2 = r.Next(namegen2.Length);
-            string outname = namegen1[name1] + "Whale " + "the" + namegen2[name2];
+            string outname = namegen1[name1] + "Whale " + "the" + " " + namegen2[name2];
             return outname;
 
         }
