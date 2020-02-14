@@ -88,3 +88,14 @@ E:\MSSA\VS Projects\WhaleWars\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\Whale
 E:\MSSA\VS Projects\WhaleWars\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.AssemblyInfo.cs
 E:\MSSA\VS Projects\WhaleWars\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.dll
 E:\MSSA\VS Projects\WhaleWars\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.pdb
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.exe
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.deps.json
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.runtimeconfig.json
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.runtimeconfig.dev.json
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.dll
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.pdb
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.csprojAssemblyReference.cache
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.AssemblyInfoInputs.cache
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.AssemblyInfo.cs
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.dll
+D:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.pdb

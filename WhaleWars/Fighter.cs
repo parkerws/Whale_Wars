@@ -22,6 +22,7 @@ namespace WhaleWars
                 case int n when n == 2: return Fighter.ShieldSlam(user, target);
                 case int n when n == 3: return Fighter.Execute(user, target);
                 case int n when n == 4: return Fighter.Berserk(user);
+                default: break;
             }
 
             return BasicAtk(user, target);

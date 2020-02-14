@@ -19,13 +19,14 @@ namespace WhaleWars
 
             switch (Input)
             {
-                case int n when n == 1: return MagicMissle(user, target);
-                case int n when n == 2: return FireBall(user, target);
-                case int n when n == 3: return BloodSyphon(user, target);
-                case int n when n == 4: return ArcaneShield(user);
+                case int n when n == 1: return Mage.MagicMissle(user, target);
+                case int n when n == 2: return Mage.FireBall(user, target);
+                case int n when n == 3: return Mage.BloodSyphon(user, target);
+                case int n when n == 4: return Mage.ArcaneShield(user);
+                default: break;
             }
 
-            return Wand(user, target);
+            return Mage.Wand(user, target);
         } //Allows the user to pick a skill           
         public static int Wand(Whale user, Whale target)
         {

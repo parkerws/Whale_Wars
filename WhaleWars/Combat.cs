@@ -18,8 +18,10 @@ namespace WhaleWars
             //While loop used to simulate a fight.
             while (user.Health > 0 && target.Health > 0)                                                  
             {                                                                                             
-                ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); 
-                Mage.MageMoves(user, target);                                                             
+                ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense);
+                if (user.CC == CharClass.mage) { Mage.MageMoves(user, target); }
+                if (user.CC == CharClass.fighter) { Fighter.FighterMoves(user, target); }
+                if (user.CC == CharClass.ranger) { Ranger.RangerMoves(user, target); }
                 Thread.Sleep(2300);                                                                       
                 ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); 
                 EnemyAI(target, user);                                                                    

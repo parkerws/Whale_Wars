@@ -33,7 +33,7 @@ namespace WhaleWars
             //Console.WriteLine(charwp.Defense);
 
             Management.mgmt();
-            
+                        
         }
     }
 }

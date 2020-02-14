@@ -15,6 +15,8 @@ namespace WhaleWars
             { UserChoice = GameStart(UserChoice); }
 
             ConsoleInterface.HUD(UserChoice.Name, "Planet", 0, UserChoice.Health, UserChoice.Offense, UserChoice.Defense);
+            Whale knight = new Whale("Knight", CharClass.fighter, 10, 2, 2);
+            Combat.Battle(UserChoice, knight);
         }
         public static void title()
         {
