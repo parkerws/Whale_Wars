@@ -7,7 +7,7 @@ namespace WhaleWars
     class Mage
     {
         //Methods used to represent a Mage spell as damage to a target.
-        public static int MageMoves(Whale user, Whale target)
+        public static int MageMoves(Whale user, Enemies target)
         {
             Console.WriteLine("Select a skill to use\n" +
                 "1) Magic Missle\n" +
@@ -28,22 +28,22 @@ namespace WhaleWars
 
             return Mage.Wand(user, target);
         } //Allows the user to pick a skill           
-        public static int Wand(Whale user, Whale target)
+        public static int Wand(Whale user, Enemies target)
         {
             target.Health -= (user.Offense - target.Defense);
             return target.Health;
         } //Basic attack                                  
-        public static int MagicMissle(Whale user, Whale target)
+        public static int MagicMissle(Whale user, Enemies target)
         {
             target.Health -= user.Offense;
             return target.Health;
         } //Deals more damage than basic attack    
-        public static int FireBall(Whale user, Whale target)
+        public static int FireBall(Whale user, Enemies target)
         {
             target.Health -= (user.Offense + 2);
             return target.Health;
         } //Deals more damage than Magic Missle       
-        public static int BloodSyphon(Whale user, Whale target)
+        public static int BloodSyphon(Whale user, Enemies target)
         {
             target.Health -= user.Offense;
             user.Health += user.Offense;

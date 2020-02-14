@@ -6,7 +6,7 @@ namespace WhaleWars
 {
     class Fighter
     {
-        public static int FighterMoves(Whale user, Whale target)
+        public static int FighterMoves(Whale user, Enemies target)
         {
             Console.WriteLine("Select a skill to use\n" +
                 "1) Lung\n" +
@@ -27,12 +27,12 @@ namespace WhaleWars
 
             return BasicAtk(user, target);
         }
-        public static int BasicAtk(Whale user, Whale target)
+        public static int BasicAtk(Whale user, Enemies target)
         {
             target.Health -= (user.Offense - target.Defense);
             return target.Health;
         }
-        public static int Lung(Whale user, Whale target)
+        public static int Lung(Whale user, Enemies target)
         {
             target.Health -= (user.Offense - target.Defense) + 1;
             return target.Health;
@@ -43,13 +43,13 @@ namespace WhaleWars
             user.Defense -= 2;
             return user.Offense;
         }
-        public static int Execute(Whale user, Whale target)
+        public static int Execute(Whale user, Enemies target)
         {
             double percent = (target.Health / 10);
             if (percent == 0.4) { target.Health -= target.Health; return target.Health; }
             else { target.Health -= (user.Offense + 1); return target.Health;  }
         }
-        public static int ShieldSlam(Whale user, Whale target)
+        public static int ShieldSlam(Whale user, Enemies target)
         {
             target.Health -= user.Defense;
             return target.Health;
