@@ -4,8 +4,7 @@ using System.Threading;
 namespace WhaleWars
 {
 	public class Combat
-	{
-        
+	{        
         //Used as a test battle between two entities.
         public static void Battle(Whale user, Enemies target)
         {
@@ -22,29 +21,13 @@ namespace WhaleWars
                 if (user.CC == CharClass.mage) { Mage.MageMoves(user, target); }
                 if (user.CC == CharClass.fighter) { Fighter.FighterMoves(user, target); }
                 if (user.CC == CharClass.ranger) { Ranger.RangerMoves(user, target); }
-                Thread.Sleep(2300);                                                                       
+                Thread.Sleep(1700);                                                                       
                 ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); 
-                EnemyAI(user, target);                                                                    
+                Enemies.EnemyAI(user, target);
+                Thread.Sleep(1700);
             }                                                                                             
            
-        }       
-               
-        public static int EnemyAI(Whale user, Enemies target)
-        {
-            Random r = new Random();
-            int ai = r.Next(1, 5);
-
-            switch (ai)
-            {
-                case int n when n == 1: return Mage.MagicMissle(user, target);
-                case int n when n == 2: return Mage.FireBall(user, target);
-                case int n when n == 3: return Mage.BloodSyphon(user, target);
-                case int n when n == 4: return Mage.ArcaneShield(user);
-                default: break;
-            }
-
-            return Mage.Wand(user, target);
-        }
+        }                            
     }
 }
 

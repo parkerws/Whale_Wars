@@ -30,5 +30,54 @@ namespace WhaleWars
             return outname;
 
         }
+
+        public static int EnemyAI(Whale user, Enemies target)
+        {
+            Random r = new Random();
+            int ai = r.Next(1, 5);
+
+            switch (ai)
+            {
+                case int n when n == 1: return Enemies.EnemyBasicATK(user, target);
+                case int n when n == 2: return Enemies.EnemySmash(user, target);
+                case int n when n == 3: return Enemies.EnemySmash(user, target);
+                case int n when n == 4: return Enemies.EnemySyphonLife(user,target);
+                default: break;
+            }
+
+            return Enemies.Missed(user, target);
+        }
+
+        public static int EnemyBasicATK(Whale user, Enemies target)
+        {
+            Console.WriteLine($"\n{target.Name} Swings his sword, dealing {target.Offense - user.Defense} damage.");
+            user.Health -= target.Offense - user.Defense;
+            return user.Health;
+        }
+        public static int EnemySmash(Whale user, Enemies target)
+        {
+            Console.WriteLine($"\n{target.Name} uses Smash dealing {target.Offense - user.Defense + 2} danage.");
+            user.Health -= (target.Offense-user.Defense) + 2;
+            return user.Health;
+        }
+        public static int EnemyUnleashedRage(Whale user, Enemies target)
+        {
+            Console.WriteLine($"\n{target.Name} uses Unleashed Rage, dealing {target.Offense} damage.");
+            user.Health -= target.Offense;
+            return user.Health;
+        }
+        public static int EnemySyphonLife(Whale user, Enemies target)
+        {
+            Console.WriteLine($"\n{target.Name} uses Syphone Life, dealing {target.Offense - user.Defense} damage and absorbing { target.Offense - user.Defense} health.");
+            user.Health -= target.Offense - user.Defense;
+            target.Health += target.Offense - user.Defense;
+            return user.Health;
+        }
+        public static int Missed(Whale user, Enemies target)
+        {
+          Console.WriteLine($"\n{target.Name} mighty blow glances you for 1 damage.");
+            user.Health -= 1;
+            return user.Health;
+        }
     }
 }
