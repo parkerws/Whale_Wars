@@ -6,11 +6,10 @@ namespace WhaleWars
     {      
         public string Name{get; set;}
 
-        public Item CreateItem(string name)
-        {
-            Name = name;
-
-        }
+        //public Item (string name)
+        //{
+        //    Name = name;
+        //}   // whose forkin' good idea was is to have a constructor for the Item class?
     }
 
 }

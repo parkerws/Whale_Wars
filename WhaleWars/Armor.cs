@@ -25,7 +25,7 @@ namespace WhaleWars
 
     public class Plating : Armor
     {
-        public Plating()
+        public Plating() : base()
         {
             Name = "Bobby Blow's Bronze Armour";
             charClass = CharClass.fighter;
@@ -35,7 +35,7 @@ namespace WhaleWars
 
     public class Chainmail : Armor
     {
-        public Chainmail()
+        public Chainmail() : base()
         {
             Name = " Silver Glittery Rainacorn Scales";
             charClass = CharClass.ranger;
@@ -45,7 +45,7 @@ namespace WhaleWars
      
     public class Cloth : Armor
     {
-        public Cloth()
+        public Cloth() : base()
         {
             Name = "Reptilian Magical Cloth";
             charClass = CharClass.mage;

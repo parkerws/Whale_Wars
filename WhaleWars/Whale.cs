@@ -13,6 +13,8 @@ namespace WhaleWars
         public int Offense { get; set; }
         public CharClass CC { get; set; }
         public int Wallet { get; set; }
+        
+        public Planet currentPlanet { get; set; }
 
         public Whale(string _name, CharClass cc, int _health, int _defense, int _offense)
         {
@@ -22,6 +24,7 @@ namespace WhaleWars
             Defense = _defense;
             Offense = _offense;
             Wallet = 5;
+            currentPlanet = new Planet();
         } //Creates an easily referenced initializer so you dont have to type out each property of the given Whale
 
         public static Whale WhaleSelect(Whale UserChoice)
@@ -105,7 +108,7 @@ namespace WhaleWars
             inventory.Add(item);
         }
 
-        public void RemoveItem(Item item) // to remove on-time use items..
+        public void RemoveItem(Item item) // to remove one-time use items..
         {
             inventory.Remove(item);
         }
