@@ -33,7 +33,7 @@ namespace WhaleWars
             } while (true);
             return name;
         }
-        public static void PlayerDied(Whale user)
+        public static void PlayerDied(Whale user, Enemies target)
         {
             Console.Clear();
             Console.WriteLine("__________________________________________________________________________________________________________________");
@@ -46,7 +46,7 @@ namespace WhaleWars
             Console.WriteLine("       ,:::::'       ;           OOO\"");
             Console.WriteLine("       ::::::;       ;          OOOOO\"");
             Console.WriteLine("       ;:::::;       ;         OOOOOOOO");
-            Console.WriteLine($"     ,;::::::;     ;'         / OOOOOOO               {user.Name} Has been slain in battle");
+            Console.WriteLine($"     ,;::::::;     ;'         / OOOOOOO          {user.Name} Has been slain by {target.Name}");
             Console.WriteLine("    ;:::::::::`. ,,,;.        /  / DOOOOOO             Would you like to Exit or start over?");
             Console.WriteLine("  .';:::::::::::::::::;,     /  /     DOOOO                       YES         NO");
             Console.WriteLine(" ,::::::;::::::;;;;::::;,   /  /        DOOO");

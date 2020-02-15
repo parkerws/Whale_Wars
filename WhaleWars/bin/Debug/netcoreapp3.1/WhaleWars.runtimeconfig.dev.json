@@ -1,8 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\parke\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\parke\\.nuget\\packages"
+      "C:\\Users\\Cryptlogic\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Cryptlogic\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }

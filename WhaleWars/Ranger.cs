@@ -22,10 +22,8 @@ namespace WhaleWars
                 case int n when n == 2: return Ranger.MultiShot(user, target);
                 case int n when n == 3: return Ranger.CriplingBlow(user, target);
                 case int n when n == 4: return Ranger.ShadowDance(user);
-                default: break;
-            }
-
-            return Ranger.BasicAtk(user, target);
+                default: return Ranger.BasicAtk(user, target);
+            }                       
         }
         public static int BasicAtk(Whale user, Enemies target)
         {
