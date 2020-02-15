@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WhaleWars
 {
@@ -11,11 +12,16 @@ namespace WhaleWars
         public static void mgmt()
         {
             title();
-            Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1);
+            List<Weapon> Inventory = new List<Weapon>();
+            Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1, Inventory);
             { UserChoice = Whale.WhaleSelect(UserChoice); }
 
             ConsoleInterface.HUD(UserChoice.Name, "Planet", 0, UserChoice.Health, UserChoice.Offense, UserChoice.Defense);
             
+           UserChoice.Armory.Add(Weapon.WeaponGen());
+           Whale.FD(UserChoice);
+            
+
             Combat.Battle(UserChoice,Enemies.EnemyGenerator());
         }
         public static void title()

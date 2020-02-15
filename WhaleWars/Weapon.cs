@@ -1,3 +1,4 @@
+using System;
 namespace WhaleWars
 {
     public class Weapon
@@ -49,5 +50,27 @@ namespace WhaleWars
                     return null;
             }
         }
+
+        public static Weapon WeaponGen()
+        {
+            Random r = new Random();
+            string[] FighterWeapons = { "Sword", "Mace", "Butcher Knife", "Bottle Opener", "Club", "Pan", "Golf Club", "Halberd", "Long Sword", "God Sword" };
+            string[] MageWeapons = { "Arcanists Wand", "Wicked One's Staff", "Oracle", "Necronomicon", "Witches Spellbook", "Stick", "Old Man Cane" };
+            string[] RangerWeapons = { "Arcane Bow", "Toxic Bow", "Fire Bow", "Ice Bow", "Lightning Bow", "Sling-Shot", "Nerf Gun", "Golden Gun", "Long Straw" };
+            int fw = r.Next(FighterWeapons.Length);
+            int mw = r.Next(MageWeapons.Length);
+            int rw = r.Next(RangerWeapons.Length);
+            string fwn = FighterWeapons[fw];
+            string mwn = MageWeapons[mw];
+            string rwn = RangerWeapons[rw];
+            int wo = r.Next(1, 11);
+
+            Weapon FWeap = new Weapon(0, wo, 0);
+            Weapon MWeap = new Weapon(0, wo, 0);
+            Weapon RWeap = new Weapon(0, wo, 0);
+
+
+            return FWeap;
+        } //altered to fit the Get; Set; variables, doesnt produce a name.. work in progress.
     }
 }
