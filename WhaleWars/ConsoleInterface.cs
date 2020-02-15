@@ -68,6 +68,40 @@ namespace WhaleWars
                 case string n when n == "no":  { Environment.Exit(0); break; }
             }           
         }
+        public static void WinArt(Enemies target)
+        {
+            Console.Clear();
+            Console.WriteLine("__________________________________________________________________________________________________________________");
+            Console.WriteLine("                  _|\'");
+            Console.WriteLine("                 `._.\'_");
+            Console.WriteLine("                     | `.");
+            Console.WriteLine("         __   ||      `._\'_ ,'\",'|                __");
+            Console.WriteLine("     ,._/|||,.||________,_._ _,_'_____________,-;|||\'_________");
+            Console.WriteLine("     '.----; /||------------.-.-\"------------/ '.---,---------'");
+            Console.WriteLine("        \'__,' ||     / (_)|`-'-__;           `.___/");
+            Console.WriteLine("        / :|  ''      |    |,-.\'|             |::.\"                        CONGRADULATIONS ");
+            Console.WriteLine($"       /___|         | .: ||_,  |   __...     |____\"          you have defeated {target.Name}");
+            Console.WriteLine("        | |  _..._    |.:  `.__, | ,'   .:|     | |");
+            Console.WriteLine("        | | `-. .:''._|___:_....'-'-. .:' /     | |");
+            Console.WriteLine("        ;-:---'`.:' _\'`._           /`.-./--.__;-:");
+            Console.WriteLine("       /_,'------\','     `--...__,-'   \'---.../_`_\"");
+            Console.WriteLine("                 ' `.:       .          |");
+            Console.WriteLine("                     \'       ::    |   :|");
+            Console.WriteLine("                     |      .:     ;  .:;");
+            Console.WriteLine("                     |    .::     /  ::/");
+            Console.WriteLine("            ,-.     / __...----.._ .::/  ,-.");
+            Console.WriteLine("           <'-'>   /-'.::::' `::::`-./  <'-'>");
+            Console.WriteLine("   ,     ,'`,' \'  ,'_.::.-----....__:| _,' :`.");
+            Console.WriteLine(" /'|\'   /  ; \' \'/                 _,-' _,'\'  \'       .");
+            Console.WriteLine(" |':\\  ; ,'   \' \'_...---'''''---,' _,-'    `. \'     /|\'");
+            Console.WriteLine("  \':\'`-'/     .\' \'               ,'/         `.\'   //.|");
+            Console.WriteLine("   \':\' /      `.`._          _,-','            \'`-'/:/");
+            Console.WriteLine("    `-'=*       `-.`''----'''_,-'               \' /:/");
+            Console.WriteLine("                   `'''---'''                  *=`-'");
+            Console.WriteLine();
+            Console.WriteLine("__________________________________________________________________________________________________________________");
+        }
+
 
         public static void HUD(string player = "", string location= "", int turn = 0, int Health = 0, int Attack = 0, int Defence = 0)
         {
