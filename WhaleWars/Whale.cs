@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,6 +11,7 @@ namespace WhaleWars
         public int Defense { get; set; }
         public int Offense { get; set; }
         public CharClass CC { get; set; }
+        public int Wallet { get; set; }
 
         public Whale(string _name, CharClass cc, int _health, int _defense, int _offense)
         {
@@ -18,7 +20,8 @@ namespace WhaleWars
             Health = _health;
             Defense = _defense;
             Offense = _offense;
-        } //Creates an easily referenced intializer so you dont have to type out each property of the given Whale
+            Wallet = 5;
+        } //Creates an easily referenced initializer so you dont have to type out each property of the given Whale
 
         private List<Item> inventory = new List<Item>();
         private List<Weapon> Armory = new List<Weapon>();
@@ -29,6 +32,8 @@ namespace WhaleWars
             Offense += Armory.Last().Damage;
             Defense += Armory.Last().Defense;
         }
+
+       
 
         public string GetWeapons()
         {
@@ -59,11 +64,8 @@ namespace WhaleWars
                     Cloth shirt = new Cloth();
                     Defense += shirt.defenseModifier;
                     break;
-
             }
         }
-
-        public void GetStats() { }
 
         public string GetInventory()
         {
@@ -83,6 +85,82 @@ namespace WhaleWars
         public void RemoveItem(Item item) // to remove on-time use items..
         {
             inventory.Remove(item);
+        }
+        public void BuyWeapon(int money, WeaponList weap)
+        {
+            int cost;
+            switch (weap)
+            {
+                case WeaponList.Sword:
+                    cost = 3;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Wand:
+                    cost = 3;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Bow:
+                    cost = 3;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Knife:
+                    cost = 4;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Chimichanga:
+                    cost = 6;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Blowhole:
+                    cost = 6;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.UltraBoof:
+                    cost = 20;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+            }
         }
     }
 }
