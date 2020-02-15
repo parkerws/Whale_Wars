@@ -6,12 +6,10 @@ namespace WhaleWars
     {      
         public string Name{get; set;}
 
-        //public Item CreateItem(string name)
+        //public Item (string name)
         //{
-        //   Name = name;
-            
-
-        //}  Was causing the program to crash, needs fixed. 
+        //    Name = name;
+        //}   // whose forkin' good idea was is to have a constructor for the Item class?
     }
 
 }

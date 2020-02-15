@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System;
@@ -11,17 +12,20 @@ namespace WhaleWars
         public int Defense { get; set; }
         public int Offense { get; set; }
         public CharClass CC { get; set; }
-        public List<Weapon> Armory { get; set; }
+        public int Wallet { get; set; }
+        
+        public Planet currentPlanet { get; set; }
 
-        public Whale(string _name, CharClass cc, int _health, int _defense, int _offense, List<Weapon> _armory)
+        public Whale(string _name, CharClass cc, int _health, int _defense, int _offense)
         {
             Name = _name;
             CC = cc;
             Health = _health;
             Defense = _defense;
             Offense = _offense;
-            Armory = _armory;
-        } //Creates an easily referenced intializer so you dont have to type out each property of the given Whale
+            Wallet = 5;
+            currentPlanet = new Planet();
+        } //Creates an easily referenced initializer so you dont have to type out each property of the given Whale
 
         public static Whale WhaleSelect(Whale UserChoice)
         {
@@ -32,50 +36,21 @@ namespace WhaleWars
                 "2.) Ranger\n" +
                 "3.) Mage\n");
             string pick = Console.ReadLine();
+            // int ClassPicker = Convert.ToInt32(pick);
+        
 
             switch (pick)
             {
-                case "1": { UserChoice = new Whale(name, CharClass.fighter, 10, 5, FD(UserChoice), UserChoice.Armory); return UserChoice;}
-                case "2": { UserChoice = new Whale(name, CharClass.ranger, 10, 4, RD(UserChoice), UserChoice.Armory); return UserChoice; }
-                case "3": { UserChoice = new Whale(name, CharClass.mage, 10, 2, MD(UserChoice), UserChoice.Armory); return UserChoice; }
+                case "1": { UserChoice = new Whale(name, CharClass.fighter, 10, 5, 2); return UserChoice; }
+                case "2": { UserChoice = new Whale(name, CharClass.ranger, 10, 4, 3); return UserChoice; }
+                case "3": { UserChoice = new Whale(name, CharClass.mage, 10, 2, 4); return UserChoice; }
                 default: return null;
             }
 
         }
 
         private List<Item> inventory = new List<Item>();
-        //private List<Weapon> Armory = new List<Weapon>();
-
-        public static int ArmOff(Whale user)
-        {
-           int damage;
-            try
-            {
-                int itemoffense = user.Armory.Last().Damage;
-            }
-            catch (Exception){ damage = 0; return damage; }
-            
-            damage = user.Armory.Last().Damage;             
-            
-            return damage;
-        }//gets the offense of the items in the Armory inventory
-        public static int FD(Whale user)
-        {
-            int damage = ArmOff(user);
-            user.Offense += damage + 2;
-
-            return user.Offense;
-        }//Adds the weapons damage to the base damage of the UserChoice Fighter Whale.
-        public static int RD(Whale user)
-        {
-            user.Offense += (Whale.ArmOff(user) + 3);
-            return user.Offense;
-        }//Adds the weapons damage to the base damage of the UserChoice Ranger Whale.
-        public static int MD(Whale user)
-        {
-            user.Offense += (Whale.ArmOff(user) + 4);
-            return user.Offense;
-        }//Adds the weapons damage to the base damage of the UserChoice Mage Whale.
+        private List<Weapon> Armory = new List<Weapon>();
 
         public void SetWeapon(WeaponList weapon) // equip weapon if in inventory
         {
@@ -83,6 +58,8 @@ namespace WhaleWars
             Offense += Armory.Last().Damage;
             Defense += Armory.Last().Defense;
         }
+
+       
 
         public string GetWeapons()
         {
@@ -113,11 +90,8 @@ namespace WhaleWars
                     Cloth shirt = new Cloth();
                     Defense += shirt.defenseModifier;
                     break;
-
             }
         }
-
-        public void GetStats() { }
 
         public string GetInventory()
         {
@@ -134,9 +108,85 @@ namespace WhaleWars
             inventory.Add(item);
         }
 
-        public void RemoveItem(Item item) // to remove on-time use items..
+        public void RemoveItem(Item item) // to remove one-time use items..
         {
             inventory.Remove(item);
+        }
+        public void BuyWeapon(int money, WeaponList weap)
+        {
+            int cost;
+            switch (weap)
+            {
+                case WeaponList.Sword:
+                    cost = 3;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Wand:
+                    cost = 3;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Bow:
+                    cost = 3;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Knife:
+                    cost = 4;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Chimichanga:
+                    cost = 6;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.Blowhole:
+                    cost = 6;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+
+                case WeaponList.UltraBoof:
+                    cost = 20;
+                    if (Wallet >= cost)
+                    {
+                        Wallet -= cost;
+                        SetWeapon(weap);
+                    }
+                    else Console.WriteLine("Not enough money!");
+                    break;
+            }
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace WhaleWars
 {
@@ -12,15 +11,11 @@ namespace WhaleWars
         public static void mgmt()
         {
             title();
-            List<Weapon> Inventory = new List<Weapon>();
-            Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1, Inventory);
-            { UserChoice = Whale.WhaleSelect(UserChoice); }
+            Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1);
+            UserChoice = Whale.WhaleSelect(UserChoice);
 
-            ConsoleInterface.HUD(UserChoice.Name, "Planet", 0, UserChoice.Health, UserChoice.Offense, UserChoice.Defense);
-
-            ConsoleInterface.DisplayInventory(UserChoice, ConsoleInterface.ShopList());
-            Whale.FD(UserChoice);            
-
+            ConsoleInterface.HUD(UserChoice);
+            
             Combat.Battle(UserChoice,Enemies.EnemyGenerator());
         }
         public static void title()
@@ -63,7 +58,7 @@ namespace WhaleWars
         
         static void Welcome()
         {
-            Typewrite("A Group-One production.\n\t\t\t\t\t\t\t\t A Chartreuse Dysentery Amoeba Game.\n", TYPESPEED);
+            Typewrite("A Group-One Production.\n\t\t\t\t\t\t\t\t A Chartreuse Dysentery Amoeba Game.\n", TYPESPEED);
         }
     }
 }

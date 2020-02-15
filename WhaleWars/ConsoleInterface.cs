@@ -158,8 +158,14 @@ namespace WhaleWars
         }
 
 
-        public static void HUD(string player = "", string location= "", int turn = 0, int Health = 0, int Attack = 0, int Defence = 0)
+        public static void HUD(Whale player)
         {
+            string location = player.currentPlanet.ToString();
+            string playerName = player.Name;
+            int Health = player.Health;
+            int turn = 1;
+            int Attack = player.Offense;
+            int Defence = player.Defense;
           
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -175,7 +181,7 @@ namespace WhaleWars
             Console.WriteLine("====================================================================================");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write("    " + player);
+            Console.Write("    " + playerName);
             Console.ResetColor();
             Console.Write(" :: ");
             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -191,7 +197,7 @@ namespace WhaleWars
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(Attack + " Attack ");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write(Defence + " Defence \n");
+            Console.Write(Defence + " Defence \n");  // this would be so much easier if Guse could spell.....
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("====================================================================================\n\n\n\n");
             Console.ResetColor();
