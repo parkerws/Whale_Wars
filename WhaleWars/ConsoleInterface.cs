@@ -128,8 +128,10 @@ namespace WhaleWars
                 Random r = new Random();
                 int nt = r.Next(type.Length);
                 string st = type[nt];
-
-                Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage ");
+                if (i == 1) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 5 Doubloon   "); }
+                if (i == 2) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 1 Doubloon   "); }
+                if (i == 3) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 4 Doubloon   "); }
+                if (i == 4) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 3 Doubloon   "); }
                 i++;
             };
             Console.WriteLine();
@@ -137,23 +139,23 @@ namespace WhaleWars
             string input = Console.ReadLine();
             switch (input)
             {
-                case "item 1": { user.Armory.Add(inventory.ElementAt(0)); return user.Armory; }
-                case "item 2": { user.Armory.Add(inventory.ElementAt(1)); return user.Armory; }
-                case "item 3": { user.Armory.Add(inventory.ElementAt(2)); return user.Armory; }
-                case "item 4": { user.Armory.Add(inventory.ElementAt(3)); return user.Armory; }
+                case "item 1": { user.Armory.Add(inventory.ElementAt(0)); user.Wallet -= 5; return user.Armory; }
+                case "item 2": { user.Armory.Add(inventory.ElementAt(1)); user.Wallet -= 1; return user.Armory; }
+                case "item 3": { user.Armory.Add(inventory.ElementAt(2)); user.Wallet -= 4; return user.Armory; }
+                case "item 4": { user.Armory.Add(inventory.ElementAt(3)); user.Wallet -= 3; return user.Armory; }
                 default: break;
             }
 
             return user.Armory;
 
         }
-        public static List<Weapon> ShopList()
+        public static List<Weapon> ShopListGenerator()
         {
             List<Weapon> sp = new List<Weapon>();
-            sp.Add(Weapon.WeaponGen());
-            sp.Add(Weapon.WeaponGen());
-            sp.Add(Weapon.WeaponGen());
-            sp.Add(Weapon.WeaponGen());
+            sp.Add(Weapon.CreateWeapon(WeaponList.Knife));
+            sp.Add(Weapon.CreateWeapon(WeaponList.Bow));
+            sp.Add(Weapon.CreateWeapon(WeaponList.Sword));
+            sp.Add(Weapon.CreateWeapon(WeaponList.Wand));
             return sp;
         }
 

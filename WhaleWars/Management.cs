@@ -19,8 +19,7 @@ namespace WhaleWars
             ConsoleInterface.HUD(UserChoice);
             
            UserChoice.Armory.Add(Weapon.WeaponGen());
-           
-            
+           ConsoleInterface.DisplayInventory(UserChoice, ConsoleInterface.ShopListGenerator());
 
             Combat.Battle(UserChoice,Enemies.EnemyGenerator());
         }

@@ -6,6 +6,9 @@ namespace WhaleWars
     {
         public static void Main()
         {
+            
+            
+           
             Management.mgmt();
 
 
