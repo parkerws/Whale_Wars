@@ -43,7 +43,7 @@ namespace WhaleWars
             Console.WriteLine("           ;::::; :;");
             Console.WriteLine("         ;:::::'   :;");
             Console.WriteLine("        ;:::::;     ;.");
-            Console.WriteLine("       ,:::::'       ;           OOO\"");
+            Console.WriteLine("       ,:::::'  .  . ;           OOO\"");
             Console.WriteLine("       ::::::;       ;          OOOOO\"");
             Console.WriteLine("       ;:::::;       ;         OOOOOOOO");
             Console.WriteLine($"     ,;::::::;     ;'         / OOOOOOO          {user.Name} Has been slain by {target.Name}");

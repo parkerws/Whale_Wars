@@ -12,7 +12,7 @@ namespace WhaleWars
         {
             title();
             Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1);
-            { UserChoice = GameStart(UserChoice); }
+            { UserChoice = Whale.WhaleSelect(UserChoice); }
 
             ConsoleInterface.HUD(UserChoice.Name, "Planet", 0, UserChoice.Health, UserChoice.Offense, UserChoice.Defense);
             
@@ -59,27 +59,6 @@ namespace WhaleWars
         static void Welcome()
         {
             Typewrite("A Group-One production.\n\t\t\t\t\t\t\t\t A Chartreuse Dysentery Amoeba Game.\n", TYPESPEED);
-        }
-
-        public static Whale GameStart(Whale UserChoice)
-        {
-            Console.WriteLine("Please input a name\n");
-            string name = Console.ReadLine();            
-            Console.WriteLine("Please chose a class\n" +
-                "1.) Fighter\n" +
-                "2.) Ranger\n" +
-                "3.) Mage\n");
-            string pick = Console.ReadLine();
-            // int ClassPicker = Convert.ToInt32(pick);
-
-            switch (pick)
-            {
-                case "1" : { UserChoice = new Whale(name, CharClass.fighter, 10, 5, 2); return UserChoice; }
-                case "2" : { UserChoice = new Whale(name, CharClass.ranger, 10, 4, 3); return UserChoice;  }
-                case "3" : { UserChoice = new Whale(name, CharClass.mage, 10, 2, 4); return UserChoice; }
-                default: return null;
-            }
-
         }
     }
 }

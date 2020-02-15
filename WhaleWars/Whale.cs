@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace WhaleWars
 {
@@ -19,6 +20,28 @@ namespace WhaleWars
             Defense = _defense;
             Offense = _offense;
         } //Creates an easily referenced intializer so you dont have to type out each property of the given Whale
+
+        public static Whale WhaleSelect(Whale UserChoice)
+        {
+            Console.WriteLine("Please input a name\n");
+            string name = Console.ReadLine();
+            Console.WriteLine("Please chose a class\n" +
+                "1.) Fighter\n" +
+                "2.) Ranger\n" +
+                "3.) Mage\n");
+            string pick = Console.ReadLine();
+            // int ClassPicker = Convert.ToInt32(pick);
+        
+
+            switch (pick)
+            {
+                case "1": { UserChoice = new Whale(name, CharClass.fighter, 10, 5, 2); return UserChoice; }
+                case "2": { UserChoice = new Whale(name, CharClass.ranger, 10, 4, 3); return UserChoice; }
+                case "3": { UserChoice = new Whale(name, CharClass.mage, 10, 2, 4); return UserChoice; }
+                default: return null;
+            }
+
+        }
 
         private List<Item> inventory = new List<Item>();
         private List<Weapon> Armory = new List<Weapon>();
