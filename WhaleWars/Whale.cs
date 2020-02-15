@@ -50,7 +50,7 @@ namespace WhaleWars
         }
 
         private List<Item> inventory = new List<Item>();
-        private List<Weapon> Armory = new List<Weapon>();
+        public List<Weapon> Armory = new List<Weapon>();
 
         public void SetWeapon(WeaponList weapon) // equip weapon if in inventory
         {
