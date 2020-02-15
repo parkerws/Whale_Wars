@@ -35,6 +35,9 @@ namespace WhaleWars
         }
         public static void PlayerDied(Whale user)
         {
+            Console.Clear();
+            Console.WriteLine("__________________________________________________________________________________________________________________");
+            Console.WriteLine("\n\n\n\n\n");
             Console.WriteLine("               ...");
             Console.WriteLine("             ;::::;");
             Console.WriteLine("           ;::::; :;");
@@ -56,7 +59,7 @@ namespace WhaleWars
             Console.WriteLine(" `:::::`::::::::::::;'`:;::#                O");
             Console.WriteLine("  `:::::`::::::::;' /  / `:#");
             Console.WriteLine("   ::::::`:::::;'  /  /   `#");
-
+            Console.WriteLine("_________________________________________________________________________________________________________________");
             string input = Convert.ToString(Input().ToLower());
             
             switch(input)
