@@ -28,7 +28,7 @@ namespace WhaleWars
             Typewrite("In an ocean of space....\n", TYPESPEED);
             Typewrite("Far Far away...\n", TYPESPEED);
             Typewrite("There was a whale...\n", TYPESPEED);
-            Typewrite("Floating aimlessly through space...\n", TYPESPEED);
+            Typewrite("Floating aimlessly through the void...\n", TYPESPEED);
             Typewrite("", TYPESPEED);
             printTitle();
             Welcome();
@@ -70,16 +70,15 @@ namespace WhaleWars
                 "2.) Ranger\n" +
                 "3.) Mage\n");
             string pick = Console.ReadLine();
-            int ClassPicker = Convert.ToInt32(pick);
+            // int ClassPicker = Convert.ToInt32(pick);
 
-            switch (ClassPicker)
+            switch (pick)
             {
-                case int n when n == 1: { UserChoice = new Whale(name, CharClass.fighter, 10, 5, 2); return UserChoice; }
-                case int n when n == 2: { UserChoice = new Whale(name, CharClass.ranger, 10, 4, 3); return UserChoice; }
-                case int n when n == 3: { UserChoice = new Whale(name, CharClass.mage, 10, 2, 4); return UserChoice; }
-                default: break;
+                case "1" : { UserChoice = new Whale(name, CharClass.fighter, 10, 5, 2); return UserChoice; }
+                case "2" : { UserChoice = new Whale(name, CharClass.ranger, 10, 4, 3); return UserChoice;  }
+                case "3" : { UserChoice = new Whale(name, CharClass.mage, 10, 2, 4); return UserChoice; }
+                default: return null;
             }
-            return UserChoice;
 
         }
     }

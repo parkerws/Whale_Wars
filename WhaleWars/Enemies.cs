@@ -38,10 +38,10 @@ namespace WhaleWars
 
             switch (ai)
             {
-                case int n when n == 1: return Enemies.EnemyBasicATK(user, target);
-                case int n when n == 2: return Enemies.EnemySmash(user, target);
-                case int n when n == 3: return Enemies.EnemySmash(user, target);
-                case int n when n == 4: return Enemies.EnemySyphonLife(user,target);
+                case 1: return Enemies.EnemyBasicATK(user, target);
+                case 2: return Enemies.EnemySmash(user, target);
+                case 3: return Enemies.EnemySmash(user, target);
+                case 4: return Enemies.EnemySyphonLife(user,target);
                 default: break;
             }
 
