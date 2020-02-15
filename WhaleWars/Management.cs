@@ -19,7 +19,7 @@ namespace WhaleWars
             ConsoleInterface.HUD(UserChoice.Name, "Planet", 0, UserChoice.Health, UserChoice.Offense, UserChoice.Defense);
 
             ConsoleInterface.DisplayInventory(UserChoice, ConsoleInterface.ShopList());
-            Whale.FD(UserChoice);            
+            Whale.FD(UserChoice);
 
             Combat.Battle(UserChoice,Enemies.EnemyGenerator());
         }

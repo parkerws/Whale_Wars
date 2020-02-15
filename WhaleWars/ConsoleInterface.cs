@@ -105,6 +105,7 @@ namespace WhaleWars
         }
         public static List<Weapon> DisplayInventory(Whale user, List<Weapon> inventory)
         {
+            Console.Clear();
             Console.WriteLine("___________________________________________________________________________________________");
             Console.WriteLine("\n\n\n\n");
             Console.WriteLine("            .-------------'```'----....,,__                        _,");
@@ -137,10 +138,10 @@ namespace WhaleWars
             string input = Console.ReadLine();
             switch (input)
             {
-                case "item 1" : { user.Armory.Add(inventory.ElementAt(0)); return user.Armory; }
-                case "item 2" : { user.Armory.Add(inventory.ElementAt(1)); return user.Armory; }
-                case "item 3" : { user.Armory.Add(inventory.ElementAt(2)); return user.Armory; }
-                case "item 4" : { user.Armory.Add(inventory.ElementAt(3)); return user.Armory; }
+                case "1" : { user.Armory.Add(inventory.ElementAt(0)); return user.Armory; }
+                case "2" : { user.Armory.Add(inventory.ElementAt(1)); return user.Armory; }
+                case "3" : { user.Armory.Add(inventory.ElementAt(2)); return user.Armory; }
+                case "4" : { user.Armory.Add(inventory.ElementAt(3)); return user.Armory; }
                 default: break;
             }         
             
