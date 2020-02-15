@@ -47,8 +47,8 @@ namespace WhaleWars
             Console.WriteLine("       ::::::;       ;          OOOOO\"");
             Console.WriteLine("       ;:::::;       ;         OOOOOOOO");
             Console.WriteLine($"     ,;::::::;     ;'         / OOOOOOO          {user.Name} Has been slain by {target.Name}");
-            Console.WriteLine("    ;:::::::::`. ,,,;.        /  / DOOOOOO             Would you like to Exit or start over?");
-            Console.WriteLine("  .';:::::::::::::::::;,     /  /     DOOOO                       YES         NO");
+            Console.WriteLine("    ;:::::::::`. ,,,;.        /  / DOOOOOO             Would you like to [E]xit or start [O]ver?");
+            Console.WriteLine("  .';:::::::::::::::::;,     /  /     DOOOO");   // yes or no what?? hella ambiguous
             Console.WriteLine(" ,::::::;::::::;;;;::::;,   /  /        DOOO");
             Console.WriteLine(";`::::::`'::::::;;;::::: ,#/  /          DOOO");
             Console.WriteLine(":`:::::::`;::::::;;::: ;::#  /            DOOO");
@@ -62,10 +62,10 @@ namespace WhaleWars
             Console.WriteLine("_________________________________________________________________________________________________________________");
             string input = Convert.ToString(Input().ToLower());
             
-            switch(input)
+            switch(input.ToLower())
             {
-                case string n when n == "yes": { Console.Clear(); Program.Main();  break; }
-                case string n when n == "no":  { Environment.Exit(0); break; }
+                case "o": { Console.Clear(); Program.Main();  break; }
+                case "e":  { Environment.Exit(0); break; }
             }           
         }
 
