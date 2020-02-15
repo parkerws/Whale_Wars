@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace WhaleWars
 {
@@ -100,6 +102,59 @@ namespace WhaleWars
             Console.WriteLine("                   `'''---'''                  *=`-'");
             Console.WriteLine();
             Console.WriteLine("__________________________________________________________________________________________________________________");
+        }
+        public static List<Weapon> DisplayInventory(Whale user, List<Weapon> inventory)
+        {
+            Console.WriteLine("___________________________________________________________________________________________");
+            Console.WriteLine("\n\n\n\n");
+            Console.WriteLine("            .-------------'```'----....,,__                        _,");
+            Console.WriteLine("            |                               `'`'`'`'-.,.__        .'(");
+            Console.WriteLine("            |                                             `'--._.'   )");
+            Console.WriteLine("            |                                                   `'-.<");
+            Console.WriteLine("            \';              .-'`'-.                            -.    `\'");
+            Console.WriteLine("             \'               -.o_.     _                     _,-'`\'   |");
+            Console.WriteLine("              ``````''--.._.-=-._    .'  \'           _,,--'`      `-._(");
+            Console.WriteLine("                (^^^^^^^^`___    '-. |    \' __,,..--'                 `");
+            Console.WriteLine("                 `````````   `'--..___\'   |`");
+            Console.WriteLine("                                       `-.,'");
+            Console.WriteLine("Please enter the number of the item you would like to buy or enter Exit to leave the shop");
+            Console.WriteLine("___________________________________________________________________________________________");           
+
+            Console.WriteLine();
+            int i = 1;
+            foreach (Weapon item in inventory)
+            {
+                string[] type = { "Fire", "Lightning", "Ice", "Rusty", "Broken" };
+                Random r = new Random();
+                int nt = r.Next(type.Length);
+                string st = type[nt];
+
+                Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage ");
+                i++;
+            };
+            Console.WriteLine();
+            
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "item 1" : { user.Armory.Add(inventory.ElementAt(0)); return user.Armory; }
+                case "item 2" : { user.Armory.Add(inventory.ElementAt(1)); return user.Armory; }
+                case "item 3" : { user.Armory.Add(inventory.ElementAt(2)); return user.Armory; }
+                case "item 4" : { user.Armory.Add(inventory.ElementAt(3)); return user.Armory; }
+                default: break;
+            }         
+            
+            return user.Armory;
+
+        }
+        public static List<Weapon> ShopList()
+        {
+            List<Weapon> sp = new List<Weapon>();
+            sp.Add(Weapon.WeaponGen());
+            sp.Add(Weapon.WeaponGen());
+            sp.Add(Weapon.WeaponGen());
+            sp.Add(Weapon.WeaponGen());
+            return sp;
         }
 
 

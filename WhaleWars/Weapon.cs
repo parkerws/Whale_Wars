@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 namespace WhaleWars
 {
     public class Weapon
@@ -63,7 +64,8 @@ namespace WhaleWars
             string fwn = FighterWeapons[fw];
             string mwn = MageWeapons[mw];
             string rwn = RangerWeapons[rw];
-            int wo = r.Next(1, 11);
+            int wo = r.Next(1, 10);
+            
 
             Weapon FWeap = new Weapon(0, wo, 0);
             Weapon MWeap = new Weapon(0, wo, 0);
