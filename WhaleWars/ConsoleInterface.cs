@@ -33,7 +33,7 @@ namespace WhaleWars
             } while (true);
             return name;
         }
-        public static void PlayerDied(Whale user)
+        public static void PlayerDied(Whale user, Enemies target)
         {
             Console.Clear();
             Console.WriteLine("__________________________________________________________________________________________________________________");
@@ -43,12 +43,12 @@ namespace WhaleWars
             Console.WriteLine("           ;::::; :;");
             Console.WriteLine("         ;:::::'   :;");
             Console.WriteLine("        ;:::::;     ;.");
-            Console.WriteLine("       ,:::::'       ;           OOO\"");
+            Console.WriteLine("       ,:::::'  .  . ;           OOO\"");
             Console.WriteLine("       ::::::;       ;          OOOOO\"");
             Console.WriteLine("       ;:::::;       ;         OOOOOOOO");
-            Console.WriteLine($"     ,;::::::;     ;'         / OOOOOOO               {user.Name} Has been slain in battle");
-            Console.WriteLine("    ;:::::::::`. ,,,;.        /  / DOOOOOO             Would you like to Exit or start over?");
-            Console.WriteLine("  .';:::::::::::::::::;,     /  /     DOOOO                       YES         NO");
+            Console.WriteLine($"     ,;::::::;     ;'         / OOOOOOO          {user.Name} Has been slain by {target.Name}");
+            Console.WriteLine("    ;:::::::::`. ,,,;.        /  / DOOOOOO             Would you like to [E]xit or start [O]ver?");
+            Console.WriteLine("  .';:::::::::::::::::;,     /  /     DOOOO");   // yes or no what?? hella ambiguous
             Console.WriteLine(" ,::::::;::::::;;;;::::;,   /  /        DOOO");
             Console.WriteLine(";`::::::`'::::::;;;::::: ,#/  /          DOOO");
             Console.WriteLine(":`:::::::`;::::::;;::: ;::#  /            DOOO");
@@ -62,13 +62,46 @@ namespace WhaleWars
             Console.WriteLine("_________________________________________________________________________________________________________________");
             string input = Convert.ToString(Input().ToLower());
             
-            switch(input)
+            switch(input.ToLower())
             {
-                case string n when n == "yes": { Program.Main(); break; }
-                case string n when n == "no":  { Environment.Exit(0); break; }
-            }
-            
+                case "o": { Console.Clear(); Program.Main();  break; }
+                case "e":  { Environment.Exit(0); break; }
+            }           
         }
+        public static void WinArt(Enemies target)
+        {
+            Console.Clear();
+            Console.WriteLine("__________________________________________________________________________________________________________________");
+            Console.WriteLine("                  _|\'");
+            Console.WriteLine("                 `._.\'_");
+            Console.WriteLine("                     | `.");
+            Console.WriteLine("         __   ||      `._\'_ ,'\",'|                __");
+            Console.WriteLine("     ,._/|||,.||________,_._ _,_'_____________,-;|||\'_________");
+            Console.WriteLine("     '.----; /||------------.-.-\"------------/ '.---,---------'");
+            Console.WriteLine("        \'__,' ||     / (_)|`-'-__;           `.___/");
+            Console.WriteLine("        / :|  ''      |    |,-.\'|             |::.\"                        CONGRADULATIONS ");
+            Console.WriteLine($"       /___|         | .: ||_,  |   __...     |____\"          you have defeated {target.Name}");
+            Console.WriteLine("        | |  _..._    |.:  `.__, | ,'   .:|     | |");
+            Console.WriteLine("        | | `-. .:''._|___:_....'-'-. .:' /     | |");
+            Console.WriteLine("        ;-:---'`.:' _\'`._           /`.-./--.__;-:");
+            Console.WriteLine("       /_,'------\','     `--...__,-'   \'---.../_`_\"");
+            Console.WriteLine("                 ' `.:       .          |");
+            Console.WriteLine("                     \'       ::    |   :|");
+            Console.WriteLine("                     |      .:     ;  .:;");
+            Console.WriteLine("                     |    .::     /  ::/");
+            Console.WriteLine("            ,-.     / __...----.._ .::/  ,-.");
+            Console.WriteLine("           <'-'>   /-'.::::' `::::`-./  <'-'>");
+            Console.WriteLine("   ,     ,'`,' \'  ,'_.::.-----....__:| _,' :`.");
+            Console.WriteLine(" /'|\'   /  ; \' \'/                 _,-' _,'\'  \'       .");
+            Console.WriteLine(" |':\\  ; ,'   \' \'_...---'''''---,' _,-'    `. \'     /|\'");
+            Console.WriteLine("  \':\'`-'/     .\' \'               ,'/         `.\'   //.|");
+            Console.WriteLine("   \':\' /      `.`._          _,-','            \'`-'/:/");
+            Console.WriteLine("    `-'=*       `-.`''----'''_,-'               \' /:/");
+            Console.WriteLine("                   `'''---'''                  *=`-'");
+            Console.WriteLine();
+            Console.WriteLine("__________________________________________________________________________________________________________________");
+        }
+
 
         public static void HUD(string player = "", string location= "", int turn = 0, int Health = 0, int Attack = 0, int Defence = 0)
         {

@@ -7,7 +7,7 @@ namespace WhaleWars
         public static void Main()
         {
             
-            //Management.mgmt();     
+            Management.mgmt();     
 
             Whale Stinky = new Whale("poofie", CharClass.fighter, 10, 10, 10);
 
