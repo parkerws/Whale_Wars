@@ -4,6 +4,72 @@ namespace WhaleWars
 {
     public static class ConsoleInterface
     {
+
+        public static string Input()
+        {
+            string name = null;
+            do
+            {
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
+                {
+                    name += key.KeyChar;
+                    Console.Write($"{key.KeyChar}");
+                }
+                else
+                {
+                    if (key.Key == ConsoleKey.Backspace && name.Length > 0)
+                    {
+                        name = name.Substring(0, (name.Length - 1));
+                        Console.Write("\b \b");
+                    }
+                    else if (key.Key == ConsoleKey.Enter)
+                    {
+                        break;
+                    }
+                }
+
+            } while (true);
+            return name;
+        }
+        public static void PlayerDied(Whale user)
+        {
+            Console.Clear();
+            Console.WriteLine("__________________________________________________________________________________________________________________");
+            Console.WriteLine("\n\n\n\n\n");
+            Console.WriteLine("               ...");
+            Console.WriteLine("             ;::::;");
+            Console.WriteLine("           ;::::; :;");
+            Console.WriteLine("         ;:::::'   :;");
+            Console.WriteLine("        ;:::::;     ;.");
+            Console.WriteLine("       ,:::::'       ;           OOO\"");
+            Console.WriteLine("       ::::::;       ;          OOOOO\"");
+            Console.WriteLine("       ;:::::;       ;         OOOOOOOO");
+            Console.WriteLine($"     ,;::::::;     ;'         / OOOOOOO               {user.Name} Has been slain in battle");
+            Console.WriteLine("    ;:::::::::`. ,,,;.        /  / DOOOOOO             Would you like to Exit or start over?");
+            Console.WriteLine("  .';:::::::::::::::::;,     /  /     DOOOO                       YES         NO");
+            Console.WriteLine(" ,::::::;::::::;;;;::::;,   /  /        DOOO");
+            Console.WriteLine(";`::::::`'::::::;;;::::: ,#/  /          DOOO");
+            Console.WriteLine(":`:::::::`;::::::;;::: ;::#  /            DOOO");
+            Console.WriteLine("::`:::::::`;:::::::: ;::::# /              DOO");
+            Console.WriteLine("`:`:::::::`;:::::: ;::::::#/               DOO");
+            Console.WriteLine(" :::`:::::::`;; ;:::::::::##                OO");
+            Console.WriteLine(" ::::`:::::::`;::::::::;:::#                OO");
+            Console.WriteLine(" `:::::`::::::::::::;'`:;::#                O");
+            Console.WriteLine("  `:::::`::::::::;' /  / `:#");
+            Console.WriteLine("   ::::::`:::::;'  /  /   `#");
+            Console.WriteLine("_________________________________________________________________________________________________________________");
+            string input = Convert.ToString(Input().ToLower());
+            
+            switch(input)
+            {
+                case string n when n == "yes": { Program.Main(); break; }
+                case string n when n == "no":  { Environment.Exit(0); break; }
+            }
+            
+        }
+
         public static void HUD(string player = "", string location= "", int turn = 0, int Health = 0, int Attack = 0, int Defence = 0)
         {
           
