@@ -13,13 +13,13 @@ namespace WhaleWars
         {
             title();
             List<Weapon> Inventory = new List<Weapon>();
-            Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1, Inventory);
+            Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1);
             { UserChoice = Whale.WhaleSelect(UserChoice); }
 
-            ConsoleInterface.HUD(UserChoice.Name, "Planet", 0, UserChoice.Health, UserChoice.Offense, UserChoice.Defense);
+            ConsoleInterface.HUD(UserChoice);
             
            UserChoice.Armory.Add(Weapon.WeaponGen());
-           Whale.FD(UserChoice);
+           
             
 
             Combat.Battle(UserChoice,Enemies.EnemyGenerator());
