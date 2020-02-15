@@ -64,10 +64,9 @@ namespace WhaleWars
             
             switch(input)
             {
-                case string n when n == "yes": { Program.Main(); break; }
+                case string n when n == "yes": { Console.Clear(); Program.Main();  break; }
                 case string n when n == "no":  { Environment.Exit(0); break; }
-            }
-            
+            }           
         }
 
         public static void HUD(string player = "", string location= "", int turn = 0, int Health = 0, int Attack = 0, int Defence = 0)
