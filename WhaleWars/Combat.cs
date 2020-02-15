@@ -21,17 +21,17 @@ namespace WhaleWars
                 if (user.CC == CharClass.mage) { Mage.MageMoves(user, target); }
                 if (user.CC == CharClass.fighter) { Fighter.FighterMoves(user, target); }
                 if (user.CC == CharClass.ranger) { Ranger.RangerMoves(user, target); }
-<<<<<<< HEAD
+
                 //Thread.Sleep(1700);
                 //if (user.Health <= 0) { ConsoleInterface.PlayerDied(user, target); }
                 //if (target.Health <= 0) { break; }
                 //ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); 
-=======
-                Thread.Sleep(1700);
+
+                Thread.Sleep(2500);
                 if (user.Health <= 0) { ConsoleInterface.PlayerDied(user, target); }
                 if (target.Health <= 0) { ConsoleInterface.WinArt(target); break; }
                 ConsoleInterface.HUD(user.Name, Location, turn, user.Health, user.Offense, user.Defense); 
->>>>>>> b0408e7eceb0492947166137e893d6e81caa64db
+
                 Enemies.EnemyAI(user, target);
                 Thread.Sleep(2500);
                 if (user.Health <= 0) { ConsoleInterface.PlayerDied(user, target); }
