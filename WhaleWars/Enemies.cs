@@ -13,8 +13,8 @@ namespace WhaleWars
         {
             Random r = new Random();
          int H =  r.Next(10, 21);
-         int O = r.Next(3, 6);
-         int D = r.Next(3,6);
+         int O = r.Next(9, 12);
+         int D = r.Next(2,6);
             List<Weapon> Inventory = new List<Weapon>();
 
             Enemies enemy = new Enemies(NameGenerator(), CharClass.fighter,H,D,O);
@@ -41,7 +41,7 @@ namespace WhaleWars
             {
                 case 1: return Enemies.EnemyBasicATK(user, target);
                 case 2: return Enemies.EnemySmash(user, target);
-                case 3: return Enemies.EnemySmash(user, target);
+                case 3: return Enemies.EnemyUnleashedRage(user, target);
                 case 4: return Enemies.EnemySyphonLife(user,target);
                 default: break;
             }
