@@ -103,8 +103,9 @@ namespace WhaleWars
             Console.WriteLine();
             Console.WriteLine("__________________________________________________________________________________________________________________");
         }
-        public static List<Weapon> DisplayInventory(Whale user, List<Weapon> inventory)
+        public static List<Weapon> WhaleShop(Whale user, List<Weapon> inventory)
         {
+            Console.Clear();
             Console.WriteLine("___________________________________________________________________________________________");
             Console.WriteLine("\n\n\n\n");
             Console.WriteLine("            .-------------'```'----....,,__                        _,");
@@ -139,10 +140,10 @@ namespace WhaleWars
             string input = Console.ReadLine();
             switch (input)
             {
-                case "item 1": { user.Armory.Add(inventory.ElementAt(0)); user.Wallet -= 5; return user.Armory; }
-                case "item 2": { user.Armory.Add(inventory.ElementAt(1)); user.Wallet -= 1; return user.Armory; }
-                case "item 3": { user.Armory.Add(inventory.ElementAt(2)); user.Wallet -= 4; return user.Armory; }
-                case "item 4": { user.Armory.Add(inventory.ElementAt(3)); user.Wallet -= 3; return user.Armory; }
+                case "1": { user.Armory.Add(inventory.ElementAt(0)); user.Wallet -= 5; return user.Armory; }
+                case "2": { user.Armory.Add(inventory.ElementAt(1)); user.Wallet -= 1; return user.Armory; }
+                case "3": { user.Armory.Add(inventory.ElementAt(2)); user.Wallet -= 4; return user.Armory; }
+                case "4": { user.Armory.Add(inventory.ElementAt(3)); user.Wallet -= 3; return user.Armory; }
                 default: break;
             }
 
@@ -161,6 +162,7 @@ namespace WhaleWars
 
         public static void HUD(Whale player)
         {
+            
             string location = player.currentPlanet.ToString();
             string playerName = player.Name;
             int Health = player.Health;

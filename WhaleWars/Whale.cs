@@ -13,7 +13,7 @@ namespace WhaleWars
         public int Offense { get; set; }
         public CharClass CC { get; set; }
         public int Wallet { get; set; }
-        
+
         public Planet currentPlanet { get; set; }
 
         public Whale(string _name, CharClass cc, int _health, int _defense, int _offense)
@@ -37,11 +37,11 @@ namespace WhaleWars
                 "3.) Mage\n");
             string pick = Console.ReadLine();
             // int ClassPicker = Convert.ToInt32(pick);
-        
+
 
             switch (pick)
             {
-                case "1": { UserChoice = new Whale(name, CharClass.fighter, 10, 5, 2); return UserChoice; }
+                case "1": { UserChoice = new Whale(name, CharClass.fighter, 10, ArmoryDefense(UserChoice), ArmoryOffense(UserChoice)); return UserChoice; }
                 case "2": { UserChoice = new Whale(name, CharClass.ranger, 10, 4, 3); return UserChoice; }
                 case "3": { UserChoice = new Whale(name, CharClass.mage, 10, 2, 4); return UserChoice; }
                 default: return null;
@@ -58,8 +58,6 @@ namespace WhaleWars
             Offense += Armory.Last().Damage;
             Defense += Armory.Last().Defense;
         }
-
-       
 
         public string GetWeapons()
         {
@@ -187,6 +185,34 @@ namespace WhaleWars
                     else Console.WriteLine("Not enough money!");
                     break;
             }
-        }
+        } //Need to bind the cost to weapon?
+
+        public static int ArmoryOffense(Whale user)
+        {
+            int damage;
+            try
+            {
+                int itemoffense = user.Armory.Last().Damage;
+            }
+            catch (Exception) { damage = 2; return damage; }
+
+            damage = user.Armory.Last().Damage += 2;
+
+            return damage;
+        } //Please dont delete, it is used to add damage to the players offense in the HUD.
+        public static int ArmoryDefense(Whale user)
+        {
+            int defense;
+            try
+            {
+                int itemdeffense = user.Armory.Last().Defense;
+            }
+            catch (Exception) { defense = 5; return defense; }
+
+            defense = (user.Armory.Last().Defense += 5);
+
+            return defense;
+        } //Please dont delete, it is used to add the armor defense to the HUD\
+ 
     }
 }

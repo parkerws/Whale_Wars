@@ -16,10 +16,12 @@ namespace WhaleWars
             Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1);
             { UserChoice = Whale.WhaleSelect(UserChoice); }
 
-            ConsoleInterface.HUD(UserChoice);
+           ConsoleInterface.HUD(UserChoice);
             
-           UserChoice.Armory.Add(Weapon.WeaponGen());
-           ConsoleInterface.DisplayInventory(UserChoice, ConsoleInterface.ShopListGenerator());
+           ConsoleInterface.WhaleShop(UserChoice, ConsoleInterface.ShopListGenerator());
+
+            Whale.ArmoryDefense(UserChoice);
+            Whale.ArmoryOffense(UserChoice);
 
             Combat.Battle(UserChoice,Enemies.EnemyGenerator());
         }
