@@ -187,31 +187,31 @@ namespace WhaleWars
             }
         } //Need to bind the cost to weapon?
 
-        public static int ArmoryOffense(Whale user)
+        public static int ArmoryOffense(Whale UserChoice)
         {
             int damage;
             try
             {
-                int itemoffense = user.Armory.Last().Damage;
+                int itemoffense = UserChoice.Armory.Last().Damage;
             }
             catch (Exception) { damage = 2; return damage; }
 
-            damage = user.Armory.Last().Damage += 2;
+            UserChoice.Offense = UserChoice.Armory.Last().Damage += 2;
 
-            return damage;
+            return UserChoice.Offense;
         } //Please dont delete, it is used to add damage to the players offense in the HUD.
-        public static int ArmoryDefense(Whale user)
+        public static int ArmoryDefense(Whale UserChoice)
         {
             int defense;
             try
             {
-                int itemdeffense = user.Armory.Last().Defense;
+                int itemdeffense = UserChoice.Armory.Last().Defense;
             }
             catch (Exception) { defense = 5; return defense; }
 
-            defense = (user.Armory.Last().Defense += 5);
+            UserChoice.Defense = (UserChoice.Armory.Last().Defense += 5);
 
-            return defense;
+            return UserChoice.Defense;
         } //Please dont delete, it is used to add the armor defense to the HUD\
  
     }

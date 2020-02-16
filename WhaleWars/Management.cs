@@ -17,11 +17,8 @@ namespace WhaleWars
             { UserChoice = Whale.WhaleSelect(UserChoice); }
 
            ConsoleInterface.HUD(UserChoice);
-            
-           ConsoleInterface.WhaleShop(UserChoice, ConsoleInterface.ShopListGenerator());
 
-            Whale.ArmoryDefense(UserChoice);
-            Whale.ArmoryOffense(UserChoice);
+            ConsoleInterface.WhaleShop(UserChoice, ConsoleInterface.ShopListGenerator());
 
             Combat.Battle(UserChoice,Enemies.EnemyGenerator());
         }

@@ -162,7 +162,9 @@ namespace WhaleWars
 
         public static void HUD(Whale player)
         {
-            
+            Whale.ArmoryDefense(player);
+            Whale.ArmoryOffense(player);
+
             string location = player.currentPlanet.ToString();
             string playerName = player.Name;
             int Health = player.Health;
