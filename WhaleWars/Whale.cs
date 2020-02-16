@@ -196,7 +196,7 @@ namespace WhaleWars
             }
             catch (Exception) { damage = 2; return damage; }
 
-            UserChoice.Offense = UserChoice.Armory.Last().Damage += 2;
+            UserChoice.Offense = UserChoice.Armory.Last().Damage + 2;
 
             return UserChoice.Offense;
         } //Please dont delete, it is used to add damage to the players offense in the HUD.
@@ -209,7 +209,7 @@ namespace WhaleWars
             }
             catch (Exception) { defense = 5; return defense; }
 
-            UserChoice.Defense = (UserChoice.Armory.Last().Defense += 5);
+            UserChoice.Defense = (UserChoice.Armory.Last().Defense + 5);
 
             return UserChoice.Defense;
         } //Please dont delete, it is used to add the armor defense to the HUD\
