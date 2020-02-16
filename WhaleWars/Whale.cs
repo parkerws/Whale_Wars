@@ -42,8 +42,8 @@ namespace WhaleWars
             switch (pick)
             {
                 case "1": { UserChoice = new Whale(name, CharClass.fighter, 10, ArmoryDefense(UserChoice), ArmoryOffense(UserChoice)); return UserChoice; }
-                case "2": { UserChoice = new Whale(name, CharClass.ranger, 10, 4, 3); return UserChoice; }
-                case "3": { UserChoice = new Whale(name, CharClass.mage, 10, 2, 4); return UserChoice; }
+                case "2": { UserChoice = new Whale(name, CharClass.ranger, 10, ArmoryDefense(UserChoice), ArmoryOffense(UserChoice)); return UserChoice; }
+                case "3": { UserChoice = new Whale(name, CharClass.mage, 10, ArmoryDefense(UserChoice), ArmoryOffense(UserChoice)); return UserChoice; }
                 default: return null;
             }
 
