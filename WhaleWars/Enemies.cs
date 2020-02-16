@@ -12,7 +12,7 @@ namespace WhaleWars
         public  static Enemies EnemyGenerator()
         {
             Random r = new Random();
-         int H =  r.Next(10, 21);
+         int H =  r.Next(20, 35);
          int O = r.Next(9, 12);
          int D = r.Next(2,6);
             List<Weapon> Inventory = new List<Weapon>();
