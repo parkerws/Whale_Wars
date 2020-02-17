@@ -27,23 +27,19 @@ namespace WhaleWars
             currentPlanet = new Planet();
         } //Creates an easily referenced initializer so you dont have to type out each property of the given Whale
 
-        public static Whale WhaleSelect(Whale UserChoice)
-        {
-            Console.WriteLine("Please input a name\n");
-            string name = Console.ReadLine();
+        public static Whale WhaleSelect(Whale Player, string name)
+        {          
             Console.WriteLine("Please chose a class\n" +
                 "1.) Fighter\n" +
                 "2.) Ranger\n" +
                 "3.) Mage\n");
-            string pick = Console.ReadLine();
-            // int ClassPicker = Convert.ToInt32(pick);
-
+            string pick = Console.ReadLine();           
 
             switch (pick)
             {
-                case "1": { UserChoice = new Whale(name, CharClass.fighter, 10, ArmoryDefense(UserChoice), ArmoryOffense(UserChoice)); return UserChoice; }
-                case "2": { UserChoice = new Whale(name, CharClass.ranger, 10, ArmoryDefense(UserChoice), ArmoryOffense(UserChoice)); return UserChoice; }
-                case "3": { UserChoice = new Whale(name, CharClass.mage, 10, ArmoryDefense(UserChoice), ArmoryOffense(UserChoice)); return UserChoice; }
+                case "1": { Player = new Whale(name, CharClass.fighter, 10, ArmoryDefense(Player), ArmoryOffense(Player)); return Player; }
+                case "2": { Player = new Whale(name, CharClass.ranger, 10, ArmoryDefense(Player), ArmoryOffense(Player)); return Player; }
+                case "3": { Player = new Whale(name, CharClass.mage, 10, ArmoryDefense(Player), ArmoryOffense(Player)); return Player; }
                 default: return null;
             }
 
@@ -187,31 +183,31 @@ namespace WhaleWars
             }
         } //Need to bind the cost to weapon?
 
-        public static int ArmoryOffense(Whale UserChoice)
+        public static int ArmoryOffense(Whale Player)
         {
             int damage;
             try
             {
-                int itemoffense = UserChoice.Armory.Last().Damage;
+                int itemoffense = Player.Armory.Last().Damage;
             }
             catch (Exception) { damage = 2; return damage; }
 
-            UserChoice.Offense = UserChoice.Armory.Last().Damage + 2;
+            Player.Offense = Player.Armory.Last().Damage + 2;
 
-            return UserChoice.Offense;
+            return Player.Offense;
         } //Please dont delete, it is used to add damage to the players offense in the HUD.
-        public static int ArmoryDefense(Whale UserChoice)
+        public static int ArmoryDefense(Whale Player)
         {
             int defense;
             try
             {
-                int itemdeffense = UserChoice.Armory.Last().Defense;
+                int itemdeffense = Player.Armory.Last().Defense;
             }
             catch (Exception) { defense = 5; return defense; }
 
-            UserChoice.Defense = (UserChoice.Armory.Last().Defense + 5);
+            Player.Defense = (Player.Armory.Last().Defense + 5);
 
-            return UserChoice.Defense;
+            return Player.Defense;
         } //Please dont delete, it is used to add the armor defense to the HUD\
  
     }

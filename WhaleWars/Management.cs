@@ -12,7 +12,7 @@ namespace WhaleWars
         public static void Mgmt(string name)
         {           
             Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
-            Player = Whale.WhaleSelect(Player);
+            Player = Whale.WhaleSelect(Player, name);
 
            ConsoleInterface.HUD(Player);
 
@@ -32,7 +32,7 @@ namespace WhaleWars
             Typewrite("There was a whale...\n", TYPESPEED);
             Typewrite("Floating aimlessly through the void...\n", TYPESPEED);
             Typewrite("", TYPESPEED);
-            printTitle();
+            PrintTitle();
             Welcome();
             Console.WriteLine("Press Enter To continue");
             Console.ReadKey();
@@ -45,7 +45,7 @@ namespace WhaleWars
                 System.Threading.Thread.Sleep(speed);
             }
         }
-        static void printTitle()
+        static void PrintTitle()
         {
             Console.Title = "ASCII Art";
             string title = @"
@@ -66,8 +66,9 @@ namespace WhaleWars
 
         public static string PlayerName()
         {
-
-          string name = ConsoleInterface.Input();
+            Console.Clear();
+            Console.WriteLine("Please input a name\n");
+            string name = ConsoleInterface.Input();
             return name;
         }
     }
