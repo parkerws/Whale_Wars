@@ -7,19 +7,19 @@ namespace WhaleWars
     public class Armor : Item
     {
         public CharClass charClass;
-        public int defenseModifier { get; set; }
+        public int defense { get; set; }
         public Armor(string name, int def, CharClass classClass)
         {
             Name = name;
             charClass = classClass;
-            defenseModifier = def;           
+            defense = def;           
         }
 
         public Armor()
         {
             Name = "melvin";
             charClass = CharClass.fighter;
-            defenseModifier = 0;
+            defense = 0;
         }
     }
 
@@ -29,7 +29,7 @@ namespace WhaleWars
         {
             Name = "Bobby Blow's Bronze Armour";
             charClass = CharClass.fighter;
-            defenseModifier = 10;
+            defense = 10;
         }
     }
 
@@ -39,7 +39,7 @@ namespace WhaleWars
         {
             Name = " Silver Glittery Rainacorn Scales";
             charClass = CharClass.ranger;
-            defenseModifier = 2;
+            defense = 2;
         }
     }
      
@@ -49,7 +49,7 @@ namespace WhaleWars
         {
             Name = "Reptilian Magical Cloth";
             charClass = CharClass.mage;
-            defenseModifier = 5;
+            defense = 5;
         }
     }
 

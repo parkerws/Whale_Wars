@@ -15,9 +15,9 @@ namespace WhaleWars
             Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
             Player = Whale.WhaleSelect(Player, name);
 
-            ConsoleInterface.HUD(Player);
+            Whale.StartItems(Player);
 
-            ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator());
+            
 
             Combat.Battle(Player,Enemies.EnemyGenerator());
         }

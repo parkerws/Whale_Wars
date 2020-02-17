@@ -49,12 +49,27 @@ namespace WhaleWars
         public List<Weapon> EquipedWeapon = new List<Weapon>();
         public List<Armor> EquipedArmor = new List<Armor>();
 
-        //public void SetWeapon(WeaponList weapon) // equip weapon if in inventory
-        //{
-        //    EquipedWeapon.Add(Weapon.CreateWeapon(weapon));
-        //    Offense += EquipedWeapon.Last().Damage;
-        //    //Defense += Armory.Last().Defense;
-        //}
+        public void SetWeapon(Whale Player) // equip weapon if in inventory
+        {
+             if (Player.CC == CharClass.fighter)
+             {
+                
+                
+                
+             }
+
+            if (Player.CC == CharClass.ranger)
+            { 
+                Chainmail chainmail = new Chainmail();
+                Player.EquipedArmor.Add(chainmail);                
+            }
+
+            if (Player.CC == CharClass.mage)
+            {
+                Cloth shirt = new Cloth();
+                Player.EquipedArmor.Add(shirt);
+            }              
+        }
 
         public string GetWeapons()
         {
@@ -67,27 +82,27 @@ namespace WhaleWars
             return outString;
         }
 
-        public void SetArmor(Whale Player)
+        public static void SetArmor(Whale Player)
         {
             if (Player.CC == CharClass.fighter)
             {
                 Plating plate = new Plating();
-                EquipedArmor.Add(plate);                
+                Player.EquipedArmor.Add(plate);
+                
             }
 
             if (Player.CC == CharClass.ranger)
             { 
                 Chainmail chainmail = new Chainmail();
-                EquipedArmor.Add(chainmail);                
+                Player.EquipedArmor.Add(chainmail);                
             }
 
             if (Player.CC == CharClass.mage)
             {
                 Cloth shirt = new Cloth();
-                EquipedArmor.Add(shirt);
-            }
-            
-        }
+                Player.EquipedArmor.Add(shirt);
+            }            
+        } //used to add a starting Item bassed off of starting class.
 
         public string GetInventory()
         {
@@ -203,14 +218,19 @@ namespace WhaleWars
             int defense;
             try
             {
-                int itemdeffense = Player.EquipedArmor.Last().defenseModifier;
+                int itemdeffense = Player.EquipedArmor.Last().defense;
             }
             catch (Exception) { defense = 5; return defense; }
 
-            Player.Defense = (Player.EquipedArmor.Last().defenseModifier + 5);
+            Player.Defense = (Player.EquipedArmor.Last().defense + 5);
 
             return Player.Defense;
         } //Please dont delete, it is used to add the armor defense to the HUD\
- 
+        public static void StartItems(Whale Player)
+        {
+            SetArmor(Player);
+
+
+        }
     }
 }
