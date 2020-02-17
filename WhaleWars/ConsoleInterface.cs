@@ -6,7 +6,6 @@ namespace WhaleWars
 {
     public static class ConsoleInterface
     {
-
         public static string Input()
         {
             string name = "";
@@ -140,14 +139,14 @@ namespace WhaleWars
             string input = Console.ReadLine();
             switch (input)
             {
-                case "1": { user.Armory.Add(inventory.ElementAt(0)); user.Wallet -= 5; return user.Armory; }
-                case "2": { user.Armory.Add(inventory.ElementAt(1)); user.Wallet -= 1; return user.Armory; }
-                case "3": { user.Armory.Add(inventory.ElementAt(2)); user.Wallet -= 4; return user.Armory; }
-                case "4": { user.Armory.Add(inventory.ElementAt(3)); user.Wallet -= 3; return user.Armory; }
+                case "1": { user.EquipedWeapon.Add(inventory.ElementAt(0)); user.Wallet -= 5; return user.EquipedWeapon; }
+                case "2": { user.EquipedWeapon.Add(inventory.ElementAt(1)); user.Wallet -= 1; return user.EquipedWeapon; }
+                case "3": { user.EquipedWeapon.Add(inventory.ElementAt(2)); user.Wallet -= 4; return user.EquipedWeapon; }
+                case "4": { user.EquipedWeapon.Add(inventory.ElementAt(3)); user.Wallet -= 3; return user.EquipedWeapon; }
                 default: break;
             }
 
-            return user.Armory;
+            return user.EquipedWeapon;
 
         }
         public static List<Weapon> ShopListGenerator()
@@ -159,7 +158,6 @@ namespace WhaleWars
             sp.Add(Weapon.CreateWeapon(WeaponList.Wand));
             return sp;
         }
-
         public static void HUD(Whale player)
         {
             Whale.ArmoryDefense(player); //used to update the hud defense

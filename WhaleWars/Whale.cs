@@ -46,19 +46,20 @@ namespace WhaleWars
         }
 
         private List<Item> inventory = new List<Item>();
-        public List<Weapon> Armory = new List<Weapon>();
+        public List<Weapon> EquipedWeapon = new List<Weapon>();
+        public List<Weapon> EquipedArmor = new List<Weapon>();
 
-        public void SetWeapon(WeaponList weapon) // equip weapon if in inventory
-        {
-            Armory.Add(Weapon.CreateWeapon(weapon));
-            Offense += Armory.Last().Damage;
-            Defense += Armory.Last().Defense;
-        }
+        //public void SetWeapon(WeaponList weapon) // equip weapon if in inventory
+        //{
+        //    EquipedWeapon.Add(Weapon.CreateWeapon(weapon));
+        //    Offense += EquipedWeapon.Last().Damage;
+        //    //Defense += Armory.Last().Defense;
+        //}
 
         public string GetWeapons()
         {
             string outString = "";
-            foreach (Weapon ouchie in Armory)
+            foreach (Weapon ouchie in EquipedWeapon)
             {
                 outString += ouchie.Name + "\n";
             }
@@ -106,93 +107,93 @@ namespace WhaleWars
         {
             inventory.Remove(item);
         }
-        public void BuyWeapon(int money, WeaponList weap)
-        {
-            int cost;
-            switch (weap)
-            {
-                case WeaponList.Sword:
-                    cost = 3;
-                    if (Wallet >= cost)
-                    {
-                        Wallet -= cost;
-                        SetWeapon(weap);
-                    }
-                    else Console.WriteLine("Not enough money!");
-                    break;
+        //public void BuyWeapon(int money, WeaponList weap)
+        //{
+        //    int cost;
+        //    switch (weap)
+        //    {
+        //        case WeaponList.Sword:
+        //            cost = 3;
+        //            if (Wallet >= cost)
+        //            {
+        //                Wallet -= cost;
+        //                SetWeapon(weap);
+        //            }
+        //            else Console.WriteLine("Not enough money!");
+        //            break;
 
-                case WeaponList.Wand:
-                    cost = 3;
-                    if (Wallet >= cost)
-                    {
-                        Wallet -= cost;
-                        SetWeapon(weap);
-                    }
-                    else Console.WriteLine("Not enough money!");
-                    break;
+        //        case WeaponList.Wand:
+        //            cost = 3;
+        //            if (Wallet >= cost)
+        //            {
+        //                Wallet -= cost;
+        //                SetWeapon(weap);
+        //            }
+        //            else Console.WriteLine("Not enough money!");
+        //            break;
 
-                case WeaponList.Bow:
-                    cost = 3;
-                    if (Wallet >= cost)
-                    {
-                        Wallet -= cost;
-                        SetWeapon(weap);
-                    }
-                    else Console.WriteLine("Not enough money!");
-                    break;
+        //        case WeaponList.Bow:
+        //            cost = 3;
+        //            if (Wallet >= cost)
+        //            {
+        //                Wallet -= cost;
+        //                SetWeapon(weap);
+        //            }
+        //            else Console.WriteLine("Not enough money!");
+        //            break;
 
-                case WeaponList.Knife:
-                    cost = 4;
-                    if (Wallet >= cost)
-                    {
-                        Wallet -= cost;
-                        SetWeapon(weap);
-                    }
-                    else Console.WriteLine("Not enough money!");
-                    break;
+        //        case WeaponList.Knife:
+        //            cost = 4;
+        //            if (Wallet >= cost)
+        //            {
+        //                Wallet -= cost;
+        //                SetWeapon(weap);
+        //            }
+        //            else Console.WriteLine("Not enough money!");
+        //            break;
 
-                case WeaponList.Chimichanga:
-                    cost = 6;
-                    if (Wallet >= cost)
-                    {
-                        Wallet -= cost;
-                        SetWeapon(weap);
-                    }
-                    else Console.WriteLine("Not enough money!");
-                    break;
+        //        case WeaponList.Chimichanga:
+        //            cost = 6;
+        //            if (Wallet >= cost)
+        //            {
+        //                Wallet -= cost;
+        //                SetWeapon(weap);
+        //            }
+        //            else Console.WriteLine("Not enough money!");
+        //            break;
 
-                case WeaponList.Blowhole:
-                    cost = 6;
-                    if (Wallet >= cost)
-                    {
-                        Wallet -= cost;
-                        SetWeapon(weap);
-                    }
-                    else Console.WriteLine("Not enough money!");
-                    break;
+        //        case WeaponList.Blowhole:
+        //            cost = 6;
+        //            if (Wallet >= cost)
+        //            {
+        //                Wallet -= cost;
+        //                SetWeapon(weap);
+        //            }
+        //            else Console.WriteLine("Not enough money!");
+        //            break;
 
-                case WeaponList.UltraBoof:
-                    cost = 20;
-                    if (Wallet >= cost)
-                    {
-                        Wallet -= cost;
-                        SetWeapon(weap);
-                    }
-                    else Console.WriteLine("Not enough money!");
-                    break;
-            }
-        } //Need to bind the cost to weapon?
+        //        case WeaponList.UltraBoof:
+        //            cost = 20;
+        //            if (Wallet >= cost)
+        //            {
+        //                Wallet -= cost;
+        //                SetWeapon(weap);
+        //            }
+        //            else Console.WriteLine("Not enough money!");
+        //            break;
+        //    }
+        //} //Need to bind the cost to weapon?
 
         public static int ArmoryOffense(Whale Player)
         {
             int damage;
             try
             {
-                int itemoffense = Player.Armory.Last().Damage;
+                int itemoffense = Player.EquipedWeapon.Last().Damage;
             }
             catch (Exception) { damage = 2; return damage; }
 
-            Player.Offense = Player.Armory.Last().Damage + 2;
+            Player.Offense = Player.EquipedWeapon.Last().Damage + 2;
 
             return Player.Offense;
         } //Please dont delete, it is used to add damage to the players offense in the HUD.
@@ -201,11 +202,11 @@ namespace WhaleWars
             int defense;
             try
             {
-                int itemdeffense = Player.Armory.Last().Defense;
+                int itemdeffense = Player.EquipedArmor.Last().Defense;
             }
             catch (Exception) { defense = 5; return defense; }
 
-            Player.Defense = (Player.Armory.Last().Defense + 5);
+            Player.Defense = (Player.EquipedArmor.Last().Defense + 5);
 
             return Player.Defense;
         } //Please dont delete, it is used to add the armor defense to the HUD\

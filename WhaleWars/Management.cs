@@ -10,11 +10,12 @@ namespace WhaleWars
 
 
         public static void Mgmt(string name)
-        {           
+        {
+            Console.Clear();
             Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
             Player = Whale.WhaleSelect(Player, name);
 
-           ConsoleInterface.HUD(Player);
+            ConsoleInterface.HUD(Player);
 
             ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator());
 
