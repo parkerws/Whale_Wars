@@ -9,17 +9,14 @@ namespace WhaleWars
         const int TYPESPEED = 30;
 
 
-        public static void Mgmt(string name)
+        public static Whale Mgmt(string name)
         {
             Console.Clear();
             Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
             Player = Whale.WhaleSelect(Player, name);
 
             Whale.StartItems(Player);
-
-            
-
-            Combat.Battle(Player,Enemies.EnemyGenerator());
+            return Player;
         }
         public static void Title()
         {

@@ -220,5 +220,18 @@ namespace WhaleWars
             Console.WriteLine("====================================================================================");
 
         }
+
+        public static void Ship(Whale Player)
+        {          
+            foreach (var item in Player.EquipedWeapon)
+            {
+                Console.WriteLine($"Equiped Weapon :: {item.Name} :: {item.Damage}");
+            }
+
+            foreach (var item in Player.EquipedArmor)
+            {
+                Console.WriteLine($"Equiped Armor  :: {item.Name} :: {item.defense}");
+            }
+        }
     }
 }

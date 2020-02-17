@@ -5,20 +5,17 @@ using System.Text;
 namespace WhaleWars
 {
     public class Armor : Item
-    {
-        public CharClass charClass;
+    {        
         public int defense { get; set; }
-        public Armor(string name, int def, CharClass classClass)
+        public Armor(string name, int def)
         {
-            Name = name;
-            charClass = classClass;
+            Name = name;            
             defense = def;           
         }
 
         public Armor()
         {
-            Name = "melvin";
-            charClass = CharClass.fighter;
+            Name = "melvin";           
             defense = 0;
         }
     }
@@ -27,8 +24,7 @@ namespace WhaleWars
     {
         public Plating() : base()
         {
-            Name = "Bobby Blow's Bronze Armour";
-            charClass = CharClass.fighter;
+            Name = "Bobby Blow's Bronze Armour";          
             defense = 10;
         }
     }
@@ -37,8 +33,7 @@ namespace WhaleWars
     {
         public Chainmail() : base()
         {
-            Name = " Silver Glittery Rainacorn Scales";
-            charClass = CharClass.ranger;
+            Name = " Silver Glittery Rainacorn Scales";           
             defense = 5;
         }
     }
@@ -47,8 +42,7 @@ namespace WhaleWars
     {
         public Cloth() : base()
         {
-            Name = "Reptilian Magical Cloth";
-            charClass = CharClass.mage;
+            Name = "Reptilian Magical Cloth";          
             defense = 2;
         }
     }
