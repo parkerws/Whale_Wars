@@ -6,10 +6,11 @@ namespace WhaleWars
     {
         public static void Main()
         {
+            Management.Title();
+
+            string name = Management.PlayerName();
             
-            
-           
-            Management.mgmt();
+            Management.Mgmt(name);
 
 
         }

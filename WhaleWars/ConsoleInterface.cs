@@ -9,7 +9,7 @@ namespace WhaleWars
 
         public static string Input()
         {
-            string name = null;
+            string name = "";
             do
             {
                 ConsoleKeyInfo key = Console.ReadKey(true);

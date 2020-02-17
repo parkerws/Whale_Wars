@@ -9,20 +9,18 @@ namespace WhaleWars
         const int TYPESPEED = 30;
 
 
-        public static void mgmt()
-        {
-            title();
-            List<Weapon> Inventory = new List<Weapon>();
-            Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1);
-            { UserChoice = Whale.WhaleSelect(UserChoice); }
+        public static void Mgmt(string name)
+        {           
+            Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
+            Player = Whale.WhaleSelect(Player);
 
-           ConsoleInterface.HUD(UserChoice);
+           ConsoleInterface.HUD(Player);
 
-            ConsoleInterface.WhaleShop(UserChoice, ConsoleInterface.ShopListGenerator());
+            ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator());
 
-            Combat.Battle(UserChoice,Enemies.EnemyGenerator());
+            Combat.Battle(Player,Enemies.EnemyGenerator());
         }
-        public static void title()
+        public static void Title()
         {
             //Console.SetWindowSize(100, 50);
             //Console.BufferHeight = 100;
@@ -36,6 +34,7 @@ namespace WhaleWars
             Typewrite("", TYPESPEED);
             printTitle();
             Welcome();
+            Console.WriteLine("Press Enter To continue");
             Console.ReadKey();
         }
         static void Typewrite(string message, int speed)
@@ -63,6 +62,13 @@ namespace WhaleWars
         static void Welcome()
         {
             Typewrite("A Group-One production.\n\t\t\t\t\t\t\t\t A Chartreuse Dysentery Amoeba Game.\n", TYPESPEED);
+        }
+
+        public static string PlayerName()
+        {
+
+          string name = ConsoleInterface.Input();
+            return name;
         }
     }
 }
