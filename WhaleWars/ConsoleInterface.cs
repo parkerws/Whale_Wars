@@ -162,13 +162,13 @@ namespace WhaleWars
 
         public static void HUD(Whale player)
         {
-            Whale.ArmoryDefense(player);
-            Whale.ArmoryOffense(player);
+            Whale.ArmoryDefense(player); //used to update the hud defense
+            Whale.ArmoryOffense(player); //used to update the hud offense
 
             string location = player.currentPlanet.ToString();
             string playerName = player.Name;
             int Health = player.Health;
-            int turn = 1;
+            int Gold = player.Wallet;
             int Attack = player.Offense;
             int Defence = player.Defense;
           
@@ -194,7 +194,7 @@ namespace WhaleWars
             Console.ResetColor();
             Console.Write(" :: ");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("turn " + turn + " /20");
+            Console.Write("Doubloons " + Gold);
             Console.ResetColor();
             Console.Write(" :: ");
             Console.ForegroundColor = ConsoleColor.Red;
