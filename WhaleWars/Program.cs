@@ -10,7 +10,6 @@ namespace WhaleWars
 
             string name = Management.PlayerName();
             
-
             Management.Mgmt(name);
 
 

@@ -36,7 +36,7 @@ namespace WhaleWars
             PrintTitle();
             Welcome();
             Console.WriteLine("Press Enter To continue");
-            Console.ReadKey();
+            ConsoleInterface.Input();
         }
         static void Typewrite(string message, int speed)
         {

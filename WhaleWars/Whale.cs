@@ -47,7 +47,7 @@ namespace WhaleWars
 
         private List<Item> inventory = new List<Item>();
         public List<Weapon> EquipedWeapon = new List<Weapon>();
-        public List<Weapon> EquipedArmor = new List<Weapon>();
+        public List<Armor> EquipedArmor = new List<Armor>();
 
         //public void SetWeapon(WeaponList weapon) // equip weapon if in inventory
         //{
@@ -67,25 +67,26 @@ namespace WhaleWars
             return outString;
         }
 
-        public void SetArmor(CharClass cc)
+        public void SetArmor(Whale Player)
         {
-            switch (cc)
+            if (Player.CC == CharClass.fighter)
             {
-                case CharClass.fighter:
-                    Plating plate = new Plating();
-                    Defense += plate.defenseModifier;
-                    break;
-
-                case CharClass.ranger:
-                    Chainmail chainmail = new Chainmail();
-                    Defense += chainmail.defenseModifier;
-                    break;
-
-                case CharClass.mage:
-                    Cloth shirt = new Cloth();
-                    Defense += shirt.defenseModifier;
-                    break;
+                Plating plate = new Plating();
+                EquipedArmor.Add(plate);                
             }
+
+            if (Player.CC == CharClass.ranger)
+            { 
+                Chainmail chainmail = new Chainmail();
+                EquipedArmor.Add(chainmail);                
+            }
+
+            if (Player.CC == CharClass.mage)
+            {
+                Cloth shirt = new Cloth();
+                EquipedArmor.Add(shirt);
+            }
+            
         }
 
         public string GetInventory()
@@ -202,11 +203,11 @@ namespace WhaleWars
             int defense;
             try
             {
-                int itemdeffense = Player.EquipedArmor.Last().Defense;
+                int itemdeffense = Player.EquipedArmor.Last().defenseModifier;
             }
             catch (Exception) { defense = 5; return defense; }
 
-            Player.Defense = (Player.EquipedArmor.Last().Defense + 5);
+            Player.Defense = (Player.EquipedArmor.Last().defenseModifier + 5);
 
             return Player.Defense;
         } //Please dont delete, it is used to add the armor defense to the HUD\
