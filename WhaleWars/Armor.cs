@@ -39,7 +39,7 @@ namespace WhaleWars
         {
             Name = " Silver Glittery Rainacorn Scales";
             charClass = CharClass.ranger;
-            defense = 2;
+            defense = 5;
         }
     }
      
@@ -49,7 +49,7 @@ namespace WhaleWars
         {
             Name = "Reptilian Magical Cloth";
             charClass = CharClass.mage;
-            defense = 5;
+            defense = 2;
         }
     }
 

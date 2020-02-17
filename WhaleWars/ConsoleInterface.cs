@@ -102,7 +102,7 @@ namespace WhaleWars
             Console.WriteLine();
             Console.WriteLine("__________________________________________________________________________________________________________________");
         }
-        public static List<Weapon> WhaleShop(Whale user, List<Weapon> inventory)
+        public static List<Weapon> WhaleShop(Whale Player, List<Weapon> inventory)
         {
             Console.Clear();
             Console.WriteLine("___________________________________________________________________________________________");
@@ -139,23 +139,23 @@ namespace WhaleWars
             string input = Console.ReadLine();
             switch (input)
             {
-                case "1": { user.EquipedWeapon.Add(inventory.ElementAt(0)); user.Wallet -= 5; return user.EquipedWeapon; }
-                case "2": { user.EquipedWeapon.Add(inventory.ElementAt(1)); user.Wallet -= 1; return user.EquipedWeapon; }
-                case "3": { user.EquipedWeapon.Add(inventory.ElementAt(2)); user.Wallet -= 4; return user.EquipedWeapon; }
-                case "4": { user.EquipedWeapon.Add(inventory.ElementAt(3)); user.Wallet -= 3; return user.EquipedWeapon; }
+                case "1": { Player.EquipedWeapon.Add(inventory.ElementAt(0)); Player.Wallet -= 5; return Player.EquipedWeapon; }
+                case "2": { Player.EquipedWeapon.Add(inventory.ElementAt(1)); Player.Wallet -= 1; return Player.EquipedWeapon; }
+                case "3": { Player.EquipedWeapon.Add(inventory.ElementAt(2)); Player.Wallet -= 4; return Player.EquipedWeapon; }
+                case "4": { Player.EquipedWeapon.Add(inventory.ElementAt(3)); Player.Wallet -= 3; return Player.EquipedWeapon; }
                 default: break;
             }
 
-            return user.EquipedWeapon;
+            return Player.EquipedWeapon;
 
         }
-        public static List<Weapon> ShopListGenerator()
+        public static List<Weapon> ShopListGenerator(Whale Player)
         {
             List<Weapon> sp = new List<Weapon>();
-            sp.Add(Weapon.CreateWeapon(WeaponList.Knife));
-            sp.Add(Weapon.CreateWeapon(WeaponList.Bow));
-            sp.Add(Weapon.CreateWeapon(WeaponList.Sword));
-            sp.Add(Weapon.CreateWeapon(WeaponList.Wand));
+            sp.Add(Weapon.WeaponGen(Player));
+            sp.Add(Weapon.WeaponGen(Player));
+            sp.Add(Weapon.WeaponGen(Player));
+            sp.Add(Weapon.WeaponGen(Player));
             return sp;
         }
         public static void HUD(Whale player)
