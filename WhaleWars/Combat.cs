@@ -25,8 +25,9 @@ namespace WhaleWars
                 Thread.Sleep(2500);
                 if (user.Health <= 0) { ConsoleInterface.PlayerDied(user, target); }
                 if (target.Health <= 0) { ConsoleInterface.WinArt(target); return; }
-            }                                                                                             
-           
+            }
+            
+            ConsoleInterface.Ship(user);
         }                            
     }
 }

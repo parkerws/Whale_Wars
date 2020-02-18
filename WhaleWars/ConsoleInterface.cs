@@ -62,12 +62,12 @@ namespace WhaleWars
             Console.WriteLine("   ::::::`:::::;'  /  /   `#");
             Console.WriteLine("_________________________________________________________________________________________________________________");
             string input = Convert.ToString(Input().ToLower());
-            
-            switch(input.ToLower())
+
+            switch (input.ToLower())
             {
-                case "o": { Console.Clear(); Program.Main();  break; }
-                case "e":  { Environment.Exit(0); break; }
-            }           
+                case "o": { Console.Clear(); Program.Main(); break; }
+                case "e": { Environment.Exit(0); break; }
+            }
         }
         public static void WinArt(Enemies target)
         {
@@ -169,7 +169,7 @@ namespace WhaleWars
             int Gold = player.Wallet;
             int Attack = player.Offense;
             int Defence = player.Defense;
-          
+
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("*************************************");
@@ -222,16 +222,39 @@ namespace WhaleWars
         }
 
         public static void Ship(Whale Player)
-        {          
+        {           
+           Console.WriteLine("Ship HUB" +
+               "\nEnter [INVENTORY]\n" +
+               "Enter [COMBAT]");
+            string input = Input();
+            switch (input)
+            {
+                case "inventory": {PlayerInventory(Player); return; }
+                case "combat": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
+                default:
+                    break;
+            }
+            
+        }
+
+        public static void PlayerInventory(Whale Player)
+        {            
+          Console.WriteLine($"{Player.Name}'s Inventory\n");
+
             foreach (var item in Player.EquipedWeapon)
             {
                 Console.WriteLine($"Equiped Weapon :: {item.Name} :: {item.Damage}");
             }
-
             foreach (var item in Player.EquipedArmor)
             {
                 Console.WriteLine($"Equiped Armor  :: {item.Name} :: {item.defense}");
             }
+
+            Console.WriteLine("\nPress [ENTER] to return to the ship");
+            Input();
+            Console.Clear();
+            Ship(Player);
         }
+
     }
 }
