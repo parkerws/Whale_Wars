@@ -6,7 +6,7 @@ namespace WhaleWars
 {
     class Ranger
     {
-        public static int RangerMoves(Whale user, Whale target)
+        public static int RangerMoves(Whale user, Enemies target)
         {
             Console.WriteLine("Select a skill to use\n" +
                 "1) Piercing Shot\n" +
@@ -22,27 +22,25 @@ namespace WhaleWars
                 case int n when n == 2: return Ranger.MultiShot(user, target);
                 case int n when n == 3: return Ranger.CriplingBlow(user, target);
                 case int n when n == 4: return Ranger.ShadowDance(user);
-                default: break;
-            }
-
-            return Ranger.BasicAtk(user, target);
+                default: return Ranger.BasicAtk(user, target);
+            }                       
         }
-        public static int BasicAtk(Whale user, Whale target)
+        public static int BasicAtk(Whale user, Enemies target)
         {
             target.Health -= (user.Offense - target.Defense);
             return target.Health;
         }
-        public static int PiercingShot(Whale user, Whale target)
+        public static int PiercingShot(Whale user, Enemies target)
         {
             target.Health -= user.Offense;
             return target.Health;
         }
-        public static int MultiShot(Whale user, Whale target)
+        public static int MultiShot(Whale user, Enemies target)
         {
             target.Health -= ((user.Offense *2)- target.Defense);
             return target.Health;
         }
-        public static int CriplingBlow(Whale user, Whale target)
+        public static int CriplingBlow(Whale user, Enemies target)
         {
             target.Defense -= 1;
             target.Health -= (user.Offense - target.Defense);

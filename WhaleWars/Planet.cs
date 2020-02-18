@@ -22,6 +22,11 @@ namespace WhaleWars
             PlanType = type;
             location = new Location(x, y, sector);
         }
+
+        public override string ToString()
+        {
+            return Name + " in the sector " + location.sector.ToString();
+        }
     }
 
     public class Location

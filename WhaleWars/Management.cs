@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WhaleWars
 {
@@ -8,17 +9,16 @@ namespace WhaleWars
         const int TYPESPEED = 30;
 
 
-        public static void mgmt()
+        public static Whale Mgmt(string name)
         {
-            title();
-            Whale UserChoice = new Whale("name", CharClass.fighter, 1, 1, 1);
-            { UserChoice = GameStart(UserChoice); }
+            Console.Clear();
+            Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
+            Player = Whale.WhaleSelect(Player, name);
 
-            ConsoleInterface.HUD(UserChoice.Name, "Planet", 0, UserChoice.Health, UserChoice.Offense, UserChoice.Defense);
-            Whale knight = new Whale("Knight", CharClass.fighter, 10, 2, 2);
-            Combat.Battle(UserChoice, knight);
+            Whale.StartItems(Player);
+            return Player;
         }
-        public static void title()
+        public static void Title()
         {
             //Console.SetWindowSize(100, 50);
             //Console.BufferHeight = 100;
@@ -28,11 +28,12 @@ namespace WhaleWars
             Typewrite("In an ocean of space....\n", TYPESPEED);
             Typewrite("Far Far away...\n", TYPESPEED);
             Typewrite("There was a whale...\n", TYPESPEED);
-            Typewrite("Floating aimlessly through space...\n", TYPESPEED);
+            Typewrite("Floating aimlessly through the void...\n", TYPESPEED);
             Typewrite("", TYPESPEED);
-            printTitle();
+            PrintTitle();
             Welcome();
-            Console.ReadKey();
+            Console.WriteLine("Press Enter To continue");
+            ConsoleInterface.Input();
         }
         static void Typewrite(string message, int speed)
         {
@@ -42,7 +43,7 @@ namespace WhaleWars
                 System.Threading.Thread.Sleep(speed);
             }
         }
-        static void printTitle()
+        static void PrintTitle()
         {
             Console.Title = "ASCII Art";
             string title = @"
@@ -58,29 +59,15 @@ namespace WhaleWars
         
         static void Welcome()
         {
-            Typewrite("A Group-One production.\n\t\t\t\t\t\t\t\t A Chartese Desentery Ameoba Game.\n", TYPESPEED);
+            Typewrite("A Group-One production.\n\t\t\t\t\t\t\t\t A Chartreuse Dysentery Amoeba Game.\n", TYPESPEED);
         }
 
-        public static Whale GameStart(Whale UserChoice)
+        public static string PlayerName()
         {
+            Console.Clear();
             Console.WriteLine("Please input a name\n");
-            string name = Console.ReadLine();            
-            Console.WriteLine("Please chose a class\n" +
-                "1.) Fighter\n" +
-                "2.) Ranger\n" +
-                "3.) Mage");
-            string pick = Console.ReadLine();
-            int ClassPicker = Convert.ToInt32(pick);
-
-            switch (ClassPicker)
-            {
-                case int n when n == 1: { UserChoice = new Whale(name, CharClass.fighter, 10, 5, 2); return UserChoice; }
-                case int n when n == 2: { UserChoice = new Whale(name, CharClass.ranger, 10, 4, 3); return UserChoice; }
-                case int n when n == 3: { UserChoice = new Whale(name, CharClass.mage, 10, 2, 4); return UserChoice; }
-                default: break;
-            }
-            return UserChoice;
-
+            string name = ConsoleInterface.Input();
+            return name;
         }
     }
 }

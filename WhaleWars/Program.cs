@@ -4,51 +4,16 @@ namespace WhaleWars
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            /*Whale barney = new Whale("barney", CharClass.fighter, 10, 2, 2);
+            Management.Title();
 
-             Planet sumPlanet = new Planet("Blowholia Prime", PlanetType.ocean, 5,4,Sector.Blowholia);
+            string name = Management.PlayerName();
+            
+            Whale Player = Management.Mgmt(name);
 
-             string Location = sumPlanet.Name;
-             int Turn = 0;
-             Console.Title = "Whale Wars";
+            ConsoleInterface.Ship(Player);
 
-
-             while (Turn < 20)
-             {
-                 Turn++;
-                 HUD(barney.Name, Location, Turn, barney.Health, barney.Offense, barney.Defense);
-                 Console.WriteLine("Press enter to simulate turns progressing... turn number " + Turn + " ... ");
-                 Console.ReadKey();
-
-             }
-
-             Console.WriteLine("Simulation of game ending");
-             Console.ReadKey(); */
-
-            Weapon charwp = Weapon.CreateWeapon(WeaponList.Sword);
-            Console.WriteLine(charwp.Name);
-            Console.WriteLine(charwp.Damage);
-            Console.WriteLine(charwp.Defense);
-
-            Plating platings = new Plating();
-            Console.WriteLine(platings.Name);
-            Console.WriteLine(platings.defenseModifier);
-            Console.WriteLine(platings.charClass);
-
-            Cloth cloths = new Cloth();
-            Console.WriteLine(cloths.Name);
-            Console.WriteLine(cloths.defenseModifier);
-            Console.WriteLine(cloths.charClass);
-
-            Chainmail chainmails = new Chainmail();
-            Console.WriteLine(chainmails.Name);
-            Console.WriteLine(chainmails.defenseModifier);
-            Console.WriteLine(chainmails.charClass);
-
-            Management.mgmt();
-                        
         }
     }
 }
