@@ -121,6 +121,7 @@ namespace WhaleWars
             Console.WriteLine("                 `````````   `'--..___\'   |`");
             Console.WriteLine("                                       `-.,'");
             Console.WriteLine("Please enter the number of the item you would like to buy or enter Exit to leave the shop");
+            Console.WriteLine($"                                                                     Doubloons :: {Player.Wallet}   ");
             Console.WriteLine("___________________________________________________________________________________________");
 
             Console.WriteLine();
@@ -243,8 +244,9 @@ namespace WhaleWars
         }
 
         public static void PlayerInventory(Whale Player)
-        {            
-          Console.WriteLine($"{Player.Name}'s Inventory\n");
+        {
+            Console.Clear();       
+            Console.WriteLine($"{Player.Name}'s Inventory\n");
 
             foreach (var item in Player.EquipedWeapon)
             {
