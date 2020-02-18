@@ -6,7 +6,7 @@ namespace WhaleWars
     {
         public static void Main(string[] args)
         {
-            /* Whale barney = new Whale("barney", CharClass.fighter, 10, 2, 2);
+            /*Whale barney = new Whale("barney", CharClass.fighter, 10, 2, 2);
 
              Planet sumPlanet = new Planet("Blowholia Prime", PlanetType.ocean, 5,4,Sector.Blowholia);
 
@@ -27,10 +27,25 @@ namespace WhaleWars
              Console.WriteLine("Simulation of game ending");
              Console.ReadKey(); */
 
-            //Weapon charwp = Weapon.CreateWeapon(WeaponList.Sword);
-            //Console.WriteLine(charwp.Name);
-            //Console.WriteLine(charwp.Damage);
-            //Console.WriteLine(charwp.Defense);
+            Weapon charwp = Weapon.CreateWeapon(WeaponList.Sword);
+            Console.WriteLine(charwp.Name);
+            Console.WriteLine(charwp.Damage);
+            Console.WriteLine(charwp.Defense);
+
+            Plating platings = new Plating();
+            Console.WriteLine(platings.Name);
+            Console.WriteLine(platings.defenseModifier);
+            Console.WriteLine(platings.charClass);
+
+            Cloth cloths = new Cloth();
+            Console.WriteLine(cloths.Name);
+            Console.WriteLine(cloths.defenseModifier);
+            Console.WriteLine(cloths.charClass);
+
+            Chainmail chainmails = new Chainmail();
+            Console.WriteLine(chainmails.Name);
+            Console.WriteLine(chainmails.defenseModifier);
+            Console.WriteLine(chainmails.charClass);
 
             Management.mgmt();
                         

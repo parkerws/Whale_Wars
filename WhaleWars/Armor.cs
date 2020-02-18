@@ -37,9 +37,9 @@ namespace WhaleWars
     {
         public Chainmail()
         {
-            Name = " Silver Glittery Rainacorn Scales";
+            Name = "Silver Glittery Rainacorn Scales";
             charClass = CharClass.ranger;
-            defenseModifier = 2;
+            defenseModifier = 5;
         }
     }
      
@@ -49,7 +49,7 @@ namespace WhaleWars
         {
             Name = "Reptilian Magical Cloth";
             charClass = CharClass.mage;
-            defenseModifier = 5;
+            defenseModifier = 2;
         }
     }
 
