@@ -13,7 +13,7 @@ namespace WhaleWars
         {
             Random r = new Random();
          int H =  r.Next(20, 35);
-         int O = r.Next(12, 15);
+         int O = r.Next(3, 7);
          int D = r.Next(4,6);
 
             Enemies enemy = new Enemies(NameGenerator(), CharClass.fighter,H,D,O);

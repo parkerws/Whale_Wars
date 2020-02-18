@@ -18,16 +18,16 @@ namespace WhaleWars
 
                 Thread.Sleep(2500);
                 if (user.Health <= 0) { ConsoleInterface.PlayerDied(user, target); }
-                if (target.Health <= 0) { ConsoleInterface.WinArt(target); return; }
+                if (target.Health <= 0) { user.Wallet += 3; ConsoleInterface.WinArt(user, target); return; }
                 ConsoleInterface.HUD(user); 
 
                 Enemies.EnemyAI(user, target);
                 Thread.Sleep(2500);
                 if (user.Health <= 0) { ConsoleInterface.PlayerDied(user, target); }
-                if (target.Health <= 0) { ConsoleInterface.WinArt(target); return; }
+                if (target.Health <= 0) { user.Wallet = +3; ConsoleInterface.WinArt(user, target); return; }
             }
             
-            ConsoleInterface.Ship(user);
+            
         }                            
     }
 }
