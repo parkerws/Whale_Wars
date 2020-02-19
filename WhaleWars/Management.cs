@@ -9,15 +9,7 @@ namespace WhaleWars
         const int TYPESPEED = 30;
 
 
-        public static Whale Mgmt(string name)
-        {
-            Console.Clear();
-            Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
-            Player = Whale.WhaleSelect(Player, name);
-
-            Whale.StartItems(Player);
-            return Player;
-        }
+       
         public static void Title()
         {
             //Console.SetWindowSize(100, 50);
