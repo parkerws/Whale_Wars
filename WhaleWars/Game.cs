@@ -44,7 +44,7 @@ namespace WhaleWars
 
             Whale.StartItems(Player);
 
-            Typewrite($"\n{Player}", "yellow");
+            Typewrite($"\n{Player.Name}", "yellow");
             Typewrite("...ya, It's all coming back to me now", "self");
             Typewrite("\n... What happened?", "self");
             Typewrite("\n... Where am I?", "self");
@@ -66,7 +66,7 @@ namespace WhaleWars
             Console.Clear();
             return Player;
         }
-        static void Choice(Whale Player)
+        public static void Choice(Whale Player)
         {
             string input = "";
             Typewrite($"\n{Player}", "yellow");
