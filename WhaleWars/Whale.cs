@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
 namespace WhaleWars
 {
@@ -158,29 +157,89 @@ namespace WhaleWars
 
         public static int ArmoryOffense(Whale Player)
         {
-            int damage;
-            try
+            if (Player.CC == CharClass.fighter)
             {
-                int itemoffense = Player.EquipedWeapon.Last().Damage;
+                int damage;
+                try
+                {
+                    int itemoffense = Player.EquipedWeapon.Last().Damage;
+                }
+                catch (Exception) { damage = 2; return damage; }
+
+                Player.Offense = Player.EquipedWeapon.Last().Damage + 2;
+
+                return Player.Offense;
             }
-            catch (Exception) { damage = 2; return damage; }
+            if (Player.CC == CharClass.mage)
+            {
+                int damage;
+                try
+                {
+                    int itemoffense = Player.EquipedWeapon.Last().Damage;
+                }
+                catch (Exception) { damage = 6; return damage; }
 
-            Player.Offense = Player.EquipedWeapon.Last().Damage + 2;
+                Player.Offense = Player.EquipedWeapon.Last().Damage + 6;
 
-            return Player.Offense;
-        } //Please dont delete, it is used to add damage to the players offense in the HUD.
+                return Player.Offense;
+            }
+            if (Player.CC == CharClass.ranger)
+            {
+                int damage;
+                try
+                {
+                    int itemoffense = Player.EquipedWeapon.Last().Damage;
+                }
+                catch (Exception) { damage = 4; return damage; }
+
+                Player.Offense = Player.EquipedWeapon.Last().Damage + 4;
+
+                return Player.Offense;
+            }
+            return 0;
+        } //This is used to add base damage to the players offense based off of they CharClass.
         public static int ArmoryDefense(Whale Player)
         {
-            int defense;
-            try
+            if (Player.CC == CharClass.fighter)
             {
-                int itemdeffense = Player.EquipedArmor.Last().defense;
+                int defense;
+                try
+                {
+                    int itemdeffense = Player.EquipedArmor.Last().defense;
+                }
+                catch (Exception) { defense = 6; return defense; }
+
+                Player.Defense = (Player.EquipedArmor.Last().defense + 6);
+
+                return Player.Defense;
             }
-            catch (Exception) { defense = 5; return defense; }
+            if (Player.CC == CharClass.mage)
+            {
+                int defense;
+                try
+                {
+                    int itemdeffense = Player.EquipedArmor.Last().defense;
+                }
+                catch (Exception) { defense = 2; return defense; }
 
-            Player.Defense = (Player.EquipedArmor.Last().defense + 5);
+                Player.Defense = (Player.EquipedArmor.Last().defense + 2);
 
-            return Player.Defense;
+                return Player.Defense;
+            }
+            if (Player.CC == CharClass.ranger)
+            {
+                int defense;
+                try
+                {
+                    int itemdeffense = Player.EquipedArmor.Last().defense;
+                }
+                catch (Exception) { defense = 4; return defense; }
+
+                Player.Defense = (Player.EquipedArmor.Last().defense + 4);
+
+                return Player.Defense;
+            }
+            return 0;
         } //Please dont delete, it is used to add the armor defense to the HUD\
         public static void StartItems(Whale Player)
         {
