@@ -13,7 +13,7 @@ namespace WhaleWars
 
         public static void startGame()
         {
-            Fastwrite("Whale Wars!", "blue\n");
+            //Fastwrite("Whale Wars!", "blue\n");
             Console.WriteLine("\nPress Space to continue...");
             Console.ReadKey();
             Console.Clear();
@@ -21,17 +21,30 @@ namespace WhaleWars
             Fastwrite("\nYou wake up floating through space...", "dialog\n\n");
             Console.WriteLine("\nPress space to continue...");
             Console.ReadKey();
-            nameCharacter();
+           // nameCharacter();
 
         }
-        //ask plaer for a name and save it
-        static void nameCharacter()
+
+        public static string PlayerName()
         {
             Console.Clear();
             Typewrite("\nWhats my name?", "self");
             Fastwrite("\nType in your name: ", "dialog\n");
-            characterName = Console.ReadLine();
-            Typewrite($"\n{characterName}", "yellow");
+            string name = ConsoleInterface.Input();
+            return name;
+        }
+
+        //ask plaer for a name and save it
+        public static Whale nameCharacter(string name)
+        {
+            Console.Clear();            
+            
+            Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
+            Player = Whale.WhaleSelect(Player, name);
+
+            Whale.StartItems(Player);
+
+            Typewrite($"\n{Player}", "yellow");
             Typewrite("...ya, It's all coming back to me now", "self");
             Typewrite("\n... What happened?", "self");
             Typewrite("\n... Where am I?", "self");
@@ -51,12 +64,12 @@ namespace WhaleWars
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
-            Choice();
+            return Player;
         }
-        static void Choice()
+        static void Choice(Whale Player)
         {
             string input = "";
-            Typewrite($"\n{characterName}", "yellow");
+            Typewrite($"\n{Player}", "yellow");
             Fastwrite(", Do you want to go too Blowholia Prime?", "dialog");
             Console.WriteLine("\nA) Yes" +
                 "\nB) No");
