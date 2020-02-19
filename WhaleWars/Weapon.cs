@@ -1,12 +1,11 @@
 using System;
 namespace WhaleWars
 {
-    public class Weapon
+    public class Weapon : Item
     {
-        public string Name { get; set; } 
+        
         public int Damage { get; set; }
         
-
         public Weapon(string weapon, int damage)  // Constructor needs these 3 parameters to create. This is only used for the CreateWeapons() method.
         {
             Name = weapon;

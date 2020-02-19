@@ -49,28 +49,6 @@ namespace WhaleWars
         public List<Weapon> EquipedWeapon = new List<Weapon>();
         public List<Armor> EquipedArmor = new List<Armor>();
 
-        public void SetWeapon(Whale Player) // equip weapon if in inventory
-        {
-             if (Player.CC == CharClass.fighter)
-             {
-                
-                
-                
-             }
-
-            if (Player.CC == CharClass.ranger)
-            { 
-                Chainmail chainmail = new Chainmail();
-                Player.EquipedArmor.Add(chainmail);                
-            }
-
-            if (Player.CC == CharClass.mage)
-            {
-                Cloth shirt = new Cloth();
-                Player.EquipedArmor.Add(shirt);
-            }              
-        }
-
         public string GetWeapons()
         {
             string outString = "";
@@ -81,28 +59,6 @@ namespace WhaleWars
 
             return outString;
         }
-
-        public static void SetArmor(Whale Player)
-        {
-            if (Player.CC == CharClass.fighter)
-            {
-                Plating plate = new Plating();
-                Player.EquipedArmor.Add(plate);
-                
-            }
-
-            if (Player.CC == CharClass.ranger)
-            { 
-                Chainmail chainmail = new Chainmail();
-                Player.EquipedArmor.Add(chainmail);                
-            }
-
-            if (Player.CC == CharClass.mage)
-            {
-                Cloth shirt = new Cloth();
-                Player.EquipedArmor.Add(shirt);
-            }            
-        } //used to add a starting Item bassed off of starting class.
 
         public string GetInventory()
         {
@@ -229,8 +185,50 @@ namespace WhaleWars
         public static void StartItems(Whale Player)
         {
             SetArmor(Player);
-
+            SetWeapon(Player);
 
         } // assignes the starting items to the player to help expand the inventory.
+        public static void SetWeapon(Whale Player)
+        {
+            if (Player.CC == CharClass.fighter)
+            {
+                Sword sword = new Sword();
+                Player.EquipedWeapon.Add(sword);
+
+            }
+
+            if (Player.CC == CharClass.ranger)
+            {
+                Bow bow = new Bow();
+                Player.EquipedWeapon.Add(bow);
+            }
+
+            if (Player.CC == CharClass.mage)
+            {
+                Wand wand = new Wand();
+                Player.EquipedWeapon.Add(wand);
+            }
+        } //used to add a starting Weapon bassed off of starting class.
+        public static void SetArmor(Whale Player)
+        {
+            if (Player.CC == CharClass.fighter)
+            {
+                Plating plate = new Plating();
+                Player.EquipedArmor.Add(plate);
+
+            }
+
+            if (Player.CC == CharClass.ranger)
+            {
+                Chainmail chainmail = new Chainmail();
+                Player.EquipedArmor.Add(chainmail);
+            }
+
+            if (Player.CC == CharClass.mage)
+            {
+                Cloth shirt = new Cloth();
+                Player.EquipedArmor.Add(shirt);
+            }
+        } //used to add a starting Armor bassed off of starting class.
     }
 }

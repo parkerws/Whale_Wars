@@ -5,7 +5,7 @@ using System.Text;
 namespace WhaleWars
 {
     public class Armor : Item
-    {        
+    {   
         public int defense { get; set; }
         public Armor(string name, int def)
         {
