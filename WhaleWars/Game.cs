@@ -44,6 +44,8 @@ namespace WhaleWars
 
             Whale.StartItems(Player);
 
+            ConsoleInterface.HUD(Player);
+
             Typewrite($"\n{Player.Name}", "yellow");
             Typewrite("...ya, It's all coming back to me now", "self");
             Typewrite("\n... What happened?", "self");
@@ -51,12 +53,18 @@ namespace WhaleWars
             Console.WriteLine("\nPress Space to continue...");
             Console.ReadKey();
             Console.Clear();
+
+            ConsoleInterface.HUD(Player);
+
             Fastwrite("\nYou look around... You see thousands of stars...", "dialog");
             Typewrite("\n...I must have blacked out...", "self");
             Typewrite("\n...I don't remember anything.", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
+
+            ConsoleInterface.HUD(Player);
+
             Fastwrite("\nYou see a small planet off in the distance...", "dialog");
             Typewrite("\nThat looks like Blowholia Prime... wait...", "self");
             Typewrite("\nBlowholia... I think I was there... something bad happened...", "self");
@@ -68,6 +76,8 @@ namespace WhaleWars
         }
         public static void Choice(Whale Player)
         {
+            ConsoleInterface.HUD(Player);
+
             string input = "";
             Typewrite($"\n{Player.Name}", "yellow");
             Fastwrite(", Do you want to go too Blowholia Prime?", "dialog");
