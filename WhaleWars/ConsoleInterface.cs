@@ -206,20 +206,20 @@ namespace WhaleWars
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("====================================================================================\n\n\n\n");
             Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(" The Combat and Story Text will Apear hear! ");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(" When you take Damage it will apear in RED! ");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(" When you Attack it will apear in YELLOW! ");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(" When you Heal it will apear in GREEN!\n");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("====================================================================================");
+            //Console.ForegroundColor = ConsoleColor.White;
+            //Console.WriteLine(" The Combat and Story Text will Apear hear! ");
+            //Console.ResetColor();
+            //Console.ForegroundColor = ConsoleColor.Red;
+            //Console.WriteLine(" When you take Damage it will apear in RED! ");
+            //Console.ResetColor();
+            //Console.ForegroundColor = ConsoleColor.Yellow;
+            //Console.WriteLine(" When you Attack it will apear in YELLOW! ");
+            //Console.ResetColor();
+            //Console.ForegroundColor = ConsoleColor.Green;
+            //Console.WriteLine(" When you Heal it will apear in GREEN!\n");
+            //Console.ResetColor();
+            //Console.ForegroundColor = ConsoleColor.White;
+            //Console.WriteLine("====================================================================================");
 
         }
 

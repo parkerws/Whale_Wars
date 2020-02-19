@@ -14,7 +14,7 @@ namespace WhaleWars
         public static void startGame()
         {
             //Fastwrite("Whale Wars!", "blue\n");
-            Console.WriteLine("\nPress Space to continue...");
+          //  Console.WriteLine("\nPress Space to continue...");
             Console.ReadKey();
             Console.Clear();
             Typewrite("\nWelcome to the console based adventure game!", "dialog\n\n");
@@ -69,7 +69,7 @@ namespace WhaleWars
         public static void Choice(Whale Player)
         {
             string input = "";
-            Typewrite($"\n{Player}", "yellow");
+            Typewrite($"\n{Player.Name}", "yellow");
             Fastwrite(", Do you want to go too Blowholia Prime?", "dialog");
             Console.WriteLine("\nA) Yes" +
                 "\nB) No");
