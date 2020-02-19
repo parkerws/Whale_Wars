@@ -87,12 +87,30 @@ namespace WhaleWars
             input = Console.ReadLine();
             if (input == "A")
             {
-                Fastwrite("\n You start to swim through the cold empty space, your eyes set on Blowholia Prime", "dialog");
+                Fastwrite("\n You point your ship towards Blowholia Prime", "dialog");
             }
             else
             {
                 Typewrite("\n I need to find out what happened to me", "self");
             }
+
+        }
+        public static void BlowholiaDialog(Whale Player)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
+            Typewrite("\nMeanwhie on blowholia...", "dialog\n");
+            Fastwrite("\nThe sounds of exploading space cannons tear through the thin Blowholia morning air","red");
+            Typewrite("\nBrave Bloholian solders are trudging through the mud of the battle field","dialog");
+            Typewrite("\n\"Is the day lost sir?\"", "friend");
+            Typewrite("one Blowholian sergeant says to", "dialog");
+            Typewrite("Captain Whalord-Hookfin", "friend");
+            Typewrite("\nCpt.Hookfin: \"For today.. But hope is not\"", "friend");
+            Typewrite("\nHe say's with a grin, as he watches your ship enter the atmosphere", "dialog");
+            Console.WriteLine("Press Space to continue.");
+            Console.ReadLine();
+            Console.Clear();
 
         }
         static void Typewrite(string message, string color)
@@ -156,6 +174,10 @@ namespace WhaleWars
             else if (color == "blue")
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            else if (color == "red")
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
             }
 
             for (int i = 0; i < message.Length; i++)
