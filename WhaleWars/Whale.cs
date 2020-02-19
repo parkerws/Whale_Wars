@@ -231,6 +231,6 @@ namespace WhaleWars
             SetArmor(Player);
 
 
-        }
+        } // assignes the starting items to the player to help expand the inventory.
     }
 }

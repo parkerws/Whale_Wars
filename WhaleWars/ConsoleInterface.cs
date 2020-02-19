@@ -108,8 +108,8 @@ namespace WhaleWars
         public static List<Weapon> WhaleShop(Whale Player, List<Weapon> inventory)
         {
             Console.Clear();
-            Console.WriteLine("___________________________________________________________________________________________");
-            Console.WriteLine("\n\n\n\n");
+            ConsoleInterface.HUD(Player);
+
             Console.WriteLine("            .-------------'```'----....,,__                        _,");
             Console.WriteLine("            |                               `'`'`'`'-.,.__        .'(");
             Console.WriteLine("            |                                             `'--._.'   )");
@@ -121,7 +121,6 @@ namespace WhaleWars
             Console.WriteLine("                 `````````   `'--..___\'   |`");
             Console.WriteLine("                                       `-.,'");
             Console.WriteLine("Please enter the number of the item you would like to buy or enter Exit to leave the shop");
-            Console.WriteLine($"                                                                     Doubloons :: {Player.Wallet}   ");
             Console.WriteLine("___________________________________________________________________________________________");
 
             Console.WriteLine();
@@ -138,8 +137,8 @@ namespace WhaleWars
                 if (i == 4) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 3 Doubloon   "); }
                 i++;
             };
-            Console.WriteLine();
-
+            Console.WriteLine("[E]xit");
+            
             string input = Console.ReadLine();
             switch (input)
             {
@@ -147,7 +146,7 @@ namespace WhaleWars
                 case "2": { Player.EquipedWeapon.Add(inventory.ElementAt(1)); Player.Wallet -= 1; Ship( Player); Console.Clear(); return null; }
                 case "3": { Player.EquipedWeapon.Add(inventory.ElementAt(2)); Player.Wallet -= 4; Ship(Player); Console.Clear(); return null; }
                 case "4": { Player.EquipedWeapon.Add(inventory.ElementAt(3)); Player.Wallet -= 3; Ship( Player); Console.Clear(); return null; }
-                default: return null;
+                default:  Ship(Player); return null;
             }
 
         }
@@ -227,17 +226,20 @@ namespace WhaleWars
         {
            Console.Clear();
 
+            ConsoleInterface.HUD(Player);
+
             Console.WriteLine("Ship HUB" +
-               "\nEnter for [INVENTORY]\n" +
-               "Enter for [COMBAT]\n" +
-               "Enter for [SHOP]");
+               "\nEnter I for [I]nventory\n" +
+               "Enter C for [C]ombat\n" +
+               "Enter S for [S]hop\n");
             string input = Input();
             switch (input.ToLower())
             {
-                case "inventory": {PlayerInventory(Player); return; }
-                case "combat": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
-                case "shop": { ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator(Player)); return; }
-                default:
+                case "i": {PlayerInventory(Player); return; }
+                case "c": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
+                case "s": { ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator(Player)); return; }
+
+                        default:
                     break;
             }
             
@@ -245,7 +247,9 @@ namespace WhaleWars
 
         public static void PlayerInventory(Whale Player)
         {
-            Console.Clear();       
+            Console.Clear();
+
+            HUD(Player);
             Console.WriteLine($"{Player.Name}'s Inventory\n");
 
             foreach (var item in Player.EquipedWeapon)
