@@ -95,7 +95,7 @@ namespace WhaleWars
             }
 
         }
-        public static void BlowholiaDialog(Whale Player)
+        public static void preBlowholiaDialog(Whale Player)
         {
             Console.Clear();
             ConsoleInterface.HUD(Player);
@@ -105,14 +105,15 @@ namespace WhaleWars
             Typewrite("\nBrave Bloholian solders are trudging through the mud of the battle field","dialog");
             Typewrite("\n\"Is the day lost sir?\"", "friend");
             Typewrite("one Blowholian sergeant says to", "dialog");
-            Typewrite("Captain Whalord-Hookfin", "friend");
+            Typewrite(" Captain Whalord-Hookfin", "friend");
             Typewrite("\nCpt.Hookfin: \"For today.. But hope is not\"", "friend");
             Typewrite("\nHe say's with a grin, as he watches your ship enter the atmosphere", "dialog");
-            Console.WriteLine("Press Space to continue.");
+            Console.WriteLine("\nPress Space to continue.");
             Console.ReadLine();
             Console.Clear();
 
         }
+
         static void Typewrite(string message, string color)
         {
             if (color == "enemy")
