@@ -6,8 +6,8 @@ namespace WhaleWars
 {
     public class Enemies : Whale
     {
-        public Enemies(string _name, CharClass cc, int _health, int _defense, int _offense)
-             :base (_name, cc, _health, _defense, _offense){}
+        public Enemies(string _name, CharClass cc, int _health, int _defense, int _offense, int magicpoints)
+             :base (_name, cc, _health, _defense, _offense, magicpoints){}
 
         public  static Enemies EnemyGenerator()
         {
@@ -16,7 +16,7 @@ namespace WhaleWars
          int O = r.Next(3, 7);
          int D = r.Next(4,6);
 
-            Enemies enemy = new Enemies(NameGenerator(), CharClass.fighter,H,D,O);
+            Enemies enemy = new Enemies(NameGenerator(), CharClass.fighter,H,D,O, 10);
             return enemy;
         }
         public static string NameGenerator()

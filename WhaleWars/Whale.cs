@@ -12,10 +12,10 @@ namespace WhaleWars
         public int Offense { get; set; }
         public CharClass CC { get; set; }
         public int Wallet { get; set; }
-
+        public int MagicPoints { get; set; }
         public Planet currentPlanet { get; set; }
 
-        public Whale(string _name, CharClass cc, int _health, int _defense, int _offense)
+        public Whale(string _name, CharClass cc, int _health, int _defense, int _offense, int magicpoints)
         {
             Name = _name;
             CC = cc;
@@ -23,6 +23,7 @@ namespace WhaleWars
             Defense = _defense;
             Offense = _offense;
             Wallet = 5;
+            MagicPoints = magicpoints;
             currentPlanet = new Planet();
         } //Creates an easily referenced initializer so you dont have to type out each property of the given Whale
 
@@ -36,9 +37,9 @@ namespace WhaleWars
 
             switch (pick)
             {
-                case "1": { Player = new Whale(name, CharClass.fighter, 10, ArmoryDefense(Player), ArmoryOffense(Player)); return Player; }
-                case "2": { Player = new Whale(name, CharClass.ranger, 10, ArmoryDefense(Player), ArmoryOffense(Player)); return Player; }
-                case "3": { Player = new Whale(name, CharClass.mage, 10, ArmoryDefense(Player), ArmoryOffense(Player)); return Player; }
+                case "1": { Player = new Whale(name, CharClass.fighter, 10, ArmoryDefense(Player), ArmoryOffense(Player), 10); return Player; }
+                case "2": { Player = new Whale(name, CharClass.ranger, 10, ArmoryDefense(Player), ArmoryOffense(Player), 10); return Player; }
+                case "3": { Player = new Whale(name, CharClass.mage, 10, ArmoryDefense(Player), ArmoryOffense(Player), 10); return Player; }
                 default: return null;
             }
 

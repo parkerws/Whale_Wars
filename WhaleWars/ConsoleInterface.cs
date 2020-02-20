@@ -170,6 +170,7 @@ namespace WhaleWars
             int Gold = player.Wallet;
             int Attack = player.Offense;
             int Defence = player.Defense;
+            int MagicPoints = player.MagicPoints;
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -197,11 +198,13 @@ namespace WhaleWars
             Console.ResetColor();
             Console.Write(" :: ");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write(Health + " Health ");
+            Console.Write(Health + " HP ");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write(MagicPoints + " MP ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write(Attack + " Attack ");
+            Console.Write(Attack + " ATK ");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write(Defence + " Defence \n");  // this would be so much easier if Guse could spell.....
+            Console.Write(Defence + " DEF \n");  // this would be so much easier if Guse could spell.....
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("====================================================================================\n\n\n\n");
             Console.ResetColor();

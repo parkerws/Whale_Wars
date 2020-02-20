@@ -39,7 +39,7 @@ namespace WhaleWars
         {
             Console.Clear();            
             
-            Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
+            Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1, 1);
             Player = Whale.WhaleSelect(Player, name);
 
             Whale.StartItems(Player);
