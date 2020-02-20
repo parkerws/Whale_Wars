@@ -87,7 +87,7 @@ namespace WhaleWars
             input = input.ToUpper();
             if (input == "A")
             {
-                Fastwrite("\n You point your ship towards Blowholia Prime", "dialog");
+                Fastwrite("\n You point your ship towards Blowholia Prime\n", "dialog");
                 Console.WriteLine("Press Space to continue.");
                 Console.ReadKey();
             }
@@ -109,7 +109,7 @@ namespace WhaleWars
             Typewrite("one Blowholian sergeant says to", "dialog");
             Typewrite(" Captain Whalord-Hookfin", "friend");
             Typewrite("\nCpt.Hookfin: \"For today.. But hope is not\"", "friend");
-            Typewrite("\nHe say's with a grin, as he watches your ship enter the atmosphere", "dialog");
+            Typewrite("\nHe say's with a grin, as he watches your ship enter the atmosphere\n", "dialog");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
@@ -120,20 +120,22 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
 
             Fastwrite("\nYour ship comes to a holt on the outskirts of Blowholia's capital city: Pier-182", "Dialog");
-            Typewrite("\nTime to get some answers.", "Self");
+            Typewrite("\nTime to get some answers.", "self");
             Fastwrite("\n\"Arrived: Blowholia Prime\"", "friend");
             Typewrite(" the ships AI says over the inter inter-com.", "dialog");
             Fastwrite("\n\"Population: 5\"", "friend");
             Typewrite("\n 5!? How can that be?", "self");
-            Console.WriteLine("Press Space to continue.");
+            Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
-            Fastwrite("\nYou quickly exit your ship and gaze upon the ruins of Pier-182", "Dialog");
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nYou quickly exit your ship and gaze upon the ruins of Pier-182", "dialog");
             Typewrite("\nWhat happened here?", "self");
             Fastwrite("\nAll of a sudden, you hear the cackle of a dolphin!", "dialog");
-            Typewrite("\nOut of the fog steps the notorious", "Dialog");
+            Typewrite("\nOut of the fog steps the notorious", "dialog");
             Fastwrite(" Dolph Lundphin", "enemy");
-            Console.WriteLine("Press SPace to continue");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
         }
 
         private static void Typewrite(string message, string color)
