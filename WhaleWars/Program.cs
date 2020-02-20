@@ -18,6 +18,8 @@ namespace WhaleWars
 
             Game.preBlowholiaDialog(Player);
 
+            Game.BlowholiaDialog(Player);
+
             ConsoleInterface.Ship(Player);
 
         }

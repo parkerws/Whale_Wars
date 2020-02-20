@@ -119,7 +119,21 @@ namespace WhaleWars
         {
             ConsoleInterface.HUD(Player);
 
-
+            Fastwrite("\nYour ship comes to a holt on the outskirts of Blowholia's capital city: Pier-182", "Dialog");
+            Typewrite("\nTime to get some answers.", "Self");
+            Fastwrite("\n\"Arrived: Blowholia Prime\"", "friend");
+            Typewrite(" the ships AI says over the inter inter-com.", "dialog");
+            Fastwrite("\n\"Population: 5\"", "friend");
+            Typewrite("\n 5!? How can that be?", "self");
+            Console.WriteLine("Press Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            Fastwrite("\nYou quickly exit your ship and gaze upon the ruins of Pier-182", "Dialog");
+            Typewrite("\nWhat happened here?", "self");
+            Fastwrite("\nAll of a sudden, you hear the cackle of a dolphin!", "dialog");
+            Typewrite("\nOut of the fog steps the notorious", "Dialog");
+            Fastwrite(" Dolph Lundphin", "enemy");
+            Console.WriteLine("Press SPace to continue");
         }
 
         private static void Typewrite(string message, string color)
