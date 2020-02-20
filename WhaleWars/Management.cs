@@ -6,7 +6,7 @@ namespace WhaleWars
     public class Management
     {
 
-        const int TYPESPEED = 30;
+        const int TYPESPEED = 15;
 
 
        
@@ -27,12 +27,12 @@ namespace WhaleWars
             Console.WriteLine("Press Enter To continue");
             ConsoleInterface.Input();
         }
-        static void Typewrite(string message, int speed)
+        private static void Typewrite(string message, int speed)
         {
             for (int i = 0; i < message.Length; i++)
             {
                 Console.Write(message[i]);
-                System.Threading.Thread.Sleep(speed);
+                System.Threading.Thread.Sleep(1);
             }
         }
         static void PrintTitle()

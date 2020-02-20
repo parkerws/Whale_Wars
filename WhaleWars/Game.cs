@@ -114,7 +114,7 @@ namespace WhaleWars
 
         }
 
-        static void Typewrite(string message, string color)
+        private static void Typewrite(string message, string color)
         {
             if (color == "enemy")
             {
@@ -150,7 +150,7 @@ namespace WhaleWars
             Console.ResetColor();
 
         }
-        static void Fastwrite(string message, string color)
+        private static void Fastwrite(string message, string color)
         {
             if (color == "enemy")
             {
@@ -184,7 +184,7 @@ namespace WhaleWars
             for (int i = 0; i < message.Length; i++)
             {
                 Console.Write(message[i]);
-                System.Threading.Thread.Sleep(25);
+                System.Threading.Thread.Sleep(15);
 
             }
             Console.ResetColor();

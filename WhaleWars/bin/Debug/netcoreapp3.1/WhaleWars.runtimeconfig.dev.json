@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\dicta\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\dicta\\.nuget\\packages",
-      "C:\\Microsoft\\Xamarin\\NuGet"
+      "C:\\Users\\nateg\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\nateg\\.nuget\\packages"
     ]
   }
 }
