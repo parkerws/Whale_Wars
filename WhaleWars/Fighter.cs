@@ -1,58 +1,106 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace WhaleWars
 {
     class Fighter
     {
-        public static int FighterMoves(Whale user, Enemies target)
+        public static int FighterMoves(Whale Player, Enemies target)
         {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
             Console.WriteLine("Select a skill to use\n" +
-                "1) Lung\n" +
-                "2) Berserk\n" +
-                "3) Execute\n" +
-                "4) ShieldSlam\n");
+                "1) Attack   +1 MP\n" +
+                "2) Lung     -2 MP\n" +
+                "3) Slam     -3 MP\n" +
+                "4) Execute  -4 MP\n" +
+                "5) Berserk  -4 MP\n");
 
             int Input = Convert.ToInt32(Console.ReadLine());
 
             switch (Input)
             {
-                case int n when n == 1: return Fighter.Lung(user, target);
-                case int n when n == 2: return Fighter.ShieldSlam(user, target);
-                case int n when n == 3: return Fighter.Execute(user, target);
-                case int n when n == 4: return Fighter.Berserk(user);
-                default: break;
+                case 1: { Player.MagicPoints += 1; return Fighter.BasicAtk(Player, target);} 
+                case 2: if (Player.MagicPoints >= 2) {Player.MagicPoints -= 2; return Fighter.Lung(Player, target); }
+                    else { Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300); return FighterMoves(Player, target); }
+                case 3: if (Player.MagicPoints >= 3) { Player.MagicPoints -= 3; return Fighter.ShieldSlam(Player, target); }
+                    else { Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300); return FighterMoves(Player, target); }
+                case 4: if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Fighter.Execute(Player, target); }
+                    else { Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300); return FighterMoves(Player, target); }
+                case 5: if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Fighter.Berserk(Player, target); }
+                    else { Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300); return FighterMoves(Player, target); }
+                default: return BasicAtk(Player, target);
             }
+        }
+        public static int BasicAtk(Whale Player, Enemies target)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
 
-            return BasicAtk(user, target);
-        }
-        public static int BasicAtk(Whale user, Enemies target)
-        {
-            target.Health -= (user.Offense - target.Defense);
+            int pd = Player.Offense - target.Defense;
+            target.Health -= (Player.Offense - target.Defense);
+            Console.WriteLine($"You swing your {Player.EquipedWeapon[0].Name} dealing {pd} to {target.Name}");
+
             return target.Health;
         }
-        public static int Lung(Whale user, Enemies target)
+        public static int Lung(Whale Player, Enemies target)
         {
-            target.Health -= (user.Offense - target.Defense) + 1;
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
+            int pd = (Player.Offense - target.Defense) + 1;
+            target.Health -= (Player.Offense - target.Defense) + 1;
+
+            Console.WriteLine($"You thrust your {Player.EquipedWeapon[0].Name} dealing {pd} to {target.Name}");            
+
             return target.Health;
         }
-        public static int Berserk(Whale user)
+        public static int Berserk(Whale Player, Enemies target)
         {
-            user.Offense += 2;
-            user.Defense -= 2;
-            return user.Offense;
-        }
-        public static int Execute(Whale user, Enemies target)
-        {
-            double percent = (target.Health / 10);
-            if (percent == 0.4) { target.Health -= target.Health; return target.Health; }
-            else { target.Health -= (user.Offense + 1); return target.Health;  }
-        }
-        public static int ShieldSlam(Whale user, Enemies target)
-        {
-            target.Health -= user.Defense;
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
+            target.Health -= (Player.Offense + 5);
+            Player.Health -= 2;
+
+            Console.WriteLine($"You charge {target.Name}, sacraficing 5 health to do {Player.Offense + 5} damage ");
+
             return target.Health;
         }
+        public static int Execute(Whale Player, Enemies target)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
+            if (target.Health == target.Health/2) 
+            {
+                Console.WriteLine($"You draw all your might, destroying {target.Name}");
+                target.Health -= target.Health;
+
+                return target.Health; 
+            }
+            else 
+            {
+                Console.WriteLine($"You draw all your might attempting to destroying {target.Name}.  ");
+                target.Health -= (Player.Offense + 1);
+
+                return target.Health;  
+            }
+        }
+        public static int ShieldSlam(Whale Player, Enemies target)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
+            target.Health -= (Player.Defense - target.Defense);
+            Console.WriteLine($"You bash your weapon against {target.Name}, dealing {Player.Defense - target.Defense} damage");
+
+            return target.Health;
+        }
+
+        
     }
 }

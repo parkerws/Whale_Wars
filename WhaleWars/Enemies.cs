@@ -6,8 +6,8 @@ namespace WhaleWars
 {
     public class Enemies : Whale
     {
-        public Enemies(string _name, CharClass cc, int _health, int _defense, int _offense)
-             :base (_name, cc, _health, _defense, _offense){}
+        public Enemies(string _name, CharClass cc, int _health, int _defense, int _offense, int magicpoints)
+             :base (_name, cc, _health, _defense, _offense, magicpoints){}
 
         public  static Enemies EnemyGenerator()
         {
@@ -16,7 +16,7 @@ namespace WhaleWars
          int O = r.Next(3, 7);
          int D = r.Next(4,6);
 
-            Enemies enemy = new Enemies(NameGenerator(), CharClass.fighter,H,D,O);
+            Enemies enemy = new Enemies(NameGenerator(), CharClass.fighter,H,D,O, 10);
             return enemy;
         }
         public static string NameGenerator()
@@ -42,22 +42,39 @@ namespace WhaleWars
                 case 2: return Enemies.EnemySmash(user, target);
                 case 3: return Enemies.EnemyUnleashedRage(user, target);
                 case 4: return Enemies.EnemySyphonLife(user,target);
+                
                 default: break;
             }
 
-            return Enemies.Missed(user, target);
+            return 0;
         }
 
         public static int EnemyBasicATK(Whale user, Enemies target)
         {
-            Console.WriteLine($"\n{target.Name} Swings his sword, dealing {target.Offense - user.Defense} damage.");
+            int ed = target.Offense - user.Defense;
+            if (ed <= 0) 
+            {
+                target.Offense += 7;
+                Console.WriteLine($"\n{target.Name} Swings his sword and misses, {target.Name} becomes enraged."); return user.Health; 
+            }
+            
             user.Health -= target.Offense - user.Defense;
+            Console.WriteLine($"\n{target.Name} Swings his sword, dealing {ed} damage.");
+
             return user.Health;
         }
         public static int EnemySmash(Whale user, Enemies target)
         {
-            Console.WriteLine($"\n{target.Name} uses Smash dealing {target.Offense - user.Defense + 2} danage.");
+            int ed = (target.Offense - user.Defense) + 2;
+            if (ed <= 0) 
+            {
+                target.Offense += 7;
+                Console.WriteLine($"\n{target.Name} uses Smash and misses, {target.Name} becomes enraged."); return user.Health; 
+            }
+
             user.Health -= (target.Offense-user.Defense) + 2;
+            Console.WriteLine($"\n{target.Name} uses Smash dealing {ed} danage.");
+
             return user.Health;
         }
         public static int EnemyUnleashedRage(Whale user, Enemies target)
@@ -68,16 +85,20 @@ namespace WhaleWars
         }
         public static int EnemySyphonLife(Whale user, Enemies target)
         {
-            Console.WriteLine($"\n{target.Name} uses Syphone Life, dealing {target.Offense - user.Defense} damage and absorbing { target.Offense - user.Defense} health.");
+            int ed = (target.Offense - user.Defense) + 2;
+            if (ed <= 0)
+            {
+                target.Offense += 7;
+                Console.WriteLine($"\n{target.Name} uses Syphone Life, but the spell misses. {target.Name} becomes enraged"); return user.Health;
+            }
+
             user.Health -= target.Offense - user.Defense;
             target.Health += target.Offense - user.Defense;
+            Console.WriteLine($"\n{target.Name} uses Syphone Life, dealing {target.Offense - user.Defense} damage "+
+                "and absorbing { target.Offense - user.Defense} health.");
+           
             return user.Health;
         }
-        public static int Missed(Whale user, Enemies target)
-        {
-          Console.WriteLine($"\n{target.Name} mighty blow glances you for 1 damage.");
-            user.Health -= 1;
-            return user.Health;
-        }
+        
     }
 }

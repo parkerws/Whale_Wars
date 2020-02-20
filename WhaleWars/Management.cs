@@ -9,15 +9,7 @@ namespace WhaleWars
         const int TYPESPEED = 30;
 
 
-        public static Whale Mgmt(string name)
-        {
-            Console.Clear();
-            Whale Player = new Whale(name, CharClass.fighter, 1, 1, 1);
-            Player = Whale.WhaleSelect(Player, name);
-
-            Whale.StartItems(Player);
-            return Player;
-        }
+       
         public static void Title()
         {
             //Console.SetWindowSize(100, 50);
@@ -62,12 +54,6 @@ namespace WhaleWars
             Typewrite("A Group-One production.\n\t\t\t\t\t\t\t\t A Chartreuse Dysentery Amoeba Game.\n", TYPESPEED);
         }
 
-        public static string PlayerName()
-        {
-            Console.Clear();
-            Console.WriteLine("Please input a name\n");
-            string name = ConsoleInterface.Input();
-            return name;
-        }
+      
     }
 }

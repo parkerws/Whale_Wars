@@ -1,16 +1,21 @@
 using System;
 namespace WhaleWars
 {
-    public class Weapon
+    public class Weapon : Item
     {
-        public string Name { get; set; } 
+        
         public int Damage { get; set; }
         
-
         public Weapon(string weapon, int damage)  // Constructor needs these 3 parameters to create. This is only used for the CreateWeapons() method.
         {
             Name = weapon;
             Damage = damage;            
+        }
+
+        public Weapon()
+        {
+            Name = "Will's Mustache";
+            Damage = 0;
         }
 
         //public static Weapon CreateWeapon(WeaponList weap) //Method that uses a list of type Weapon to create all weapons necessary for the game.
@@ -65,8 +70,66 @@ namespace WhaleWars
             int wo = r.Next(1, 11);
             if (Player.CC == CharClass.fighter) { Weapon FWeap = new Weapon(fwn, wo); return FWeap; }
             if (Player.CC == CharClass.mage) { Weapon MWeap = new Weapon(mwn, wo); return MWeap; }
-            if (Player.CC == CharClass.fighter) { Weapon RWeap = new Weapon(rwn, wo); return RWeap; }
+            if (Player.CC == CharClass.ranger) { Weapon RWeap = new Weapon(rwn, wo); return RWeap; }
             else {return null; }            
         } //altered to fit the Get; Set; variables, doesnt produce a name.. work in progress.
     }
+
+    public class Sword : Weapon
+    {
+        public Sword() : base()
+        {
+            Name = "Sword";
+            Damage = 6;
+        }
+    } 
+    public class Knife : Weapon
+    {
+        public Knife() : base()
+        {
+            Name = "Knife";
+            Damage = 7;
+        }
+    }
+    public class Bow : Weapon
+    {
+        public Bow() : base()
+        {
+            Name = "Bow";
+            Damage = 2;
+        }
+    }
+    public class Blowhole : Weapon
+    {
+        public Blowhole() : base()
+        {
+            Name = "Blowhole";
+            Damage = 9;
+        }
+    }
+    public class Chimichanga : Weapon
+    {
+        public Chimichanga() : base()
+        {
+            Name = "Chimichanga";
+            Damage = 8;
+        }
+    }
+    public class Wand : Weapon
+    {
+        public Wand() : base()
+        {
+            Name = "Wand";
+            Damage = 5;
+        }
+    }
+    public class UltraBoof : Weapon
+    {
+        public UltraBoof() : base()
+        {
+            Name = "UltraBoof";
+            Damage = 10;
+        }
+    }
+
 }

@@ -121,14 +121,14 @@ C:\Users\job_2\OneDrive\Desktop\HomeworkJank\MSSACohort5\Whale_Wars\WhaleWars\ob
 C:\Users\job_2\OneDrive\Desktop\HomeworkJank\MSSACohort5\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.AssemblyInfo.cs
 C:\Users\job_2\OneDrive\Desktop\HomeworkJank\MSSACohort5\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.dll
 C:\Users\job_2\OneDrive\Desktop\HomeworkJank\MSSACohort5\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.pdb
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.exe
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.deps.json
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.runtimeconfig.json
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.runtimeconfig.dev.json
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.dll
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.pdb
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.csprojAssemblyReference.cache
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.AssemblyInfoInputs.cache
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.AssemblyInfo.cs
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.dll
-C:\Users\diego\source\repos\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.pdb
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.exe
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.deps.json
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.runtimeconfig.json
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.runtimeconfig.dev.json
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.dll
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WhaleWars.pdb
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.csprojAssemblyReference.cache
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.AssemblyInfoInputs.cache
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.AssemblyInfo.cs
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.dll
+E:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.pdb
