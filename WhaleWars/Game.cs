@@ -119,7 +119,7 @@ namespace WhaleWars
         {
             ConsoleInterface.HUD(Player);
 
-            Fastwrite("\nYour ship comes to a holt on the outskirts of Blowholia's capital city: Pier-182", "Dialog");
+            Fastwrite("\nYour ship comes to a holt on the outskirts of Blowholia's capital city: Pier-182", "dialog");
             Typewrite("\nTime to get some answers.", "self");
             Fastwrite("\n\"Arrived: Blowholia Prime\"", "friend");
             Typewrite(" the ships AI says over the inter inter-com.", "dialog");
@@ -136,6 +136,12 @@ namespace WhaleWars
             Fastwrite(" Dolph Lundphin", "enemy");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("Lundphin! I should've known this was your doing!", "self");
+            Fastwrite("\nYou've made a big mistake comming back here, ","enemy");
+            Fastwrite($"{Player.Name}!", "self");
+            
         }
 
         private static void Typewrite(string message, string color)
