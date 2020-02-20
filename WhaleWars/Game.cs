@@ -109,7 +109,7 @@ namespace WhaleWars
             Typewrite("\nCpt.Hookfin: \"For today.. But hope is not\"", "friend");
             Typewrite("\nHe say's with a grin, as he watches your ship enter the atmosphere", "dialog");
             Console.WriteLine("\nPress Space to continue.");
-            Console.ReadLine();
+            Console.ReadKey();
             Console.Clear();
 
         }
