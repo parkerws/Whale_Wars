@@ -82,16 +82,18 @@ namespace WhaleWars
             Typewrite($"\n{Player.Name}", "yellow");
             Fastwrite(", Do you want to go too Blowholia Prime?", "dialog");
             Console.WriteLine("\nA) Yes" +
-                "\nB) No");
-            input = input.ToUpper();
+                "\nB) No");            
             input = Console.ReadLine();
+            input = input.ToUpper();
             if (input == "A")
             {
                 Fastwrite("\n You point your ship towards Blowholia Prime", "dialog");
+                Console.WriteLine("Press Space to continue.");
+                Console.ReadKey();
             }
             else
             {
-                Typewrite("\n I need to find out what happened to me", "self");
+                ConsoleInterface.Ship(Player);
             }
 
         }
@@ -111,6 +113,11 @@ namespace WhaleWars
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
+
+        }
+        public static void BlowholiaDialog(Whale Player)
+        {
+            ConsoleInterface.HUD(Player);
 
         }
 
