@@ -19,7 +19,7 @@ namespace WhaleWars
             Console.Clear();
             Typewrite("\nWelcome to the console based adventure game!", "dialog\n\n");
             Fastwrite("\nYou wake up floating through space...", "dialog\n\n");
-            Console.WriteLine("\nPress space to continue...");
+            Console.WriteLine("\nPress the Spacebar to continue...");
             Console.ReadKey();
            // nameCharacter();
 
@@ -115,10 +115,10 @@ namespace WhaleWars
             Console.Clear();
 
         }
-        public static void BlowholiaDialog(Whale Player, Enemies enemy)
+        public static void BlowholiaDialog(Whale Player)
         {
             ConsoleInterface.HUD(Player);
-            enemy = Enemies.EnemyGenerator();
+            Enemies enemy = Enemies.EnemyGenerator();
  
             Fastwrite("\nYour ship comes to a holt on the outskirts of Blowholia's capital city: Pier-182", "dialog");
             Typewrite("\nTime to get some answers.", "self");
@@ -139,15 +139,16 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Typewrite("\nLundphin! I should've known this was your doing!", "self");
+            Typewrite("\nLundphin! ", "enemy");
+             Fastwrite("I should've known this was your doing!", "self");
             Fastwrite("\nYou've made a big mistake comming back here, ","enemy");
             Fastwrite($"{Player.Name}!", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Typewrite("\nNow you're going to die by the hand of minion,","enemy");
-            Fastwrite($"{enemy.Name}", "yellow");
+            Typewrite("\nNow you're going to die by the hand of my minion, ","enemy");
+            Fastwrite($"{enemy.Name}"!, "yellow");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
