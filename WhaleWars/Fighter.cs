@@ -46,7 +46,7 @@ namespace WhaleWars
 
             int pd = Player.Offense - target.Defense;
             target.Health -= (Player.Offense - target.Defense);
-            Console.WriteLine($"You hastely attack with {Player.EquipedWeapon[0].Name} dealing {pd} to {target.Name}");
+            Console.WriteLine($"You hastely attack with your {Player.EquipedWeapon[0].Name} dealing {pd} to {target.Name}");
 
             return target.Health;
         }

@@ -1,60 +1,81 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace WhaleWars
 {
     class Mage
     {
         //Methods used to represent a Mage spell as damage to a target.
-        public static int MageMoves(Whale user, Enemies target)
+        public static int MageMoves(Whale Player, Enemies target)
         {
+
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
             Console.WriteLine("Select a skill to use\n" +
-                "1) Magic Missle\n" +
-                "2) Fire Ball\n" +
-                "3) Blood Syphon\n" +
-                "4) ArcaneShield");
+                "1) Attack          MP +3\n"+
+                "2) Magic Missle    MP -2\n" +
+                "3) Fire Ball       MP -4\n" +
+                "4) Blood Syphon    MP -4\n" +
+                "5) Arcane Blast    MP -5\n");
 
             string Input = Console.ReadLine();
 
             switch (Input)
             {
-                case "1": return Mage.MagicMissle(user, target);
-                case "2": return Mage.FireBall(user, target);
-                case "3": return Mage.BloodSyphon(user, target);
-                case "4": return Mage.ArcaneShield(user);
+                case "1": { Player.MagicPoints += 3; return Fighter.BasicAtk(Player, target); }
+                case "2": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 2; return MagicMissle(Player, target); }
+                    else { OutofMP(Player, target); return 0; }
+                case "3": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 4; return FireBall(Player, target); }
+                    else { OutofMP(Player, target); return 0; }
+                case "4": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 4; return BloodSyphon(Player, target); }
+                    else { OutofMP(Player, target); return 0; }
+                case "5": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 5; return ArcaneBlast(Player, target); }
+                    else { OutofMP(Player, target); return 0; }
                 default: break;
             }
 
-            return Mage.Wand(user, target);
-        } //Allows the user to pick a skill           
-        public static int Wand(Whale user, Enemies target)
+            return Fighter.BasicAtk(Player, target);
+        } //Allows the user to pick a skill
+        public static void OutofMP(Whale Player, Enemies target)
         {
-            target.Health -= (user.Offense - target.Defense);
-            return target.Health;
-        } //Basic attack                                  
-        public static int MagicMissle(Whale user, Enemies target)
+            Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300); MageMoves(Player, target);
+        }
+                                       
+        public static int MagicMissle(Whale Player, Enemies target)
         {
-            target.Health -= user.Offense;
+            target.Health -= Player.Offense + 5;
+
+            Console.WriteLine($"You shoot a powerfull missle out of tail, dealing {Player.Offense + 5} to {target.Name}");
+
             return target.Health;
         } //Deals more damage than basic attack    
-        public static int FireBall(Whale user, Enemies target)
+        public static int FireBall(Whale Player, Enemies target)
         {
-            target.Health -= (user.Offense + 2);
+            target.Health -= (Player.Offense * 3);
+
+            Console.WriteLine($"You shoot a massive fireball, dealing {Player.Offense} to {target.Name}");
+
             return target.Health;
         } //Deals more damage than Magic Missle       
-        public static int BloodSyphon(Whale user, Enemies target)
+        public static int BloodSyphon(Whale Player, Enemies target)
         {
-            target.Health -= user.Offense;
-            user.Health += user.Offense;
+            target.Health -= Player.Offense;
+            Player.Health += Player.Offense/2;
+
+            Console.WriteLine($"Blood runs down {target.Name} and pools around you.\n" +
+                $"You absorbe {target.Name} essence dealing {Player.Offense} damage and gaining {Player.Offense/2} life");
+
             return target.Health;
         } //Deals damage and absorbes health        
-        public static int ArcaneShield(Whale user)
+        public static int ArcaneBlast(Whale Player, Whale target)
         {
-            Console.WriteLine("You are surrounded with a purple barrier.");
-            user.Defense += 20;
-            return user.Defense;
-        } //Increases Defense                               
+            Console.WriteLine($"Arcane explodes from your tail, dealing {Player.Offense * 5} to {target.Name}");
+            target.Health -= (Player.Offense * 5);
+            return target.Health;
+        } //deals all the damage                             
         
     }
 }
