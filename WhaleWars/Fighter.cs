@@ -25,15 +25,19 @@ namespace WhaleWars
             {
                 case 1: { Player.MagicPoints += 1; return Fighter.BasicAtk(Player, target);} 
                 case 2: if (Player.MagicPoints >= 2) {Player.MagicPoints -= 2; return Fighter.Lung(Player, target); }
-                    else { Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300); return FighterMoves(Player, target); }
+                    else { OutofMP(Player, target); return 0; }
                 case 3: if (Player.MagicPoints >= 3) { Player.MagicPoints -= 3; return Fighter.ShieldSlam(Player, target); }
-                    else { Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300); return FighterMoves(Player, target); }
+                    else { OutofMP(Player, target); return 0; }
                 case 4: if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Fighter.Execute(Player, target); }
-                    else { Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300); return FighterMoves(Player, target); }
+                    else { OutofMP(Player, target); return 0; }
                 case 5: if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Fighter.Berserk(Player, target); }
-                    else { Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300); return FighterMoves(Player, target); }
+                    else { OutofMP(Player, target); return 0; }
                 default: return BasicAtk(Player, target);
             }
+        }
+        public static void OutofMP(Whale Player, Enemies target)
+        {
+            Console.WriteLine("You do not have enough MP, please select a different skill"); Thread.Sleep(1300);  FighterMoves(Player, target);
         }
         public static int BasicAtk(Whale Player, Enemies target)
         {
@@ -42,7 +46,7 @@ namespace WhaleWars
 
             int pd = Player.Offense - target.Defense;
             target.Health -= (Player.Offense - target.Defense);
-            Console.WriteLine($"You swing your {Player.EquipedWeapon[0].Name} dealing {pd} to {target.Name}");
+            Console.WriteLine($"You hastely attack with {Player.EquipedWeapon[0].Name} dealing {pd} to {target.Name}");
 
             return target.Health;
         }
@@ -99,8 +103,6 @@ namespace WhaleWars
             Console.WriteLine($"You bash your weapon against {target.Name}, dealing {Player.Defense - target.Defense} damage");
 
             return target.Health;
-        }
-
-        
+        }        
     }
 }
