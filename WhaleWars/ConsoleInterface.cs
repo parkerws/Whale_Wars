@@ -203,7 +203,7 @@ namespace WhaleWars
             Console.Write(MagicPoints + " MP ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(Attack + " ATK ");
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(Defence + " DEF \n");  // this would be so much easier if Guse could spell.....
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("====================================================================================\n\n\n\n");
