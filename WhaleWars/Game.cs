@@ -103,7 +103,7 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
 
             Typewrite("\nMeanwhie on blowholia...", "dialog\n");
-            Fastwrite("\nThe sounds of exploading space cannons tear through the thin Blowholia morning air","red");
+            Fastwrite("\nThe sounds of exploading space cannons and dolphin's laugh tear through the thin Blowholia morning air","red");
             Typewrite("\nBrave Bloholian solders are trudging through the mud of the battle field","dialog");
             Typewrite("\n\"Is the day lost sir?\"", "friend");
             Typewrite("one Blowholian sergeant says to", "dialog");
@@ -118,6 +118,7 @@ namespace WhaleWars
         public static void BlowholiaDialog(Whale Player)
         {
             ConsoleInterface.HUD(Player);
+
 
         }
 
