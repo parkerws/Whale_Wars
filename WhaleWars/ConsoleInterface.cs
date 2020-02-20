@@ -34,7 +34,7 @@ namespace WhaleWars
             } while (true);
             return name;
         }
-        public static void PlayerDied(Whale user, Enemies target)
+        public static void PlayerDied(Whale Player, Enemies target)
         {
             Console.Clear();
             Console.WriteLine("__________________________________________________________________________________________________________________");
@@ -47,9 +47,9 @@ namespace WhaleWars
             Console.WriteLine("       ,:::::'  .  . ;           OOO\"");
             Console.WriteLine("       ::::::;       ;          OOOOO\"");
             Console.WriteLine("       ;:::::;       ;         OOOOOOOO");
-            Console.WriteLine($"     ,;::::::;     ;'         / OOOOOOO          {user.Name} Has been slain by {target.Name}");
+            Console.WriteLine($"     ,;::::::;     ;'         / OOOOOOO          {Player.Name} Has been slain by {target.Name}");
             Console.WriteLine("    ;:::::::::`. ,,,;.        /  / DOOOOOO             Would you like to [E]xit or start [O]ver?");
-            Console.WriteLine("  .';:::::::::::::::::;,     /  /     DOOOO");   // yes or no what?? hella ambiguous
+            Console.WriteLine("  .';:::::::::::::::::;,     /  /     DOOOO");   
             Console.WriteLine(" ,::::::;::::::;;;;::::;,   /  /        DOOO");
             Console.WriteLine(";`::::::`'::::::;;;::::: ,#/  /          DOOO");
             Console.WriteLine(":`:::::::`;::::::;;::: ;::#  /            DOOO");
@@ -61,13 +61,12 @@ namespace WhaleWars
             Console.WriteLine("  `:::::`::::::::;' /  / `:#");
             Console.WriteLine("   ::::::`:::::;'  /  /   `#");
             Console.WriteLine("_________________________________________________________________________________________________________________");
-            string input = Convert.ToString(Input().ToLower());
+            string input = Input().ToLower();
 
-            switch (input.ToLower())
-            {
-                case "o": { Console.Clear(); Program.Main(); break; }
-                case "e": { Environment.Exit(0); break; }
-            }
+               if(input == "o") { Console.Clear(); Program.Main();}
+               if (input == "e") { Environment.Exit(0);}
+            if (input != "e" || input != "o") { PlayerDied(Player, target); } 
+            
         }
         public static void WinArt(Whale Player, Enemies target)
         {
