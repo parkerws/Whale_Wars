@@ -81,11 +81,11 @@ namespace WhaleWars
             string input = "";
             Typewrite($"\n{Player.Name}", "yellow");
             Fastwrite(", Do you want to go too Blowholia Prime?", "dialog");
-            Console.WriteLine("\nA) Yes" +
-                "\nB) No");            
+            Console.WriteLine("\nY) Yes" +
+                "\nN) No");            
             input = Console.ReadLine();
             input = input.ToUpper();
-            if (input == "A")
+            if (input == "Y")
             {
                 Fastwrite("\n You point your ship towards Blowholia Prime\n", "dialog");
                 Console.WriteLine("Press Space to continue.");
@@ -104,7 +104,7 @@ namespace WhaleWars
 
             Typewrite("\nMeanwhie on blowholia...", "dialog\n");
             Fastwrite("\nThe sounds of exploading space cannons and dolphin's laugh tear through the thin Blowholia morning air","red");
-            Typewrite("\nBrave Bloholian solders are trudging through the mud of the battle field","dialog");
+            Typewrite("\nBrave Blowholian solders are trudging through the mud of the battle field","dialog");
             Typewrite("\n\"Is the day lost sir?\"", "friend");
             Typewrite("one Blowholian sergeant says to", "dialog");
             Typewrite(" Captain Whalord-Hookfin", "friend");
@@ -115,10 +115,11 @@ namespace WhaleWars
             Console.Clear();
 
         }
-        public static void BlowholiaDialog(Whale Player)
+        public static void BlowholiaDialog(Whale Player, Enemies enemy)
         {
             ConsoleInterface.HUD(Player);
-
+            enemy = Enemies.EnemyGenerator();
+ 
             Fastwrite("\nYour ship comes to a holt on the outskirts of Blowholia's capital city: Pier-182", "dialog");
             Typewrite("\nTime to get some answers.", "self");
             Fastwrite("\n\"Arrived: Blowholia Prime\"", "friend");
@@ -138,10 +139,21 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Typewrite("Lundphin! I should've known this was your doing!", "self");
+            Typewrite("\nLundphin! I should've known this was your doing!", "self");
             Fastwrite("\nYou've made a big mistake comming back here, ","enemy");
             Fastwrite($"{Player.Name}!", "self");
-            
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nNow you're going to die by the hand of minion,","enemy");
+            Fastwrite($"{enemy.Name}", "yellow");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Combat.Battle(Player, enemy);
+
         }
 
         private static void Typewrite(string message, string color)
