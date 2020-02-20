@@ -28,7 +28,7 @@ namespace WhaleWars
         public static string PlayerName()
         {
             Console.Clear();
-            Typewrite("\nWhats my name?", "self");
+            Typewrite("\nWhat is thy name?", "self");
             Fastwrite("\nType in your name: ", "dialog\n");
             string name = ConsoleInterface.Input();
             return name;

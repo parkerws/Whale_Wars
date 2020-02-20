@@ -290,5 +290,44 @@ namespace WhaleWars
                 Player.EquipedArmor.Add(shirt);
             }
         } //used to add a starting Armor bassed off of starting class.
+
+        public static void UpgradeWeapon(Whale Player, Weapon newWeap) 
+        {
+            Weapon oldWeapon = Player.EquipedWeapon.Last();
+            Player.EquipedWeapon.Remove(oldWeapon);
+            Player.inventory.Add(oldWeapon);
+            Player.EquipedWeapon.Add(newWeap);
+        }
+
+        public static void UpgradeArmor(Whale Player, Armor newArmor)
+        {
+            Armor oldArmor = Player.EquipedArmor.Last();
+            Player.inventory.Add(oldArmor);
+            Player.EquipedArmor.Remove(oldArmor);
+            Player.EquipedArmor.Add(newArmor);
+        }
+
+        public static void changeWeapon(Whale player)
+        {
+            int counter = 1;
+            int weapSelection;
+            List<Weapon> weapList = new List<Weapon>();
+            Console.WriteLine();
+            foreach(Weapon weap in player.inventory)
+            {
+                Console.WriteLine($"{counter}. {weap}");
+                weapList.Add(weap);
+                counter++;
+            }
+            Console.WriteLine("Select which weapon you wish to equip.");
+            if (int.TryParse(Console.ReadLine(), out weapSelection))
+            {
+                weapSelection -= 1;
+            }
+            else Console.WriteLine("Invalid input. Please select from the above list.");
+
+            UpgradeWeapon(player, weapList.ElementAt(weapSelection));
+            player.RemoveItem(weapList.ElementAt(weapSelection));
+        }
     }
 }

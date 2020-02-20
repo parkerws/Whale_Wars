@@ -15,14 +15,14 @@ namespace WhaleWars
                 "3) Blood Syphon\n" +
                 "4) ArcaneShield");
 
-            int Input = Convert.ToInt32(Console.ReadLine());
+            string Input = Console.ReadLine();
 
             switch (Input)
             {
-                case int n when n == 1: return Mage.MagicMissle(user, target);
-                case int n when n == 2: return Mage.FireBall(user, target);
-                case int n when n == 3: return Mage.BloodSyphon(user, target);
-                case int n when n == 4: return Mage.ArcaneShield(user);
+                case "1": return Mage.MagicMissle(user, target);
+                case "2": return Mage.FireBall(user, target);
+                case "3": return Mage.BloodSyphon(user, target);
+                case "4": return Mage.ArcaneShield(user);
                 default: break;
             }
 

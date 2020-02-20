@@ -15,15 +15,15 @@ namespace WhaleWars
                 "4) Execute -4 MP\n" +
                 "5) Berserk -4 MP\n");
 
-            int Input = Convert.ToInt32(Console.ReadLine());
+            string Input = Console.ReadLine();
 
             switch (Input)
             {
-                case 1: return Fighter.BasicAtk(Player, target);
-                case 2: return Fighter.Lung(Player, target);
-                case 3: return Fighter.ShieldSlam(Player, target);
-                case 4: return Fighter.Execute(Player, target);
-                case 5: return Fighter.Berserk(Player, target);
+                case "1": return Fighter.BasicAtk(Player, target);
+                case "2": return Fighter.Lung(Player, target);
+                case "3": return Fighter.ShieldSlam(Player, target);
+                case "4": return Fighter.Execute(Player, target);
+                case "5": return Fighter.Berserk(Player, target);
                 default: return BasicAtk(Player, target);
             }
         }

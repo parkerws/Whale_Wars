@@ -142,10 +142,10 @@ namespace WhaleWars
             string input = Console.ReadLine();
             switch (input)
             {
-                case "1": { Player.EquipedWeapon.Add(inventory.ElementAt(0)); Player.Wallet -= 5; Ship( Player); Console.Clear(); return null; }
-                case "2": { Player.EquipedWeapon.Add(inventory.ElementAt(1)); Player.Wallet -= 1; Ship( Player); Console.Clear(); return null; }
-                case "3": { Player.EquipedWeapon.Add(inventory.ElementAt(2)); Player.Wallet -= 4; Ship(Player); Console.Clear(); return null; }
-                case "4": { Player.EquipedWeapon.Add(inventory.ElementAt(3)); Player.Wallet -= 3; Ship( Player); Console.Clear(); return null; }
+                case "1": { Whale.UpgradeWeapon(Player, inventory.ElementAt(0)); Player.Wallet -= 5; Ship( Player); Console.Clear(); return null; }
+                case "2": { Whale.UpgradeWeapon(Player, inventory.ElementAt(1)); Player.Wallet -= 1; Ship( Player); Console.Clear(); return null; }
+                case "3": { Whale.UpgradeWeapon(Player, inventory.ElementAt(2)); Player.Wallet -= 4; Ship(Player); Console.Clear(); return null; }
+                case "4": { Whale.UpgradeWeapon(Player, inventory.ElementAt(3)); Player.Wallet -= 3; Ship( Player); Console.Clear(); return null; }
                 default:  Ship(Player); return null;
             }
 
@@ -234,13 +234,15 @@ namespace WhaleWars
             Console.WriteLine("Ship HUB" +
                "\nEnter I for [I]nventory\n" +
                "Enter C for [C]ombat\n" +
-               "Enter S for [S]hop\n");
+               "Enter S for [S]hop\n" +
+               "Enter e for [E]quip different weapon\n");
             string input = Input();
             switch (input.ToLower())
             {
                 case "i": {PlayerInventory(Player); return; }
                 case "c": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
                 case "s": { ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator(Player)); return; }
+                case "e": { Whale.changeWeapon(Player); Ship(Player); return ;  }
 
                         default:
                     break;
@@ -254,6 +256,8 @@ namespace WhaleWars
 
             HUD(Player);
             Console.WriteLine($"{Player.Name}'s Inventory\n");
+
+            Console.WriteLine(Player.GetInventory());
 
             foreach (var item in Player.EquipedWeapon)
             {
