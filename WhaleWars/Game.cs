@@ -87,7 +87,7 @@ namespace WhaleWars
             input = input.ToUpper();
             if (input == "Y")
             {
-                Fastwrite("\n You point your ship towards Blowholia Prime\n", "dialog");
+                Fastwrite("\n You point the ship towards Blowholia Prime\n", "dialog");
                 Console.WriteLine("Press Space to continue.");
                 Console.ReadKey();
             }
@@ -178,7 +178,7 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Typewrite("\nCpt. Whalord steps into view.", "dialog");
+            Typewrite("\nCpt. Whalord-Hookfin steps into view.", "dialog");
             Typewrite("\nYes, sir! you lead the defence of Blowholia.", "fiend");
             Typewrite("\nYou look around at the world in ruins", "dialog.");
             Typewrite("\nWell, what a bang up job I did...", "self");
@@ -189,13 +189,36 @@ namespace WhaleWars
             Typewrite("\nYou shouldn't be so hard on yourself, sir. After all you were TAKEN!", "friend");
             Typewrite("\nTaken?", "self");
             Typewrite("\nYes, sir. About halfway through the battle. They loaded you up on that ship there.", "friend");
-            Typewrite("He gestures to the ship you arrived on", "dialog");
-            Typewrite("I wasn't worried though, sir. I knew youd make it back. Just a matter of time","friend");
+            Typewrite("\nHe gestures to the ship you arrived on", "dialog");
+            Typewrite("\nI wasn't worried though, sir. I knew youd make it back. Just a matter of time","friend");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-
+            Typewrite("\nWell I guess that explains that. I need to go after ", "self");
+            Fastwrite("Lundfin.", "enemy");
+            Typewrite("\nHe's probably halfway to ", "friend");
+            Fastwrite("Atlantis","planet");
+            Typewrite(" by now", "friend");
+            Typewrite("\nAtlantis", "location");
+            Typewrite("?", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nYup the next planet he planned to take on his plan of attack", "friend");
+            Typewrite("\nThen thats where I'm headed, thanks for your help, ", "self");
+            Typewrite("Cpt.Hookfin.", "friend");
+            Typewrite("\nYou start to walk twards the ship.", "dialog");
+            Fastwrite("\nI'd, make an upgrade while you travel if you can afford it!", "friend");
+            Typewrite("\nThe next ", "fiend");
+            Fastwrite("Henchmen", "yellow");
+            Typewrite(" you face will propably be tougher than the one you just killed!","friend");
+            Typewrite("Thanks for the tip, Cpt.", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
 
         }
 
@@ -225,7 +248,11 @@ namespace WhaleWars
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
-
+            else if (color == "planet")
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+            }
+            Console.ForegroundColor = ConsoleColor.Magenta;
             for (int i = 0; i < message.Length; i++)
             {
                 Console.Write(message[i]);
@@ -265,7 +292,10 @@ namespace WhaleWars
             {
                 Console.BackgroundColor = ConsoleColor.Red;
             }
-
+            else if (color == "planet")
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+            }
             for (int i = 0; i < message.Length; i++)
             {
                 Console.Write(message[i]);
