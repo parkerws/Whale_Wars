@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WhaleWars;
 
 namespace WhaleWars
 {
@@ -158,6 +159,18 @@ namespace WhaleWars
             sp.Add(Weapon.WeaponGen(Player));
             return sp;
         }
+
+        public static List<Item> ItemListGenerator(Whale Player)
+        {
+            List<Item> itemStore = new List<Item>();
+            itemStore.Add(Item.ItemGen("health"));
+            itemStore.Add(Item.ItemGen("Armor"));
+            itemStore.Add(Item.ItemGen("Magic"));
+            return itemStore;
+        }
+
+
+
         public static void HUD(Whale player)
         {
             Whale.ArmoryDefense(player); //used to update the hud defense
@@ -265,6 +278,11 @@ namespace WhaleWars
             foreach (var item in Player.EquipedArmor)
             {
                 Console.WriteLine($"Equiped Armor  :: {item.Name} :: {item.defense}");
+            }
+
+            foreach (var item in Player.inventory)
+            {
+                Console.WriteLine($"Item :: {Playe}")
             }
 
             Console.WriteLine("\nPress [ENTER] to return to the ship");

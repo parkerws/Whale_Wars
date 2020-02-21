@@ -329,5 +329,38 @@ namespace WhaleWars
             UpgradeWeapon(player, weapList.ElementAt(weapSelection));
             player.RemoveItem(weapList.ElementAt(weapSelection));
         }
+
+        public static void UseItem(Whale Player)
+        {
+            int counter = 0;
+            int itemSelection;
+            Console.WriteLine("Which item would you like to use?");
+            foreach (var i in Player.inventory)
+            {
+                Console.WriteLine($"{++counter}: {i.Name}");
+            }
+
+            if (int.TryParse(Console.ReadLine(), out itemSelection))
+            {
+                if (inventory[itemSelection - 1] == HealthPotion)
+                {
+                    Player.Health += inventory[itemSelection.attributeIncrease - 1];
+                    inventory.Remove(itemSelection - 1);
+                }
+
+                else if (inventory[itemSelection - 1] == ArmorPotion)
+                {
+                    Player.Armor += inventory[itemSelection.attributeIncrease - 1];
+                    inventory.Remove(itemSelection - 1);
+                }
+
+                else if (inventory[itemSelection - 1] == MagicPotion)
+                {
+                    Player.MagicPoints += inventory[itemSelection.attributeIncrease - 1];
+                    inventory.Remove(itemSelection - 1);
+                }
+            }
+            
+        }
     }
 }

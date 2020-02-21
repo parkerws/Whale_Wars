@@ -1,4 +1,6 @@
 using System;
+using WhaleWars;
+
 namespace WhaleWars
 {
     public class Weapon : Item
