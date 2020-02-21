@@ -254,37 +254,37 @@ namespace WhaleWars
             player.RemoveItem(weapList.ElementAt(weapSelection));
         }
 
-        //public static void UseItem(Whale Player)
-        //{
-        //    int counter = 1;
-        //    int itemSelection;
-        //    Console.WriteLine("Which item would you like to use?");
-        //    foreach (var i in Player.inventory)
-        //    {
-        //        Console.WriteLine($"{counter++}: {i.Name}");
-        //    }
+        public static void UseItem(Whale Player)
+        {
+            int counter = 1;
+            int itemSelection;
+            Console.WriteLine("Which item would you like to use?");
+            foreach (var i in Player.inventory)
+            {
+                Console.WriteLine($"{counter++}: {i.Name}");
+            }
 
-        //    if (int.TryParse(Console.ReadLine(), out itemSelection))
-        //    {
-        //        if (inventory.ElementAt(itemSelection - 1) == HealthPotion)
-        //        {
-        //            Player.Health += inventory[itemSelection.attributeIncrease - 1];
-        //            inventory.Remove(itemSelection - 1);
-        //        }
+            if (int.TryParse(Console.ReadLine(), out itemSelection))
+            {
+                if (Player.inventory.ElementAt(itemSelection - 1) is HealthPotion)
+                {
+                    Player.Health += Player.inventory[itemSelection - 1].attributeIncrease;
+                    Player.inventory.Remove(Player.inventory.ElementAt(itemSelection - 1));
+                }
 
-        //        else if (inventory.ElementAt(itemSelection - 1) == ArmorPotion)
-        //        {
-        //            Player.Armor += inventory[itemSelection.attributeIncrease - 1];
-        //            inventory.Remove(itemSelection - 1);
-        //        }
+                else if (Player.inventory.ElementAt(itemSelection - 1) is ArmorPotion)
+                {
+                    Player.Offense += Player.inventory[itemSelection - 1].attributeIncrease;
+                    Player.inventory.Remove(Player.inventory.ElementAt(itemSelection - 1));
+                }
 
-        //        else if (inventory.ElementAt(itemSelection - 1) == MagicPotion)
-        //        {
-        //            Player.MagicPoints += inventory[itemSelection.attributeIncrease - 1];
-        //            inventory.Remove(itemSelection - 1);
-        //        }
-        //    }
-            
-        //}
+                else if (Player.inventory.ElementAt(itemSelection - 1) is MagicPotion)
+                {
+                    Player.MagicPoints += Player.inventory[itemSelection - 1].attributeIncrease;
+                    Player.inventory.Remove(Player.inventory.ElementAt(itemSelection - 1));
+                }
+            }
+
+        }
     }
 }
