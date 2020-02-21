@@ -186,6 +186,16 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
+            Typewrite("\nYou shouldn't be so hard on yourself, sir. After all you were TAKEN!", "friend");
+            Typewrite("\nTaken?", "self");
+            Typewrite("\nYes, sir. About halfway through the battle. They loaded you up on that ship there.", "friend");
+            Typewrite("He gestures to the ship you arrived on", "dialog");
+            Typewrite("I wasn't worried though, sir. I knew youd make it back. Just a matter of time","friend");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
 
         }
 
