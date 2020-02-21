@@ -10,7 +10,12 @@ namespace WhaleWars
         public int cost { get; set; }
         public int attributeIncrease { get; set; }
 
-
+        public Item()
+        {
+            Name = "Sven";
+            cost = 2;
+            attributeIncrease = 10;
+        }
 
         public static Item ItemGen(string itemType)
         {
@@ -70,7 +75,7 @@ namespace WhaleWars
 }
 
 
-public class HealthPotion : Item
+    public class HealthPotion : Item
     {
         public HealthPotion(string name) : base()
         {
