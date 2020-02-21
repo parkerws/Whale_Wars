@@ -141,8 +141,9 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Typewrite("\nLundphin! ", "enemy");
              Fastwrite("I should've known this was your doing!", "self");
-            Fastwrite("\nYou've made a big mistake comming back here, ","enemy");
-            Fastwrite($"{Player.Name}!", "self");
+            Typewrite("\nYou've made a big mistake comming back here, ","enemy");
+            Typewrite($"{Player.Name}!", "self");
+            Fastwrite("\nMy cronies will rip you to sheds!", "enemy");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
@@ -167,7 +168,25 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Typewrite("\nLundfin's ship descends from the sky and lands behind him", "dialog");
+            Typewrite("\nLundfin's ", "enemy");
+            Typewrite("ship descends from the sky and lands behind him.", "dialog");
+            Typewrite("\nHe and his gang climb abord and take off.", "dialog");
+            Typewrite("\nI knew you'd return, ", "friend");
+            Typewrite($"Admiral {Player.Name} Whaleworth.","self");
+            Typewrite("\nAdmiral?", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nCpt. Whalord steps into view.", "dialog");
+            Typewrite("\nYes, sir! you lead the defence of Blowholia.", "fiend");
+            Typewrite("\nYou look around at the world in ruins", "dialog.");
+            Typewrite("\nWell, what a bang up job I did...", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
         }
 
         private static void Typewrite(string message, string color)
