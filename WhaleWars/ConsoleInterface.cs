@@ -105,7 +105,7 @@ namespace WhaleWars
             Input();
             ConsoleInterface.Ship(Player);
         }
-        public static List<Weapon> WhaleShop(Whale Player, List<Weapon> inventory)
+        public static List<Weapon> WhaleShop(Whale Player, List<Weapon> inventory, List<Item> items)
         {
             Console.Clear();
             ConsoleInterface.HUD(Player);
@@ -137,6 +137,15 @@ namespace WhaleWars
                 if (i == 4) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 3 Doubloon   "); }
                 i++;
             };
+            foreach (Weapon item in items)
+            {
+                
+                if (i == 1) { Console.WriteLine($"Item {i})  {item.Name} Cost {item.cost}"); }
+                if (i == 2) { Console.WriteLine($"Item {i})  {item.Name} Cost {item.cost}"); }
+                if (i == 3) { Console.WriteLine($"Item {i})  {item.Name} Cost {item.cost}"); }
+                if (i == 4) { Console.WriteLine($"Item {i})  {item.Name} Cost {item.cost}"); }
+                i++;
+            };
             Console.WriteLine("[E]xit");
             
             string input = Console.ReadLine();
@@ -157,6 +166,7 @@ namespace WhaleWars
             sp.Add(Weapon.WeaponGen(Player));
             sp.Add(Weapon.WeaponGen(Player));
             sp.Add(Weapon.WeaponGen(Player));
+           
             return sp;
         }
 
@@ -253,7 +263,7 @@ namespace WhaleWars
             {
                 case "i": {PlayerInventory(Player); return; }
                 case "c": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
-                case "s": { ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator(Player)); return; }
+                case "s": { ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator(Player), ConsoleInterface.ItemListGenerator(Player)); return; }
                 case "e": { Whale.changeWeapon(Player); Ship(Player); return ;  }
 
                         default:
@@ -282,7 +292,7 @@ namespace WhaleWars
 
             foreach (var item in Player.inventory)
             {
-                Console.WriteLine($"Item :: {Playe}")
+                Console.WriteLine($"Item :: {item}");
             }
 
             Console.WriteLine("\nPress [ENTER] to return to the ship");

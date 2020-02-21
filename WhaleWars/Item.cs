@@ -43,9 +43,6 @@ namespace WhaleWars
         string aItem = ArmorItems[armorItem];
         string mItem = MagicItems[magicItem];
 
-        int wo = r.Next(1, 4);
-
-
             if (itemType == "health")
         {
             HealthPotion healthPotion = new HealthPotion(hItem);
