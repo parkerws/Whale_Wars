@@ -77,11 +77,12 @@ namespace WhaleWars
 
             return user.Health;
         }
-        public static int EnemyUnleashedRage(Whale user, Enemies target)
+        public static int EnemyUnleashedRage(Whale Player, Enemies target)
         {
-            Console.WriteLine($"\n{target.Name} uses Unleashed Rage, dealing {target.Offense} damage.");
-            user.Health -= target.Offense;
-            return user.Health;
+            Console.WriteLine($"\n{target.Name} Unleashes Rage, increasing base ATK by 3 and dealing {target.Offense - Player.Defense} damage.");
+            target.Offense += 3;
+            Player.Health -= (target.Offense - Player.Defense);
+            return Player.Health;
         }
         public static int EnemySyphonLife(Whale user, Enemies target)
         {
@@ -94,6 +95,7 @@ namespace WhaleWars
 
             user.Health -= target.Offense - user.Defense;
             target.Health += target.Offense - user.Defense;
+
             Console.WriteLine($"\n{target.Name} uses Syphone Life, dealing {target.Offense - user.Defense} damage "+
                 "and absorbing { target.Offense - user.Defense} health.");
            
