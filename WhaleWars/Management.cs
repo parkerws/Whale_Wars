@@ -46,7 +46,7 @@ namespace WhaleWars
   \__/\  / |___|  (____  /____/\___  >   \__/\  /  (____  /__|  /____  >
        \/       \/     \/          \/         \/        \/           \/                                  
                                                                  ";
-            Typewrite(title, 5);
+            Console.WriteLine(title, 5);
         }
         
         static void Welcome()

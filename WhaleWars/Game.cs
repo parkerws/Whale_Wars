@@ -17,8 +17,9 @@ namespace WhaleWars
           //  Console.WriteLine("\nPress Space to continue...");
             Console.ReadKey();
             Console.Clear();
-            Typewrite("\nWelcome to the console based adventure game!", "dialog");
-            Fastwrite("\nYou wake up floating through space...", "dialog");
+            Console.ForegroundColor = ConsoleColor.White;
+            Typewrite("\nWelcome to the console based adventure game!", "white");
+            Fastwrite("\nYou wake up floating through space...", "white");
             Console.WriteLine("\nPress the Spacebar to continue...");
             Console.ReadKey();
            // nameCharacter();
@@ -68,7 +69,7 @@ namespace WhaleWars
             Fastwrite("\nYou see a small planet off in the distance...", "dialog");
             Typewrite("\nThat looks like Blowholia Prime... wait...", "self");
             Typewrite("\nBlowholia... I think I was there... something bad happened...", "self");
-            Typewrite("\nI can't remember... maybe there are some answers there", "self");
+            Typewrite("\nI can't remember... maybe they'll have some answers", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
@@ -188,6 +189,10 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Typewrite("\nYou shouldn't be so hard on yourself, sir. After all you were TAKEN!", "friend");
             Typewrite("\nTaken?", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
             Typewrite("\nYes, sir. About halfway through the battle. They loaded you up on that ship there.", "friend");
             Typewrite("\nHe gestures to the ship you arrived on", "dialog");
             Typewrite("\nI wasn't worried though, sir. I knew youd make it back. Just a matter of time","friend");
@@ -198,9 +203,9 @@ namespace WhaleWars
             Typewrite("\nWell I guess that explains that. I need to go after ", "self");
             Fastwrite("Lundfin.", "enemy");
             Typewrite("\nHe's probably halfway to ", "friend");
-            Fastwrite("Atlantis", "magenta");
+            Fastwrite("Atlantis", "location");
             Typewrite(" by now", "friend");
-            Typewrite("\nAtlantis", "magenta");
+            Typewrite("\nAtlantis", "location");
             Typewrite("?", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
@@ -210,11 +215,15 @@ namespace WhaleWars
             Typewrite("\nThen thats where I'm headed, thanks for your help, ", "self");
             Typewrite("Cpt.Hookfin.", "friend");
             Typewrite("\nYou start to walk twards the ship.", "dialog");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
             Fastwrite("\nI'd, make an upgrade while you travel if you can afford it!", "friend");
-            Typewrite("\nThe next ", "fiend");
+            Typewrite("\nThe next ", "friend");
             Fastwrite("Henchmen", "yellow");
             Typewrite(" you face will propably be tougher than the one you just killed!","friend");
-            Typewrite("Thanks for the tip, Cpt.", "self");
+            Typewrite("\nThanks for the tip, Cpt.", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
@@ -240,7 +249,7 @@ namespace WhaleWars
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
             }
-            else if (color == "dialog")
+            else if (color == "white")
             {
                 Console.ForegroundColor = ConsoleColor.White;
             }
@@ -248,11 +257,11 @@ namespace WhaleWars
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
-            else if (color == "magenta")
+            else if (color == "location")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
             }
-            Console.ForegroundColor = ConsoleColor.Magenta;
+            
             for (int i = 0; i < message.Length; i++)
             {
                 Console.Write(message[i]);
@@ -280,7 +289,7 @@ namespace WhaleWars
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
             }
-            else if (color == "dialog")
+            else if (color == "white")
             {
                 Console.ForegroundColor = ConsoleColor.White;
             }
@@ -292,7 +301,7 @@ namespace WhaleWars
             {
                 Console.BackgroundColor = ConsoleColor.Red;
             }
-            else if (color == "magenta")
+            else if (color == "location")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
             }
