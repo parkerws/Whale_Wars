@@ -17,9 +17,9 @@ namespace WhaleWars
             Console.WriteLine("Select a skill to use\n" +
                 "1) Attack          MP +3\n"+
                 "2) Magic Missle    MP -2\n" +
-                "3) Fire Ball       MP -4\n" +
-                "4) Blood Syphon    MP -4\n" +
-                "5) Arcane Blast    MP -5\n");
+                "3) Fire Ball       MP -3\n" +
+                "4) Blood Syphon    MP -5\n" +
+                "5) Arcane Blast    MP -4\n");
 
             string Input = Console.ReadLine();
 
@@ -28,11 +28,11 @@ namespace WhaleWars
                 case "1": { Player.MagicPoints += 3; return Fighter.BasicAtk(Player, target); }
                 case "2": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 2; return MagicMissle(Player, target); }
                     else { OutofMP(Player, target); return 0; }
-                case "3": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 4; return FireBall(Player, target); }
+                case "3": if (Player.MagicPoints >= 3) { Player.MagicPoints -= 3; return FireBall(Player, target); }
                     else { OutofMP(Player, target); return 0; }
-                case "4": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 4; return BloodSyphon(Player, target); }
+                case "4": if (Player.MagicPoints >= 5) { Player.MagicPoints -= 5; return BloodSyphon(Player, target); }
                     else { OutofMP(Player, target); return 0; }
-                case "5": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 5; return ArcaneBlast(Player, target); }
+                case "5": if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return ArcaneBlast(Player, target); }
                     else { OutofMP(Player, target); return 0; }
                 default: break;
             }

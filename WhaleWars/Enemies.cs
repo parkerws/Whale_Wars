@@ -35,7 +35,7 @@ namespace WhaleWars
         public static int EnemyAI(Whale Player, Enemies target)
         {
             Random r = new Random();
-            int ai = r.Next(1, 5);
+            int ai = r.Next(1, 6);
 
             switch (ai)
             {
@@ -43,7 +43,7 @@ namespace WhaleWars
                 case 2: return EnemySmash(Player, target);
                 case 3: return EnemyUnleashedRage(Player, target);
                 case 4: return EnemySyphonLife(Player,target);
-                
+                case 5: return SpawnMinion(Player, target);
                 default: break;
             }
 
@@ -98,7 +98,7 @@ namespace WhaleWars
             target.Health += target.Offense - user.Defense;
 
             Console.WriteLine($"\n{target.Name} uses Syphone Life, dealing {ed} damage "+
-                "and absorbing { target.Offense - user.Defense} health.");
+                $"and absorbing {ed} health.");
            
             return user.Health;
         }
