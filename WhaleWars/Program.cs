@@ -7,12 +7,13 @@ namespace WhaleWars
     class Program
 
     {
-        static void Main()
+       public static void Main()
         {
+            NetCoreAudio.Player WWTheme = new NetCoreAudio.Player();
+            WWTheme.Play("WW_Background.wav");
 
-
-            SoundPlayer WWTheme = new SoundPlayer("WW_Background.wav");
-            WWTheme.Play();
+            //SoundPlayer WWTheme = new SoundPlayer("WW_Background.wav");
+            //WWTheme.Play();
 
 
             Management.Title();
