@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace WhaleWars
 {
@@ -31,17 +32,17 @@ namespace WhaleWars
 
         }
 
-        public static int EnemyAI(Whale user, Enemies target)
+        public static int EnemyAI(Whale Player, Enemies target)
         {
             Random r = new Random();
             int ai = r.Next(1, 5);
 
             switch (ai)
             {
-                case 1: return Enemies.EnemyBasicATK(user, target);
-                case 2: return Enemies.EnemySmash(user, target);
-                case 3: return Enemies.EnemyUnleashedRage(user, target);
-                case 4: return Enemies.EnemySyphonLife(user,target);
+                case 1: return EnemyBasicATK(Player, target);
+                case 2: return EnemySmash(Player, target);
+                case 3: return EnemyUnleashedRage(Player, target);
+                case 4: return EnemySyphonLife(Player,target);
                 
                 default: break;
             }
@@ -58,7 +59,7 @@ namespace WhaleWars
                 Console.WriteLine($"\n{target.Name} Swings his sword and misses, {target.Name} becomes enraged."); return user.Health; 
             }
             
-            user.Health -= target.Offense - user.Defense;
+            user.Health -= (target.Offense - user.Defense);
             Console.WriteLine($"\n{target.Name} Swings his sword, dealing {ed} damage.");
 
             return user.Health;
@@ -86,7 +87,7 @@ namespace WhaleWars
         }
         public static int EnemySyphonLife(Whale user, Enemies target)
         {
-            int ed = (target.Offense - user.Defense) + 2;
+            int ed = (target.Offense - user.Defense);
             if (ed <= 0)
             {
                 target.Offense += 7;
@@ -96,11 +97,24 @@ namespace WhaleWars
             user.Health -= target.Offense - user.Defense;
             target.Health += target.Offense - user.Defense;
 
-            Console.WriteLine($"\n{target.Name} uses Syphone Life, dealing {target.Offense - user.Defense} damage "+
+            Console.WriteLine($"\n{target.Name} uses Syphone Life, dealing {ed} damage "+
                 "and absorbing { target.Offense - user.Defense} health.");
            
             return user.Health;
         }
-        
+        public static int SpawnMinion(Whale Player, Enemies target)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
+            Enemies target2 = EnemyGenerator();
+
+            Console.WriteLine($"{target.Name} Yells: I NEED HELP! {target2.Name} rushes you from out of the shadows.");
+            
+            Thread.Sleep(2000);
+
+            Combat.Battle(Player, target, target2);
+            return 0;
+        } //boss move used to add another monster into combat. 3 person Combat WOOO! 
     }
 }
