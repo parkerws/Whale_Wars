@@ -18,8 +18,8 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
-            Typewrite("\nWelcome to the console based adventure game!", "white");
-            Fastwrite("\nYou wake up floating through space...", "white");
+            Typewrite("\nWelcome to the console based adventure game!", "dialog");
+            Fastwrite("\nYou wake up floating through space...", "dialog");
             Console.WriteLine("\nPress the Spacebar to continue...");
             Console.ReadKey();
            // nameCharacter();
@@ -249,7 +249,7 @@ namespace WhaleWars
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
             }
-            else if (color == "white")
+            else if (color == "dialog")
             {
                 Console.ForegroundColor = ConsoleColor.White;
             }
