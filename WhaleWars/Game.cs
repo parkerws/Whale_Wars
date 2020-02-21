@@ -17,8 +17,8 @@ namespace WhaleWars
           //  Console.WriteLine("\nPress Space to continue...");
             Console.ReadKey();
             Console.Clear();
-            Typewrite("\nWelcome to the console based adventure game!", "dialog\n\n");
-            Fastwrite("\nYou wake up floating through space...", "dialog\n\n");
+            Typewrite("\nWelcome to the console based adventure game!", "dialog");
+            Fastwrite("\nYou wake up floating through space...", "dialog");
             Console.WriteLine("\nPress the Spacebar to continue...");
             Console.ReadKey();
            // nameCharacter();
@@ -102,7 +102,7 @@ namespace WhaleWars
             Console.Clear();
             ConsoleInterface.HUD(Player);
 
-            Typewrite("\nMeanwhie on blowholia...", "dialog\n");
+            Typewrite("\nMeanwhie on blowholia...", "dialog");
             Fastwrite("\nThe sounds of exploading space cannons and dolphin's laugh tear through the thin Blowholia morning air","red");
             Typewrite("\nBrave Blowholian solders are trudging through the mud of the battle field","dialog");
             Typewrite("\n\"Is the day lost sir?\"", "friend");
@@ -198,9 +198,9 @@ namespace WhaleWars
             Typewrite("\nWell I guess that explains that. I need to go after ", "self");
             Fastwrite("Lundfin.", "enemy");
             Typewrite("\nHe's probably halfway to ", "friend");
-            Fastwrite("Atlantis","planet");
+            Fastwrite("Atlantis", "magenta");
             Typewrite(" by now", "friend");
-            Typewrite("\nAtlantis", "location");
+            Typewrite("\nAtlantis", "magenta");
             Typewrite("?", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
@@ -248,7 +248,7 @@ namespace WhaleWars
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
-            else if (color == "planet")
+            else if (color == "magenta")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
             }
@@ -292,7 +292,7 @@ namespace WhaleWars
             {
                 Console.BackgroundColor = ConsoleColor.Red;
             }
-            else if (color == "planet")
+            else if (color == "magenta")
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
             }
