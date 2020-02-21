@@ -172,6 +172,10 @@ namespace WhaleWars
             Typewrite("\nLundfin's ", "enemy");
             Typewrite("ship descends from the sky and lands behind him.", "dialog");
             Typewrite("\nHe and his gang climb abord and take off.", "dialog");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
             Typewrite("\nI knew you'd return, ", "friend");
             Typewrite($"Admiral {Player.Name} Whaleworth.","self");
             Typewrite("\nAdmiral?", "self");
@@ -180,7 +184,7 @@ namespace WhaleWars
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Typewrite("\nCpt. Whalord-Hookfin steps into view.", "dialog");
-            Typewrite("\nYes, sir! you lead the defence of Blowholia.", "fiend");
+            Typewrite("\nYes, sir! you lead the defence of Blowholia.", "friend");
             Typewrite("\nYou look around at the world in ruins", "dialog.");
             Typewrite("\nWell, what a bang up job I did...", "self");
             Console.WriteLine("\nPress Space to continue.");
@@ -194,7 +198,7 @@ namespace WhaleWars
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Typewrite("\nYes, sir. About halfway through the battle. They loaded you up on that ship there.", "friend");
-            Typewrite("\nHe gestures to the ship you arrived on", "dialog");
+            Typewrite("\nHe gestures to the ship you arrived on.", "dialog");
             Typewrite("\nI wasn't worried though, sir. I knew youd make it back. Just a matter of time","friend");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
@@ -214,7 +218,7 @@ namespace WhaleWars
             Fastwrite("\nYup the next planet he planned to take on his plan of attack", "friend");
             Typewrite("\nThen thats where I'm headed, thanks for your help, ", "self");
             Typewrite("Cpt.Hookfin.", "friend");
-            Typewrite("\nYou start to walk twards the ship.", "dialog");
+            Typewrite("\nYou start to walk towards the ship.", "dialog");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
@@ -289,7 +293,7 @@ namespace WhaleWars
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
             }
-            else if (color == "white")
+            else if (color == "dialog")
             {
                 Console.ForegroundColor = ConsoleColor.White;
             }
