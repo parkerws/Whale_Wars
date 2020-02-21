@@ -133,6 +133,10 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Fastwrite("\nYou quickly exit your ship and gaze upon the ruins of Pier-182", "dialog");
             Typewrite("\nWhat happened here?", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
             Fastwrite("\nAll of a sudden, you hear the cackle of a dolphin!", "dialog");
             Typewrite("\nOut of the fog steps the notorious", "dialog");
             Fastwrite(" Dolph Lundphin", "enemy");
@@ -215,7 +219,7 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Fastwrite("\nYup the next planet he planned to take on his plan of attack", "friend");
+            Fastwrite("\nYup, the next planet he planned to take on his plan of attack", "friend");
             Typewrite("\nThen thats where I'm headed, thanks for your help, ", "self");
             Typewrite("Cpt.Hookfin.", "friend");
             Typewrite("\nYou start to walk towards the ship.", "dialog");
