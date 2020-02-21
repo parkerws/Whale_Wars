@@ -159,6 +159,10 @@ namespace WhaleWars
         public static void postBlowholiaDialog(Whale Player)
         {
             ConsoleInterface.HUD(Player);
+            Typewrite("\nVery good, ", "enemy");
+            Typewrite($"{Player.Name},", "self");
+            Typewrite(" You've only defeated my weakest minion!","enemy");
+            Fastwrite("NEXT TIME IT WONT BE SO EASY!", "enemy");
         }
 
         private static void Typewrite(string message, string color)
