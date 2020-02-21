@@ -132,3 +132,4 @@ E:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.Assem
 E:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.AssemblyInfo.cs
 E:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.dll
 E:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.pdb
+C:\Users\nateg\source\repos\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WW_Background.wav

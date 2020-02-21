@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Media;
 
+
 namespace WhaleWars
 {
     class Program
+
     {
         public static void Main()
         {
+
+
+            SoundPlayer WWTheme = new SoundPlayer("WW_Background.wav");
+            WWTheme.Play();
+
+
             Management.Title();
 
             Game.startGame();
@@ -24,5 +32,6 @@ namespace WhaleWars
             ConsoleInterface.Ship(Player);
 
         }
+
     }
 }
