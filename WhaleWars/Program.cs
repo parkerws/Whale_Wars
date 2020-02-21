@@ -7,7 +7,7 @@ namespace WhaleWars
     class Program
 
     {
-        public static void Main()
+        static void Main()
         {
 
 
@@ -29,7 +29,7 @@ namespace WhaleWars
 
             Game.BlowholiaDialog(Player);
 
-            ConsoleInterface.Ship(Player);
+            ConsoleInterface.Ship(Player);  
 
         }
 
