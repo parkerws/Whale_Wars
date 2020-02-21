@@ -148,7 +148,7 @@ namespace WhaleWars
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Typewrite("\nNow you're going to die by the hand of my minion, ","enemy");
-            Fastwrite($"{enemy.Name}"!, "yellow");
+            Fastwrite($"{enemy.Name}!", "yellow");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
@@ -162,7 +162,12 @@ namespace WhaleWars
             Typewrite("\nVery good, ", "enemy");
             Typewrite($"{Player.Name},", "self");
             Typewrite(" You've only defeated my weakest minion!","enemy");
-            Fastwrite("NEXT TIME IT WONT BE SO EASY!", "enemy");
+            Fastwrite("\nNEXT TIME IT WONT BE SO EASY!", "enemy");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nLundfin's ship descends from the sky and lands behind him", "dialog");
         }
 
         private static void Typewrite(string message, string color)

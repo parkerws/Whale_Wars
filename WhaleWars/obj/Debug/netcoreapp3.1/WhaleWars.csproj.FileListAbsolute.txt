@@ -136,3 +136,5 @@ C:\Users\nateg\source\repos\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WW_Back
 D:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\WW_Background.wav
 D:\MSSA\VS Projects\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\NetCoreAudio.dll
 D:\MSSA\VS Projects\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.csproj.CopyComplete
+C:\Users\nateg\source\repos\Whale_Wars\WhaleWars\bin\Debug\netcoreapp3.1\NetCoreAudio.dll
+C:\Users\nateg\source\repos\Whale_Wars\WhaleWars\obj\Debug\netcoreapp3.1\WhaleWars.csproj.CopyComplete
