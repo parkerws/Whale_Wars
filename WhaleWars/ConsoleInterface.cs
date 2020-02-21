@@ -103,7 +103,7 @@ namespace WhaleWars
             Console.WriteLine("__________________________________________________________________________________________________________________");
             Console.WriteLine("Press [ENTER] to continue");
             Input();
-            ConsoleInterface.Ship(Player);
+            
         }
         public static List<Weapon> WhaleShop(Whale Player, List<Weapon> inventory, List<Item> items)
         {
@@ -137,7 +137,7 @@ namespace WhaleWars
                 if (i == 4) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 3 Doubloon   "); }
                 i++;
             };
-            foreach (Weapon item in items)
+            foreach (Item item in items)
             {
                 
                 if (i == 1) { Console.WriteLine($"Item {i})  {item.Name} Cost {item.cost}"); }
