@@ -137,13 +137,15 @@ namespace WhaleWars
                 if (i == 4) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 3 Doubloon   "); }
                 i++;
             };
-            foreach (Item item in items)
+            
+            int j = 1;
+            foreach (Item it in items)
             {
                 
-                if (i == 1) { Console.WriteLine($"Item {i})  {item.Name} Cost {item.cost}"); }
-                if (i == 2) { Console.WriteLine($"Item {i})  {item.Name} Cost {item.cost}"); }
-                if (i == 3) { Console.WriteLine($"Item {i})  {item.Name} Cost {item.cost}"); }
-                if (i == 4) { Console.WriteLine($"Item {i})  {item.Name} Cost {item.cost}"); }
+                if (j == 1) { Console.WriteLine($"Item {j})  {it.Name} Cost {it.cost}"); }
+                if (j == 2) { Console.WriteLine($"Item {j})  {it.Name} Cost {it.cost}"); }
+                if (j == 3) { Console.WriteLine($"Item {j})  {it.Name} Cost {it.cost}"); }
+                if (j == 4) { Console.WriteLine($"Item {j})  {it.Name} Cost {it.cost}"); }
                 i++;
             };
             Console.WriteLine("[E]xit");
@@ -170,9 +172,10 @@ namespace WhaleWars
             return sp;
         }
 
-        public static List<Item> ItemListGenerator(Whale Player)
+        public static List<Item> ItemListGenerator()
         {
             List<Item> itemStore = new List<Item>();
+            itemStore.Add(Item.ItemGen("health"));
             itemStore.Add(Item.ItemGen("health"));
             itemStore.Add(Item.ItemGen("Armor"));
             itemStore.Add(Item.ItemGen("Magic"));
@@ -263,7 +266,7 @@ namespace WhaleWars
             {
                 case "i": {PlayerInventory(Player); return; }
                 case "c": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
-                case "s": { ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator(Player), ConsoleInterface.ItemListGenerator(Player)); return; }
+                case "s": { ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator(Player), ConsoleInterface.ItemListGenerator()); return; }
                 case "e": { Whale.changeWeapon(Player); Ship(Player); return ;  }
 
                         default:
