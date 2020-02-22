@@ -33,23 +33,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Cryptlogic\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\job_2\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
+      "projectUniqueName": "C:\\Users\\job_2\\Source\\Repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
       "projectName": "WhaleWars",
-      "projectPath": "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
-      "packagesPath": "C:\\Users\\Cryptlogic\\.nuget\\packages\\",
-      "outputPath": "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\obj\\",
+      "projectPath": "C:\\Users\\job_2\\Source\\Repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
+      "packagesPath": "C:\\Users\\job_2\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\job_2\\Source\\Repos\\Whale_Wars\\WhaleWars\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Cryptlogic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\job_2\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

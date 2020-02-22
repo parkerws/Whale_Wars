@@ -41,9 +41,9 @@ namespace WhaleWars
             Game.CoraltonDialog(Player);
 
             Game.postCoraltonDialog(Player);
-            
+
             ConsoleInterface.Ship3(Player);
-            
+
             Game.BlubbernotDialog(Player);
 
             Game.postBlubbernotDialog(Player);
@@ -55,6 +55,8 @@ namespace WhaleWars
             Game.PreTrenchChoice(Player);
 
             Game.trenchDialog1(Player);
+
+            Game.posttrenchDialog(Player);
 
 
 

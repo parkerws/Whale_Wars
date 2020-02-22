@@ -622,7 +622,6 @@ namespace WhaleWars
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
-            ConsoleInterface.HUD(Player);
             ConsoleInterface.EndGameWin();
 
         }
