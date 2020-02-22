@@ -569,7 +569,8 @@ namespace WhaleWars
             input = input.ToUpper();
             if (input == "Y")
             {
-                ConsoleInterface.Shop1(Player);
+                ConsoleInterface.Cousin(Player);
+                ConsoleInterface.Shop4(Player);
             }
             else
             {
@@ -578,7 +579,7 @@ namespace WhaleWars
         }
         public static void trenchDialog1(Whale Player)
         {
-            Enemies enemy = new Enemies("Dolf Lundfin", CharClass.fighter,40,5,9,10);
+            Enemies enemy = Enemies.EnemyGenerator();
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Typewrite("\nYou exit your ship", "dialog");
@@ -601,6 +602,9 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
+
+            enemy = new Enemies("Dolf Lundfin", CharClass.fighter, 40, 5, 9, 10);
+
             Combat.EndBattle(Player, enemy);
 
         }

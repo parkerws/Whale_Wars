@@ -586,7 +586,7 @@ namespace WhaleWars
                 "1) Shop\n" +
                 //"2) Equip weapons\n" +
                 "2) Inventory\n" +
-                "3) Go to trench\n");
+                "3) Go to Marriana Trench\n");
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
@@ -683,7 +683,7 @@ namespace WhaleWars
             Console.WriteLine("I'm Bobo the whale, i know what you're thinking...");
             Console.WriteLine("How could I be a whale, well I'll tell you a secret");
             Console.WriteLine("Im Dolf-lundfins first and only child, lucky for you i have some pretty nice wears.");
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
         }
         public static void Goose2(Whale Player)
         {
@@ -767,8 +767,8 @@ namespace WhaleWars
             Console.WriteLine("           .' _.  /  :   :        '.");
             Console.WriteLine("____________________'/_) : ') \'_/ (' : ( \"_______________");
             Console.WriteLine("Hi! I are Lenard");
-            Console.WriteLine("I covere the shop for Bobo, when hes out");
-            Thread.Sleep(5000);
+            Console.WriteLine("I cover the shop for Bobo, when hes out doing Whale knows what.");
+            Thread.Sleep(10000);
 
         }
         public static void Cousin2(Whale Player)
