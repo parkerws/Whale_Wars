@@ -618,7 +618,7 @@ namespace WhaleWars
             Typewrite($"{Player.currentPlanet}", "location");
             Fastwrite(" realize that their dictator has be vanquished", "dialog");
             Typewrite("\nHail Dorthy! The wicked witch is dead!!!!", "friend");
-            Typewrite($"\nI mean, Hali {Player.Name}, we are free from Lundfin's tyranical reign! ", "friend");
+            Typewrite($"\nI mean, Hail {Player.Name}, we are free from Lundfin's tyranical reign! ", "friend");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
