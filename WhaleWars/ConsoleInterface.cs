@@ -182,7 +182,35 @@ namespace WhaleWars
             return itemStore;
         }
 
-
+        public static void Shop1()
+        {
+            Console.Clear();
+            Console.WriteLine("                                   ___");
+            Console.WriteLine("                              ,-''   `.");
+            Console.WriteLine("                             ,'  _   e )`-._");
+            Console.WriteLine("                            /  ,' `-._<.===-'");
+            Console.WriteLine("                           /  /");
+            Console.WriteLine("                          /  ;");
+            Console.WriteLine("              _.--.__    /   ;");
+            Console.WriteLine(" (`._    _.-''       ;--'    |");
+            Console.WriteLine(" <_  `-''                     \"");
+            Console.WriteLine("  <`-                          :");
+            Console.WriteLine("   (__   <__.                  ;");
+            Console.WriteLine("     `-.   '-.__.      _.'    /");
+            Console.WriteLine("        \'      `-.__,-'    _,'");
+            Console.WriteLine("         `._    ,    /__,-'");
+            Console.WriteLine("            ''._\'__,'< <____");
+            Console.WriteLine("                 | |  `----.`.");
+            Console.WriteLine("                 | |        \' `.");
+            Console.WriteLine("                 ; |___      \'-``");
+            Console.WriteLine("                 \'   --<");
+            Console.WriteLine("                  `.`.<");
+            Console.WriteLine("                    `-'");
+            Console.WriteLine("Well Hello, Stranger.");
+            Console.WriteLine("I'm Bobo the whale, i know what your thinking...");
+            Console.WriteLine("How could i be a whale, well ill tell you a secret");
+            Console.WriteLine("Im Dolf-lundfins first and only child, lucky for you i have some pretty nice wears.");
+        }
 
         public static void HUD(Whale player)
         {
