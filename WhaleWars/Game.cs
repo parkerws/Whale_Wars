@@ -556,7 +556,7 @@ namespace WhaleWars
             input = input.ToUpper();
             if (input == "Y")
             {
-                ConsoleInterface.Shop1();
+                ConsoleInterface.Shop1(Player);
             }
             else
             {
