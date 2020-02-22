@@ -52,6 +52,12 @@ namespace WhaleWars
 
             Game.trenchDialog(Player);
 
+            Game.PreTrenchChoice(Player);
+
+            Game.trenchDialog1(Player);
+
+
+
 
         }
 

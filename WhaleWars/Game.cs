@@ -563,14 +563,36 @@ namespace WhaleWars
                 trenchDialog1(Player);
             }
         }
-        private static void trenchDialog1(Whale Player)
+        public static void trenchDialog1(Whale Player)
         {
+            Enemies enemy = Enemies.EnemyGenerator();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Typewrite("You exit your ship", "dialog");
-            Fastwrite("I've been waiting for you ", "enemy");
+            Typewrite("\nYou exit your ship", "dialog");
+            Fastwrite("\nI've been waiting for you ", "enemy");
             Typewrite($"{Player.Name}.", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nLundphin", "enemy");
+            Fastwrite("It's over! I'm here to stop you once and for all!", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nIn your dreams ", "enemy");
+            Typewrite($"{Player.Name}!","self");
+            Fastwrite("\nIt is I who will be stopping you!", "enemy");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Combat.Battle(Player, enemy);
 
+        }
+        public static void posttrenchDialog(Whale Player)
+        {
 
         }
         private static void Typewrite(string message, string color)
