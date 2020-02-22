@@ -253,28 +253,28 @@ namespace WhaleWars
             Player.EquipedArmor.Add(newArmor);
         }
 
-        public static void changeWeapon(Whale player)
-        {
-            int counter = 1;
-            int weapSelection;
-            List<Weapon> weapList = new List<Weapon>();
-            Console.WriteLine();
-            foreach(Weapon weap in player.inventory)
-            {
-                Console.WriteLine($"{counter}. {weap}");
-                weapList.Add(weap);
-                counter++;
-            }
-            Console.WriteLine("Select which weapon you wish to equip.");
-            if (int.TryParse(Console.ReadLine(), out weapSelection))
-            {
-                weapSelection -= 1;
-            }
-            else Console.WriteLine("Invalid input. Please select from the above list.");
+        //public static void changeWeapon(Whale player)
+        //{
+        //    int counter = 1;
+        //    int weapSelection;
+        //    List<Weapon> weapList = new List<Weapon>();
+        //    Console.WriteLine();
+        //    foreach(Weapon weap in player.inventory)
+        //    {
+        //        Console.WriteLine($"{counter}. {weap}");
+        //        weapList.Add(weap);
+        //        counter++;
+        //    }
+        //    Console.WriteLine("Select which weapon you wish to equip.");
+        //    if (int.TryParse(Console.ReadLine(), out weapSelection))
+        //    {
+        //        weapSelection -= 1;
+        //    }
+        //    else Console.WriteLine("Invalid input. Please select from the above list.");
 
-            UpgradeWeapon(player, weapList.ElementAt(weapSelection));
-            player.RemoveItem(weapList.ElementAt(weapSelection));
-        }
+        //    UpgradeWeapon(player, weapList.ElementAt(weapSelection));
+        //    player.RemoveItem(weapList.ElementAt(weapSelection));
+        //}
 
         public static void UseItem(Whale Player)
         {

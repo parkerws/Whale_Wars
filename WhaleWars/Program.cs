@@ -30,6 +30,10 @@ namespace WhaleWars
 
             Game.postBlowholiaDialog(Player);
 
+            ConsoleInterface.Goose1(Player);
+
+            ConsoleInterface.Shop1(Player);
+
             ConsoleInterface.Ship1(Player);
 
             Game.AtlantisDialog(Player);

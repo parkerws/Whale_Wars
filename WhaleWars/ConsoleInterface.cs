@@ -197,24 +197,25 @@ namespace WhaleWars
                 j++;
             };
             Fork fork = new Fork();
-            Console.WriteLine($"Item 9)  Fork Cost 32 Doubloon");
+            if (Player.Name == "Chaze" || Player.Name == "Nate" || Player.Name == "Diego" || Player.Name == "Will" || Player.Name == "Harley") 
+            { Console.WriteLine($"Item 9)  Fork Cost 1 Doubloon"); }
 
             Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
 
             string input = Input().ToLower();
             switch (input)
             {
-                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5;  Console.Clear(); return ; }
-                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4;  Console.Clear(); return ; }
-                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4;  Console.Clear(); return ; }
-                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3;  Console.Clear(); return ; }
-                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
-                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
-                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
-                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
-                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 32;  Console.Clear(); return; }
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Shop1(Player); return ; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Shop1(Player); return ; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Shop1(Player); return ; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Shop1(Player); return ; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; Shop1(Player); return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; Shop1(Player); return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; Shop1(Player); return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; Shop1(Player); return; }
+                case "9": { Whale.UpgradeWeapon(Player, fork); Player.Wallet -= 1; Shop1(Player); return; }
                 case "s": { Sell(Player); Shop1(Player); return; }
-                default: return ;
+                default: Console.WriteLine("You leave Bobo's stand and head back to the ship"); return ;
             }
         } // when using this shop make sure you put the Goose1 method before it.
         public static void Shop2(Whale Player)
@@ -246,22 +247,22 @@ namespace WhaleWars
                 j++;
             };
             Blowhole Blowhole = new Blowhole();
-            Console.WriteLine($"Item 9)  BlowHole Cost 14 Doubloon");
+            Console.WriteLine($"Item 9)  BlowHole Cost 7 Doubloon");
 
             Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
 
             string input = Input().ToLower();
             switch (input)
             {
-                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Console.Clear(); return; }
-                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Console.Clear(); return; }
-                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Console.Clear(); return; }
-                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Console.Clear(); return; }
-                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
-                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
-                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
-                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
-                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 14; Console.Clear(); return; }
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Shop2(Player); return; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Shop2(Player); return; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Shop2(Player); return; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Shop2(Player); return; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; Shop2(Player); return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; Shop2(Player); return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; Shop2(Player); return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; Shop2(Player); return; }
+                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 7; Shop2(Player); return; }
                 case "s": { Sell(Player); Shop2(Player); return; }
                 default: return;
             }
@@ -295,22 +296,22 @@ namespace WhaleWars
                 j++;
             };
             Blowhole Blowhole = new Blowhole();
-            Console.WriteLine($"Item 9)  BlowHole Cost 14 Doubloon");
+            Console.WriteLine($"Item 9)  BlowHole Cost 6 Doubloon");
 
             Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
 
             string input = Input().ToLower();
             switch (input)
             {
-                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Console.Clear(); return; }
-                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Console.Clear(); return; }
-                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Console.Clear(); return; }
-                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Console.Clear(); return; }
-                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
-                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
-                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
-                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
-                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 14; Console.Clear(); return; }
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Shop3(Player); return; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Shop3(Player); return; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Shop3(Player); return; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Shop3(Player); return; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; Shop3(Player); return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; Shop3(Player); return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; Shop3(Player); return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; Shop3(Player); return; }
+                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 6; Shop3(Player); return; }
                 case "s": { Sell(Player); Shop3(Player); return; }
                 default: return;
             }
@@ -344,22 +345,22 @@ namespace WhaleWars
                 j++;
             };
             UltraBoof Blowhole = new UltraBoof();
-            Console.WriteLine($"Item 9)  UltraBoof Cost 22 Doubloon");
+            Console.WriteLine($"Item 9)  UltraBoof Cost 5 Doubloon");
 
             Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
 
             string input = Input().ToLower();
             switch (input)
             {
-                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Console.Clear(); return; }
-                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Console.Clear(); return; }
-                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Console.Clear(); return; }
-                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Console.Clear(); return; }
-                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
-                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
-                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
-                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
-                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 22; Console.Clear(); return; }
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Shop4(Player); return; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Shop4(Player); return; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Shop4(Player); return; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Shop4(Player); return; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; Shop4(Player); return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; Shop4(Player); return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; Shop4(Player); return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; Shop4(Player); return; }
+                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Shop4(Player); return; }
                 case "s": { Sell(Player); Shop4(Player); return; }
                 default: return;
             }
@@ -398,14 +399,14 @@ namespace WhaleWars
             string input = Input().ToLower();
             switch (input)
             {
-                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Console.Clear(); return; }
-                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Console.Clear(); return; }
-                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Console.Clear(); return; }
-                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Console.Clear(); return; }
-                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
-                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
-                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
-                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Shop5(Player); return; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Shop5(Player); return; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Shop5(Player); return; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Shop5(Player); return; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; Shop5(Player); return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; Shop5(Player); return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; Shop5(Player); return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; Shop5(Player); return; }
                 case "s": { Sell(Player); Shop5(Player); return; }
                 default: return;
             }
@@ -485,16 +486,16 @@ namespace WhaleWars
 
             Console.WriteLine("Ship HUB\n" +
                 "1) Shop\n" +
-                "2) Equip weapons\n" +
-                "3) Inventory\n" +
-                "4) Go to Blowholia Prime\n");
+                //"2) Equip weapons\n" +
+                "2) Inventory\n" +
+                "3) Go to Blowholia Prime\n");
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
                 case "1": { Shop5(Player); ShipIntro(Player); return; }
-                case "2": { Whale.changeWeapon(Player); ShipIntro(Player); return; }
-                case "3": { PlayerInventory(Player); ShipIntro(Player); return; }
-                case "4": { break; }
+                //case "2": { Whale.changeWeapon(Player); ShipIntro(Player); return; }
+                case "2": { PlayerInventory(Player); ShipIntro(Player); return; }
+                case "3": { break; }
 
                 default:
                     Console.WriteLine("Please choose a destination"); ShipIntro(Player);
@@ -509,16 +510,16 @@ namespace WhaleWars
             
             Console.WriteLine("Ship HUB\n" +
                "1) Shop\n" +
-               "2) Equip weapons\n" +
-               "3) Inventory\n" +
-               "4) Go to Atlantis\n");
+               //"2) Equip weapons\n" +
+               "2) Inventory\n" +
+               "3) Go to Atlantis\n");
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
                 case "1": { Shop5(Player);Ship1(Player); return; }
-                case "2": { Whale.changeWeapon(Player); Ship1(Player); return; }
-                case "3": { PlayerInventory(Player); Ship1(Player); return; }
-                case "4": { break; }
+                //case "2": { Whale.changeWeapon(Player); Ship1(Player); return; }
+                case "2": { PlayerInventory(Player); Ship1(Player); return; }
+                case "3": { break; }
 
                         default: Console.WriteLine("Please choose a destination"); Ship1(Player);
                     break;
@@ -533,16 +534,16 @@ namespace WhaleWars
 
             Console.WriteLine("Ship HUB\n" +
                "1) Shop\n" +
-               "2) Equip weapons\n" +
-               "3) Inventory\n" +
-               "4) Go to Coralton\n");
+               //"2) Equip weapons\n" +
+               "2) Inventory\n" +
+               "3) Go to Coralton\n");
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
                 case "1": { Shop5(Player); Ship2(Player); return; }
-                case "2": { Whale.changeWeapon(Player); Ship2(Player); return; }
-                case "3": { PlayerInventory(Player); Ship2(Player); return; }
-                case "4": { break; }
+                //case "2": { Whale.changeWeapon(Player); Ship2(Player); return; }
+                case "2": { PlayerInventory(Player); Ship2(Player); return; }
+                case "3": { break; }
 
                 default:
                     Console.WriteLine("Please choose a destination"); Ship2(Player);
@@ -558,16 +559,16 @@ namespace WhaleWars
 
             Console.WriteLine("Ship HUB\n" +
                "1) Shop\n" +
-               "2) Equip weapons\n" +
-               "3) Inventory\n" +
-               "4) Go to Blubbernot\n");
+               //"2) Equip weapons\n" +
+               "2) Inventory\n" +
+               "3) Go to Blubbernot\n");
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
                 case "1": { Shop5(Player); Ship3(Player); return; }
-                case "2": { Whale.changeWeapon(Player); Ship3(Player); return; }
-                case "3": { PlayerInventory(Player); Ship3(Player); return; }
-                case "4": { break; }
+                //case "2": { Whale.changeWeapon(Player); Ship3(Player); return; }
+                case "2": { PlayerInventory(Player); Ship3(Player); return; }
+                case "3": { break; }
 
                 default:
                     Console.WriteLine("Please choose a destination"); Ship3(Player);
@@ -583,16 +584,16 @@ namespace WhaleWars
 
             Console.WriteLine("Ship HUB\n" +
                 "1) Shop\n" +
-                "2) Equip weapons\n" +
-                "3) Inventory\n" +
-                "4) Go to trench\n");
+                //"2) Equip weapons\n" +
+                "2) Inventory\n" +
+                "3) Go to trench\n");
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
                 case "1": { Shop5(Player); Ship4(Player); return; }
-                case "2": { Whale.changeWeapon(Player); Ship4(Player); return; }
-                case "3": { PlayerInventory(Player); Ship4(Player); return; }
-                case "4": { break; }
+                //case "2": { Whale.changeWeapon(Player); Ship4(Player); return; }
+                case "2": { PlayerInventory(Player); Ship4(Player); return; }
+                case "3": { break; }
 
                 default:
                     Console.WriteLine("Please choose a destination"); Ship4(Player);
