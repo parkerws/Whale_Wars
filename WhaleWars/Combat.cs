@@ -16,13 +16,13 @@ namespace WhaleWars
                 if (user.CC == CharClass.fighter) { Fighter.FighterMoves(user, target); }
                 if (user.CC == CharClass.ranger) { Ranger.RangerMoves(user, target); }
 
-                Thread.Sleep(2500);
+                Thread.Sleep(2900);
                 if (user.Health <= 0) { ConsoleInterface.PlayerDied(user, target); }
                 if (target.Health <= 0) { user.Wallet += 3; ConsoleInterface.WinArt(user, target); return; }
                 ConsoleInterface.HUD(user); 
 
                 Enemies.EnemyAI(user, target);
-                Thread.Sleep(2500);
+                Thread.Sleep(2900);
                 if (user.Health <= 0) { ConsoleInterface.PlayerDied(user, target); }
                 if (target.Health <= 0) { user.Wallet = +3; ConsoleInterface.WinArt(user, target); return; }
             }
@@ -40,20 +40,19 @@ namespace WhaleWars
                 if (Player.CC == CharClass.fighter) { Fighter.FighterMoves(Player, target); }
                 if (Player.CC == CharClass.ranger) { Ranger.RangerMoves(Player, target); }
 
-                Thread.Sleep(2500);
-                if (Player.Health <= 0) { ConsoleInterface.PlayerDied(Player, target); }
+                Thread.Sleep(2900);
                 if (target.Health <= 0) { Player.Wallet += 3; Battle(Player, target2); return; }
                 if (target2.Health <= 0) { Player.Wallet += 3; Battle(Player, target); return; }
                 ConsoleInterface.HUD(Player);
 
                 Enemies.EnemyAI(Player, target);
-                Thread.Sleep(2500);
+                Thread.Sleep(2900);
                 if (Player.Health <= 0) { ConsoleInterface.PlayerDied(Player, target); }
                 if (target.Health <= 0) { Player.Wallet = +3; Battle(Player, target2); return; }
                 if (target2.Health <= 0) { Player.Wallet = +3; Battle(Player, target); return; }
 
                 Enemies.EnemyAI(Player, target2);
-                Thread.Sleep(2500);
+                Thread.Sleep(2900);
                 if (Player.Health <= 0) { ConsoleInterface.PlayerDied(Player, target); }
                 if (target.Health <= 0) { Player.Wallet = +3; Battle(Player, target2); return; }
                 if (target2.Health <= 0) { Player.Wallet = +3; Battle(Player, target); return; }

@@ -8,7 +8,7 @@ namespace WhaleWars
     {
         
         //Character name
-        static string characterName = "";
+        //static string characterName = "";
         //Print out game title and setup
 
         public static void startGame()
@@ -75,6 +75,7 @@ namespace WhaleWars
             Console.Clear();
             return Player;
         }
+
         public static void Choice(Whale Player)
         {
             ConsoleInterface.HUD(Player);
@@ -98,6 +99,7 @@ namespace WhaleWars
             }
 
         }
+
         public static void preBlowholiaDialog(Whale Player)
         {
             Console.Clear();
@@ -116,6 +118,7 @@ namespace WhaleWars
             Console.Clear();
 
         }
+
         public static void BlowholiaDialog(Whale Player)
         {
             ConsoleInterface.HUD(Player);
@@ -124,7 +127,7 @@ namespace WhaleWars
             Fastwrite("\nYour ship comes to a halt on the outskirts of Blowholia's capital city: Pier-182", "dialog");
             Typewrite("\nTime to get some answers.", "self");
             Fastwrite("\n\"Arrived: Blowholia Prime\"", "friend");
-            Typewrite(" the ships AI says over the inter inter-com.", "dialog");
+            Typewrite(" the ships AI says over the inter-com.", "dialog");
             Fastwrite("\n\"Population: 5\"", "friend");
             Typewrite("\n 5!? How can that be?", "self");
             Console.WriteLine("\nPress Space to continue.");
@@ -162,6 +165,7 @@ namespace WhaleWars
             Combat.Battle(Player, enemy);
 
         }
+
         public static void postBlowholiaDialog(Whale Player)
         {
             ConsoleInterface.HUD(Player);
@@ -239,6 +243,7 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
 
         }
+
         public static void AtlantisDialog(Whale Player)
         {
             Enemies enemy = Enemies.EnemyGenerator();
@@ -282,6 +287,7 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Combat.Battle(Player, enemy);
         }
+
         public static void postAtlantisDialog(Whale Player)
         {
             Console.Clear();
@@ -314,7 +320,7 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Typewrite("\nWell thank you", "self");
             Typewrite("\nNo, thank you, Mr.", "friend");
-            Typewrite("\nThe little girl runs away and into the arms of he parents","dialog");
+            Typewrite("\nThe little girl runs away and into the arms of he parents.","dialog");
             Typewrite("\nShe was safe. For now.","dialog");
             Typewrite("\nI've got to stop him...", "self");
             Console.WriteLine("\nPress Space to continue.");
@@ -329,9 +335,11 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
 
         }
+
         public static void CoraltonDialog(Whale Player)
         {
             Enemies enemy = Enemies.EnemyGenerator();
+            Console.Clear();
             ConsoleInterface.HUD(Player);
             Typewrite("\nYour ship lands on ", "dialog");
             Typewrite("Coralton.", "location");
@@ -372,7 +380,8 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Combat.Battle(Player, enemy);
         }
-        public static void postCoraltondialog(Whale Player)
+
+        public static void postCoraltonDialog(Whale Player)
         {
             Console.Clear();
             ConsoleInterface.HUD(Player);
@@ -412,6 +421,105 @@ namespace WhaleWars
             
         }
 
+        public static void BlubbernotDialog(Whale Player)
+        {
+            Enemies enemy = Enemies.EnemyGenerator();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nYour ship lands on ", "dialog");
+            Typewrite("Blubbernot-6.", "location");
+            Typewrite("\nNO MORE MESSING AROUND", "self");
+            Fastwrite(" LUNDPHIN,", "enemy");
+            Typewrite(" I'M FINISHING YOU THIS TIME!", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nYou exit your ship and immediately charge into the city ", "dialog");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nLundfin!", "enemy");
+            Typewrite(" come out here and face me like a man!", "self");
+            Typewrite("\nYou here a dolphin cackle.", "dialog");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nPeople of ", "enemy");
+            Typewrite("Blubbernot-6!", "location");
+            Typewrite("Your \"hero\" has arrived!", "enemy");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nYou see ", "dialog");
+            Fastwrite("Dolph Lunphin", "enemy");
+            Typewrite(" float down from the top of a building on his hover board.", "dialog");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nI'd love to stick around and chat but I've got one last", "enemy");
+            Fastwrite(" Henchmen", "yellow");
+            Typewrite(" to do that for me.", "enemy");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("It was nice knowing you, ", "enemy");
+            Typewrite($"{Player.Name}!", "self");
+            Fastwrite($"\n{enemy.Name}, ", "yellow");
+            Fastwrite("FINISH HIM ONCE AND FOR ALL!", "enemy");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Combat.Battle(Player, enemy);
+        }
+        public static void postBlubbernotDialog(Whale Player)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nYou look around and ", "dialog");
+            Fastwrite("Lundphin", "enemy");
+            Typewrite("is nowhere in sight.", "dialog");
+            Fastwrite("\nDang it! he got away again!","self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nThe people of ", "dialog");
+            Typewrite("Blubbernot-6", "location");
+            Fastwrite(", seeing that the coast is clear, begin chearing and chanting your name.", "dialog");
+            Typewrite($"\n{Player.Name}! {Player.Name}! {Player.Name}! {Player.Name}!", "friend");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nDon't they realize? He's still out there", "self");
+            Typewrite("\nYou run back to your ship","dialog");
+            Fastwrite("\nGet me the hell out of here", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nYou get back inside your ship.", "dialog");
+            Typewrite("\nLundPhin,", "enemy");
+            Typewrite(" theres only one place you could've gone... your home, the", "self");
+            Typewrite("Marinara Trench.", "location");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nYou depart for the ", "dialog");
+            Typewrite("Marinara Trench.", "location");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+        }    
 
         private static void Typewrite(string message, string color)
         {

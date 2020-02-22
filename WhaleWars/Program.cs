@@ -40,9 +40,13 @@ namespace WhaleWars
 
             Game.CoraltonDialog(Player);
 
-            Game.postCoraltondialog(Player);
+            Game.postCoraltonDialog(Player);
             
             ConsoleInterface.Ship(Player);
+            
+            Game.BlubbernotDialog(Player);
+
+            Game.postBlubbernotDialog(Player);
 
         }
 
