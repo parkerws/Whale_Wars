@@ -133,5 +133,13 @@ namespace WhaleWars
             Damage = 10;
         }
     }
+    public class Fork : Weapon
+    {
+        public Fork() : base()
+        {
+            Name = "Mind Fork of Endless Suffering";
+            Damage = 75;
+        }
+    }
 
 }
