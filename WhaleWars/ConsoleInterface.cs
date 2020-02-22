@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WhaleWars;
+using System.Threading;
 
 namespace WhaleWars
 {
@@ -177,39 +178,68 @@ namespace WhaleWars
             List<Item> itemStore = new List<Item>();
             itemStore.Add(Item.ItemGen("health"));
             itemStore.Add(Item.ItemGen("health"));
-            itemStore.Add(Item.ItemGen("Armor"));
-            itemStore.Add(Item.ItemGen("Magic"));
+            itemStore.Add(Item.ItemGen("armor"));
+            itemStore.Add(Item.ItemGen("magic"));
             return itemStore;
         }
 
-        public static void Shop1()
+        public static void Shop1(Whale Player)
         {
             Console.Clear();
-            Console.WriteLine("                                   ___");
-            Console.WriteLine("                              ,-''   `.");
-            Console.WriteLine("                             ,'  _   e )`-._");
-            Console.WriteLine("                            /  ,' `-._<.===-'");
-            Console.WriteLine("                           /  /");
-            Console.WriteLine("                          /  ;");
-            Console.WriteLine("              _.--.__    /   ;");
-            Console.WriteLine(" (`._    _.-''       ;--'    |");
-            Console.WriteLine(" <_  `-''                     \"");
-            Console.WriteLine("  <`-                          :");
-            Console.WriteLine("   (__   <__.                  ;");
-            Console.WriteLine("     `-.   '-.__.      _.'    /");
-            Console.WriteLine("        \'      `-.__,-'    _,'");
-            Console.WriteLine("         `._    ,    /__,-'");
-            Console.WriteLine("            ''._\'__,'< <____");
-            Console.WriteLine("                 | |  `----.`.");
-            Console.WriteLine("                 | |        \' `.");
-            Console.WriteLine("                 ; |___      \'-``");
-            Console.WriteLine("                 \'   --<");
-            Console.WriteLine("                  `.`.<");
-            Console.WriteLine("                    `-'");
-            Console.WriteLine("Well Hello, Stranger.");
-            Console.WriteLine("I'm Bobo the whale, i know what your thinking...");
-            Console.WriteLine("How could i be a whale, well ill tell you a secret");
-            Console.WriteLine("Im Dolf-lundfins first and only child, lucky for you i have some pretty nice wears.");
+            HUD(Player);
+
+           List<Item> Items = ItemListGenerator();
+           List<Weapon> Weaps = ShopListGenerator(Player);
+           
+            Goose1();
+            Thread.Sleep(2500);
+
+            Console.Clear();
+            HUD(Player);
+
+            Goose2();
+
+            int i = 1;
+            foreach (Weapon W in Weaps)
+            {
+                
+                if (i == 1) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 5 Doubloons   "); }
+                if (i == 2) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 1 Doubloons   "); }
+                if (i == 3) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 4 Doubloons   "); }
+                if (i == 4) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 3 Doubloons   "); }
+                i++;
+            };
+
+            int j = 5;
+            foreach (Item it in Items)
+            {
+
+                if (j == 5) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloons"); }
+                if (j == 6) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloons"); }
+                if (j == 7) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloons"); }
+                if (j == 8) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloons"); }
+                j++;
+            };
+            Fork fork = new Fork();
+            Console.WriteLine($"Item 9)  fork Cost 32 Doubloon");
+
+            Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
+
+            string input = Input().ToLower();
+            switch (input)
+            {
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5;  Console.Clear(); return ; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4;  Console.Clear(); return ; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4;  Console.Clear(); return ; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3;  Console.Clear(); return ; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
+                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 32;  Console.Clear(); return; }
+                case "s": { Sell(Player); Shop1(Player); return; }
+                default: return ;
+            }
         }
 
         public static void HUD(Whale player)
@@ -310,7 +340,7 @@ namespace WhaleWars
             HUD(Player);
             Console.WriteLine($"{Player.Name}'s Inventory\n");
 
-            Console.WriteLine(Player.GetInventory());
+            //Console.WriteLine(Player.GetInventory());
 
             foreach (var item in Player.EquipedWeapon)
             {
@@ -323,13 +353,85 @@ namespace WhaleWars
 
             foreach (var item in Player.inventory)
             {
-                Console.WriteLine($"Item :: {item}");
+                Console.WriteLine($"Item :: {item.Name}");
             }
 
             Console.WriteLine("\nPress [ENTER] to return to the ship");
             Input();
             Console.Clear();
             Ship(Player);
+        }
+        public static void Sell(Whale Player)
+        {
+            Console.Clear();
+            HUD(Player);
+
+            Console.WriteLine("Select an Item to sell.");
+
+            int i = 1;
+            foreach (var item in Player.inventory)
+            {
+                Console.WriteLine($"{i}) {item.Name} :: Sells for {item.cost} Doubloons");
+                i++;
+            }
+
+            string input = Input().ToLower();
+            switch (input)
+            {
+                case "1": { Player.Wallet += Player.inventory[0].cost; Player.inventory.Remove(Player.inventory[0]); return; }
+                case "2": { Player.Wallet += Player.inventory[1].cost; Player.inventory.Remove(Player.inventory[1]); return; }
+                case "3": { Player.Wallet += Player.inventory[2].cost; Player.inventory.Remove(Player.inventory[2]); return; }
+                case "4": { Player.Wallet += Player.inventory[3].cost; Player.inventory.Remove(Player.inventory[3]); return; }
+                case "5": { Player.Wallet += Player.inventory[4].cost; Player.inventory.Remove(Player.inventory[4]); return; }
+                case "6": { Player.Wallet += Player.inventory[5].cost; Player.inventory.Remove(Player.inventory[5]); return; }
+
+                default: return;
+            }
+        }
+
+        public static void Goose1()
+        {
+            Console.Clear();
+            Console.WriteLine("                                   ___");
+            Console.WriteLine("                              ,-''   `.");
+            Console.WriteLine("                             ,'  _   e )`-._");
+            Console.WriteLine("                            /  ,' `-._<.===-'");
+            Console.WriteLine("                           /  /");
+            Console.WriteLine("                          /  ;");
+            Console.WriteLine("              _.--.__    /   ;");
+            Console.WriteLine(" (`._    _.-''       ;--'    |");
+            Console.WriteLine(" <_  `-''                     \"");
+            Console.WriteLine("  <`-                          :");
+            Console.WriteLine("   (__   <__.                  ;");
+            Console.WriteLine("     `-.   '-.__.      _.'    /");
+            Console.WriteLine("        \'      `-.__,-'    _,'");
+            Console.WriteLine("         `._    ,    /__,-'");
+            Console.WriteLine("            ''._\'__,'< <____");
+            Console.WriteLine("                 | |  `----.`.");
+            Console.WriteLine("                 | |        \' `.");
+            Console.WriteLine("                 ; |___      \'-``");
+            Console.WriteLine("                 \'   --<");
+            Console.WriteLine("                  `.`.<");
+            Console.WriteLine("                    `-'");
+            Console.WriteLine("Well Hello, Stranger.");
+            Console.WriteLine("I'm Bobo the whale, i know what your thinking...");
+            Console.WriteLine("How could i be a whale, well ill tell you a secret");
+            Console.WriteLine("Im Dolf-lundfins first and only child, lucky for you i have some pretty nice wears.");
+        }
+        public static void Goose2()
+        {
+            Console.WriteLine("                                    _");
+            Console.WriteLine("                                ,-'' ''.");
+            Console.WriteLine("                              ,'  ____  `.");
+            Console.WriteLine("                            ,'  ,'    `.  `._");
+            Console.WriteLine("   (`.         _..--.._   ,'  ,'        \'   \"");
+            Console.WriteLine("  (`-.\'   .-''        '''   /          (  d _b");
+            Console.WriteLine(" (`._  `-'' ,._             (            `-(   \"");
+            Console.WriteLine(" <_  `     (  <`<            \'             `-._\"");
+            Console.WriteLine("  <`-       (__< <           :");
+            Console.WriteLine("   (__        (_<_<          ;");
+            Console.WriteLine("  ----`--------------------------------------------------------");
+            Console.WriteLine("SO! What you buying?");
         }
 
     }

@@ -170,6 +170,7 @@ namespace WhaleWars
         {
             SetArmor(Player);
             SetWeapon(Player);
+            SetItems(Player);
 
         } // assignes the starting items to the player to help expand the inventory.
         public static void SetWeapon(Whale Player)
@@ -214,6 +215,27 @@ namespace WhaleWars
                 Player.EquipedArmor.Add(shirt);
             }
         } //used to add a starting Armor bassed off of starting class.
+        public static void SetItems(Whale Player)
+        {
+            if (Player.CC == CharClass.fighter) 
+            {
+                Player.inventory.Add(Item.ItemGen("health"));
+                Player.inventory.Add(Item.ItemGen("health"));
+                Player.inventory.Add(Item.ItemGen("health"));
+            }
+            if (Player.CC == CharClass.mage)
+            {
+                Player.inventory.Add(Item.ItemGen("magic"));
+                Player.inventory.Add(Item.ItemGen("magic"));
+                Player.inventory.Add(Item.ItemGen("magic"));
+            }
+            if (Player.CC == CharClass.ranger)
+            {
+                Player.inventory.Add(Item.ItemGen("health"));
+                Player.inventory.Add(Item.ItemGen("health"));
+                Player.inventory.Add(Item.ItemGen("magic"));
+            }
+        }
 
         public static void UpgradeWeapon(Whale Player, Weapon newWeap) 
         {
