@@ -101,7 +101,7 @@ namespace WhaleWars
             }
             else
             {
-                ConsoleInterface.Ship(Player);
+                ConsoleInterface.ShipIntro(Player);
             }
 
         }
