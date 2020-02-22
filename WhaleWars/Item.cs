@@ -80,8 +80,8 @@ namespace WhaleWars
         public HealthPotion(string name) : base()
         {
             Name = name;
-            cost = 5;
-            attributeIncrease = 5;
+            cost = 2;
+            attributeIncrease = 20;
         }
     }
     public class ArmorPotion : Item
@@ -90,7 +90,7 @@ namespace WhaleWars
         {
             Name = name;
             cost = 7;
-            attributeIncrease = 7;
+            attributeIncrease = 5;
         }
     }
     public class MagicPotion : Item
@@ -98,8 +98,8 @@ namespace WhaleWars
         public MagicPotion(string name) : base()
         {
             Name = name;
-            cost = 7;
-            attributeIncrease = 7;
+            cost = 3;
+            attributeIncrease = 12;
         }
     }
 

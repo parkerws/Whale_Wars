@@ -447,14 +447,14 @@ namespace WhaleWars
 
             Console.WriteLine("Ship HUB" +
                "\nEnter I for [I]nventory\n" +
-               "Enter C for [C]ombat\n" +
+               //"Enter C for [C]ombat\n" +
                "Enter S for [S]hop\n" +
                "Enter e for [E]quip different weapon\n");
             string input = Input();
             switch (input.ToLower())
             {
                 case "i": {PlayerInventory(Player); return; }
-                case "c": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
+               // case "c": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
                 case "s": { ConsoleInterface.Shop5(Player); return; }
                 case "e": { Whale.changeWeapon(Player); Ship(Player); return ;  }
 
