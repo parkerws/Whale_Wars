@@ -6,15 +6,8 @@ namespace WhaleWars
 {
     class Game
     {
-        
-        //Character name
-        //static string characterName = "";
-        //Print out game title and setup
-
         public static void startGame()
         {
-            //Fastwrite("Whale Wars!", "blue\n");
-          //  Console.WriteLine("\nPress Space to continue...");
             Console.ReadKey();
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
@@ -22,8 +15,6 @@ namespace WhaleWars
             Fastwrite("\nYou wake up floating through space...", "dialog");
             Console.WriteLine("\nPress the Spacebar to continue...");
             Console.ReadKey();
-           // nameCharacter();
-
         }
 
         public static string PlayerName()
@@ -35,7 +26,7 @@ namespace WhaleWars
             return name;
         }
 
-        //ask plaer for a name and save it
+        //ask player for a name and save it
         public static Whale nameCharacter(string name)
         {
             Console.Clear();            
@@ -95,7 +86,7 @@ namespace WhaleWars
             }
             else
             {
-                ConsoleInterface.Ship(Player);
+                ConsoleInterface.ShipIntro(Player);
             }
 
         }
