@@ -35,7 +35,7 @@ namespace WhaleWars
                     else { OutofMP(Player, target); return 0; }
                 case "5": if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return ArcaneBlast(Player, target); }
                     else { OutofMP(Player, target); return 0; }
-                case "6": if (Player.inventory.Count == 0) { Console.WriteLine("You have no more items to use."); Thread.Sleep(2500); FighterMoves(Player, target); return 0; }
+                case "6": if (Player.inventory.Count == 0) { Console.WriteLine("{Player.Name}: ...I'm out of items."); Thread.Sleep(2500); MageMoves(Player, target); return 0; }
                     else { Whale.UseItem(Player); return 0; }
                 default: break;
             }
