@@ -21,7 +21,7 @@ namespace WhaleWars
             string name = Game.PlayerName();
 
             Whale Player = Game.nameCharacter(name);
-           
+
             Game.Choice(Player);
 
             Game.preBlowholiaDialog(Player);

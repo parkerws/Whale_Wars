@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using WhaleWars;
@@ -106,62 +106,7 @@ namespace WhaleWars
             Input();
             
         }
-        public static List<Weapon> WhaleShop(Whale Player, List<Weapon> inventory, List<Item> items)
-        {
-            Console.Clear();
-            ConsoleInterface.HUD(Player);
-
-            Console.WriteLine("            .-------------'```'----....,,__                        _,");
-            Console.WriteLine("            |                               `'`'`'`'-.,.__        .'(");
-            Console.WriteLine("            |                                             `'--._.'   )");
-            Console.WriteLine("            |                                                   `'-.<");
-            Console.WriteLine("            \';              .-'`'-.                            -.    `\'");
-            Console.WriteLine("             \'               -.o_.     _                     _,-'`\'   |");
-            Console.WriteLine("              ``````''--.._.-=-._    .'  \'           _,,--'`      `-._(");
-            Console.WriteLine("                (^^^^^^^^`___    '-. |    \' __,,..--'                 `");
-            Console.WriteLine("                 `````````   `'--..___\'   |`");
-            Console.WriteLine("                                       `-.,'");
-            Console.WriteLine("Please enter the number of the item you would like to buy or enter Exit to leave the shop");
-            Console.WriteLine("___________________________________________________________________________________________");
-
-            Console.WriteLine();
-            int i = 1;
-            foreach (Weapon item in inventory)
-            {
-                string[] type = { "Fire", "Lightning", "Ice", "Rusty", "Broken" };
-                Random r = new Random();
-                int nt = r.Next(type.Length);
-                string st = type[nt];
-                if (i == 1) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 5 Doubloon   "); }
-                if (i == 2) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 1 Doubloon   "); }
-                if (i == 3) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 4 Doubloon   "); }
-                if (i == 4) { Console.WriteLine($"Item {i}) {st} {item.Name}, {item.Damage} damage, Cost 3 Doubloon   "); }
-                i++;
-            };
-            
-            int j = 1;
-            foreach (Item it in items)
-            {
-                
-                if (j == 1) { Console.WriteLine($"Item {j})  {it.Name} Cost {it.cost}"); }
-                if (j == 2) { Console.WriteLine($"Item {j})  {it.Name} Cost {it.cost}"); }
-                if (j == 3) { Console.WriteLine($"Item {j})  {it.Name} Cost {it.cost}"); }
-                if (j == 4) { Console.WriteLine($"Item {j})  {it.Name} Cost {it.cost}"); }
-                i++;
-            };
-            Console.WriteLine("[E]xit");
-            
-            string input = Console.ReadLine();
-            switch (input)
-            {
-                case "1": { Whale.UpgradeWeapon(Player, inventory.ElementAt(0)); Player.Wallet -= 5; Ship( Player); Console.Clear(); return null; }
-                case "2": { Whale.UpgradeWeapon(Player, inventory.ElementAt(1)); Player.Wallet -= 1; Ship( Player); Console.Clear(); return null; }
-                case "3": { Whale.UpgradeWeapon(Player, inventory.ElementAt(2)); Player.Wallet -= 4; Ship(Player); Console.Clear(); return null; }
-                case "4": { Whale.UpgradeWeapon(Player, inventory.ElementAt(3)); Player.Wallet -= 3; Ship( Player); Console.Clear(); return null; }
-                default:  Ship(Player); return null;
-            }
-
-        }
+        
         public static List<Weapon> ShopListGenerator(Whale Player)
         {
             List<Weapon> sp = new List<Weapon>();
@@ -183,21 +128,14 @@ namespace WhaleWars
             return itemStore;
         }
 
+
+        //All shops have been created, most the shops revolve around Bobo the whale (goose). feel like its a good place to add a laugh
         public static void Shop1(Whale Player)
         {
-            Console.Clear();
-            HUD(Player);
+            Goose2(Player);
 
-           List<Item> Items = ItemListGenerator();
-           List<Weapon> Weaps = ShopListGenerator(Player);
-           
-            Goose1();
-            Thread.Sleep(5000);
-
-            Console.Clear();
-            HUD(Player);
-
-            Goose2();
+            List<Item> Items = ItemListGenerator();
+            List<Weapon> Weaps = ShopListGenerator(Player);
 
             int i = 1;
             foreach (Weapon W in Weaps)
@@ -240,11 +178,200 @@ namespace WhaleWars
                 case "s": { Sell(Player); Shop1(Player); return; }
                 default: return ;
             }
-        }
+        } // when using this shop make sure you put the Goose1 method before it.
         public static void Shop2(Whale Player)
         {
+            Goose3(Player);
 
-        }
+            List<Item> Items = ItemListGenerator();
+            List<Weapon> Weaps = ShopListGenerator(Player);
+
+            int i = 1;
+            foreach (Weapon W in Weaps)
+            {
+
+                if (i == 1) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 5 Doubloon   "); }
+                if (i == 2) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 1 Doubloon   "); }
+                if (i == 3) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 4 Doubloon   "); }
+                if (i == 4) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 3 Doubloon   "); }
+                i++;
+            };
+
+            int j = 5;
+            foreach (Item it in Items)
+            {
+
+                if (j == 5) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 6) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 7) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 8) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                j++;
+            };
+            Blowhole Blowhole = new Blowhole();
+            Console.WriteLine($"Item 9)  BlowHole Cost 14 Doubloon");
+
+            Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
+
+            string input = Input().ToLower();
+            switch (input)
+            {
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Console.Clear(); return; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Console.Clear(); return; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Console.Clear(); return; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Console.Clear(); return; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
+                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 14; Console.Clear(); return; }
+                case "s": { Sell(Player); Shop2(Player); return; }
+                default: return;
+            }
+        }// all shops are controlled by Bobo. this is a way to show that.
+        public static void Shop3(Whale Player)
+        {
+            Goose3(Player);
+
+            List<Item> Items = ItemListGenerator();
+            List<Weapon> Weaps = ShopListGenerator(Player);
+
+            int i = 1;
+            foreach (Weapon W in Weaps)
+            {
+
+                if (i == 1) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 5 Doubloon   "); }
+                if (i == 2) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 1 Doubloon   "); }
+                if (i == 3) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 4 Doubloon   "); }
+                if (i == 4) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 3 Doubloon   "); }
+                i++;
+            };
+
+            int j = 5;
+            foreach (Item it in Items)
+            {
+
+                if (j == 5) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 6) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 7) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 8) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                j++;
+            };
+            Blowhole Blowhole = new Blowhole();
+            Console.WriteLine($"Item 9)  BlowHole Cost 14 Doubloon");
+
+            Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
+
+            string input = Input().ToLower();
+            switch (input)
+            {
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Console.Clear(); return; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Console.Clear(); return; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Console.Clear(); return; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Console.Clear(); return; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
+                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 14; Console.Clear(); return; }
+                case "s": { Sell(Player); Shop3(Player); return; }
+                default: return;
+            }
+        }// all shops are controlled by Bobo. this is a way to show that.
+        public static void Shop4(Whale Player)
+        {
+            Cousin2(Player);
+
+            List<Item> Items = ItemListGenerator();
+            List<Weapon> Weaps = ShopListGenerator(Player);
+
+            int i = 1;
+            foreach (Weapon W in Weaps)
+            {
+
+                if (i == 1) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 5 Doubloon   "); }
+                if (i == 2) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 1 Doubloon   "); }
+                if (i == 3) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 4 Doubloon   "); }
+                if (i == 4) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 3 Doubloon   "); }
+                i++;
+            };
+
+            int j = 5;
+            foreach (Item it in Items)
+            {
+
+                if (j == 5) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 6) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 7) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 8) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                j++;
+            };
+            UltraBoof Blowhole = new UltraBoof();
+            Console.WriteLine($"Item 9)  UltraBoof Cost 22 Doubloon");
+
+            Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
+
+            string input = Input().ToLower();
+            switch (input)
+            {
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Console.Clear(); return; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Console.Clear(); return; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Console.Clear(); return; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Console.Clear(); return; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
+                case "9": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 22; Console.Clear(); return; }
+                case "s": { Sell(Player); Shop4(Player); return; }
+                default: return;
+            }
+        }//Bobo's cousin Lenard steps in for him when he is out. make sure to place Cousin 1 before this shop
+        public static void Shop5(Whale Player)
+        {
+            BigWhale(Player);
+
+            List<Item> Items = ItemListGenerator();
+            List<Weapon> Weaps = ShopListGenerator(Player);
+
+            int i = 1;
+            foreach (Weapon W in Weaps)
+            {
+
+                if (i == 1) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 5 Doubloon   "); }
+                if (i == 2) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 1 Doubloon   "); }
+                if (i == 3) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 4 Doubloon   "); }
+                if (i == 4) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 3 Doubloon   "); }
+                i++;
+            };
+
+            int j = 5;
+            foreach (Item it in Items)
+            {
+
+                if (j == 5) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 6) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 7) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 8) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                j++;
+            };
+
+            Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
+
+            string input = Input().ToLower();
+            switch (input)
+            {
+                case "1": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Console.Clear(); return; }
+                case "2": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Console.Clear(); return; }
+                case "3": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Console.Clear(); return; }
+                case "4": { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Console.Clear(); return; }
+                case "5": { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; return; }
+                case "6": { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; return; }
+                case "7": { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; return; }
+                case "8": { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; return; }
+                case "s": { Sell(Player); Shop5(Player); return; }
+                default: return;
+            }
+        }//Whale shop has been moved to shop 5
 
         public static void HUD(Whale player)
         {
@@ -328,7 +455,7 @@ namespace WhaleWars
             {
                 case "i": {PlayerInventory(Player); return; }
                 case "c": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
-                case "s": { ConsoleInterface.WhaleShop(Player, ConsoleInterface.ShopListGenerator(Player), ConsoleInterface.ItemListGenerator()); return; }
+                case "s": { ConsoleInterface.Shop5(Player); return; }
                 case "e": { Whale.changeWeapon(Player); Ship(Player); return ;  }
 
                         default:
@@ -393,9 +520,10 @@ namespace WhaleWars
             }
         }
 
-        public static void Goose1()
+        public static void Goose1(Whale Player)
         {
             Console.Clear();
+            HUD(Player);
             Console.WriteLine("                                   ___");
             Console.WriteLine("                              ,-''   `.");
             Console.WriteLine("                             ,'  _   e )`-._");
@@ -421,9 +549,13 @@ namespace WhaleWars
             Console.WriteLine("I'm Bobo the whale, i know what you're thinking...");
             Console.WriteLine("How could I be a whale, well I'll tell you a secret");
             Console.WriteLine("Im Dolf-lundfins first and only child, lucky for you i have some pretty nice wears.");
+            Thread.Sleep(5000);
         }
-        public static void Goose2()
+        public static void Goose2(Whale Player)
         {
+            Console.Clear();
+            HUD(Player);
+
             Console.WriteLine("                                    _");
             Console.WriteLine("                                ,-'' ''.");
             Console.WriteLine("                              ,'  ____  `.");
@@ -437,6 +569,134 @@ namespace WhaleWars
             Console.WriteLine("  ----`--------------------------------------------------------");
             Console.WriteLine("SO! What you buying?");
         }
+        public static void Goose3(Whale Player)
+        {
+            Console.Clear();
+            HUD(Player);
+
+            Console.WriteLine("                                                        _...--.");
+            Console.WriteLine("                                        _____......----'     .'");
+            Console.WriteLine("                                  _..-''                   .'");
+            Console.WriteLine("                                .'                       ./");
+            Console.WriteLine("                        _.--._.'                       .' |");
+            Console.WriteLine("                     .-'                           .-.'  /");
+            Console.WriteLine("                   .'   _.-.                     .  \'  '");
+            Console.WriteLine("                 .'  .'   .'    _    .-.        / `./  :");
+            Console.WriteLine("               .'  .'   .'  .--' `.  |  \' |`. |     .'");
+            Console.WriteLine("            _.'  .'   .' `.'       `-'   \'/ |.'   .'");
+            Console.WriteLine("         _.'  .-'   .'     `-.            `      .'");
+            Console.WriteLine("       .'   .'    .'          `-.._ _ _ _ .-.    :");
+            Console.WriteLine("      /    /o _.-'               .--'   .'   \'  |");
+            Console.WriteLine("    .'-.__..-'                  /..    .`    / .'");
+            Console.WriteLine("  .'   . '                       /.'/.'     /  |");
+            Console.WriteLine(" `---'                                   _.'   '");
+            Console.WriteLine("                                       /.'    .'");
+            Console.WriteLine("                                        /.'/.'");
+            Console.WriteLine("-----------------------------------------------------------------------------");
+            Console.WriteLine("Welcome back, Stranger. What you buying?");
+
+        }
+        public static void Cousin(Whale Player)
+        {
+            Console.Clear();
+            HUD(Player);
+
+            Console.WriteLine("                  _..-''''-.._");
+            Console.WriteLine("              _.-'            `-._");
+            Console.WriteLine("             /                    \"");
+            Console.WriteLine("            :    .-';      ;'-.    :");
+            Console.WriteLine("            |   / _.-:    :-._ \'  |"); 
+            Console.WriteLine("            :  ; ;  o/    \'o  ; ;  :");
+            Console.WriteLine("           /    \'_!-'      '-!_/    \"");
+            Console.WriteLine("          :'-..__              __..-':");
+            Console.WriteLine("         /       \'           /       \"");
+            Console.WriteLine("       .'\'       \'         /        /'.");
+            Console.WriteLine("     .'   ;        `-.    .-'        ;   '.");
+            Console.WriteLine("    ;     :           '..'           :     ;");
+            Console.WriteLine("   :      |         __...__          |      :");
+            Console.WriteLine("   ;      |      .-'       `-.       |      ;");
+            Console.WriteLine("   :      :     /             \'     :      :");
+            Console.WriteLine("  :      /     /               \'     \'     :");
+            Console.WriteLine("  ;    .'     :                 :      '.    ;");
+            Console.WriteLine("  ;   :      :                   :       :   ;");
+            Console.WriteLine("  ;   :      :                   :       :   ;");
+            Console.WriteLine("  :  /       :                   :        \' :");
+            Console.WriteLine("   ;;         \'                /          ;;");
+            Console.WriteLine("    ;-.        '-.     ,     .-'         .-;");
+            Console.WriteLine("     ;;'-...      '-..___..-'       ...-';;");
+            Console.WriteLine("            ';, \'''--....________....--'' /  ,; '");
+            Console.WriteLine("           '.       .'    '.      .'");
+            Console.WriteLine("             \'    /        \'   /");
+            Console.WriteLine("              :   :          :  :");
+            Console.WriteLine("              :    \'       /   :");
+            Console.WriteLine("             /      '.    .'     \"");
+            Console.WriteLine("           .' _.  /  :   :        '.");
+            Console.WriteLine("____________________'/_) : ') \'_/ (' : ( \"_______________");
+            Console.WriteLine("Hi! I are Lenard");
+            Console.WriteLine("I covere the shop for Bobo, when hes out");
+            Thread.Sleep(5000);
+
+        }
+        public static void Cousin2(Whale Player)
+        {
+            Console.Clear();
+            HUD(Player);
+
+            Console.Clear();
+            HUD(Player);
+
+            Console.WriteLine("                  _..-''''-.._");
+            Console.WriteLine("              _.-'            `-._");
+            Console.WriteLine("             /                    \"");
+            Console.WriteLine("            :    .-';      ;'-.    :");
+            Console.WriteLine("            |   / _.-:    :-._ \'  |");
+            Console.WriteLine("            :  ; ;  o/    \'o  ; ;  :");
+            Console.WriteLine("           /    \'_!-'      '-!_/    \"");
+            Console.WriteLine("          :'-..__              __..-':");
+            Console.WriteLine("         /       \'           /       \"");
+            Console.WriteLine("       .'\'       \'         /        /'.");
+            Console.WriteLine("     .'   ;        `-.    .-'        ;   '.");
+            Console.WriteLine("    ;     :           '..'           :     ;");
+            Console.WriteLine("   :      |         __...__          |      :");
+            Console.WriteLine("   ;      |      .-'       `-.       |      ;");
+            Console.WriteLine("   :      :     /             \'     :      :");
+            Console.WriteLine("  :      /     /               \'     \'     :");
+            Console.WriteLine("  ;    .'     :                 :      '.    ;");
+            Console.WriteLine("  ;   :      :                   :       :   ;");
+            Console.WriteLine("  ;   :      :                   :       :   ;");
+            Console.WriteLine("  :  /       :                   :        \' :");
+            Console.WriteLine("   ;;         \'                /          ;;");
+            Console.WriteLine("    ;-.        '-.     ,     .-'         .-;");
+            Console.WriteLine("     ;;'-...      '-..___..-'       ...-';;");
+            Console.WriteLine("            ';, \'''--....________....--'' /  ,; '");
+            Console.WriteLine("           '.       .'    '.      .'");
+            Console.WriteLine("             \'    /        \'   /");
+            Console.WriteLine("              :   :          :  :");
+            Console.WriteLine("              :    \'       /   :");
+            Console.WriteLine("             /      '.    .'     \"");
+            Console.WriteLine("           .' _.  /  :   :        '.");
+            Console.WriteLine("____________________'/_) : ') \'_/ (' : ( \"_______________");
+            Console.WriteLine("What would you like to buy?");
+        }
+        public static void BigWhale(Whale Player)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
+            Console.WriteLine("            .-------------'```'----....,,__                        _,");
+            Console.WriteLine("            |                               `'`'`'`'-.,.__        .'(");
+            Console.WriteLine("            |                                             `'--._.'   )");
+            Console.WriteLine("            |                                                   `'-.<");
+            Console.WriteLine("            \';              .-'`'-.                            -.    `\'");
+            Console.WriteLine("             \'               -.o_.     _                     _,-'`\'   |");
+            Console.WriteLine("              ``````''--.._.-=-._    .'  \'           _,,--'`      `-._(");
+            Console.WriteLine("                (^^^^^^^^`___    '-. |    \' __,,..--'                 `");
+            Console.WriteLine("                 `````````   `'--..___\'   |`");
+            Console.WriteLine("                                       `-.,'");
+            Console.WriteLine("        Welcome back to the ship, What would you like to buy?");
+            Console.WriteLine("___________________________________________________________________________________________");
+        }
+ 
 
     }
 }

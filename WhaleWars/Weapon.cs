@@ -106,7 +106,7 @@ namespace WhaleWars
         public Blowhole() : base()
         {
             Name = "Blowhole";
-            Damage = 9;
+            Damage = 15;
         }
     }
     public class Chimichanga : Weapon
