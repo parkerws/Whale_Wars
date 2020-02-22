@@ -683,7 +683,9 @@ namespace WhaleWars
             Console.WriteLine("I'm Bobo the whale, i know what you're thinking...");
             Console.WriteLine("How could I be a whale, well I'll tell you a secret");
             Console.WriteLine("Im Dolf-lundfins first and only child, lucky for you i have some pretty nice wears.");
-            Thread.Sleep(10000);
+            Console.WriteLine("Press ENTER to continue");
+            Console.ReadLine();
+            
         }
         public static void Goose2(Whale Player)
         {
