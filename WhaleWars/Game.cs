@@ -6,8 +6,21 @@ namespace WhaleWars
 {
     class Game
     {
+
+        //Character name
+        //static string characterName = "";
+        //Print out game title and setup
+
+        public static Planet Blowholia = new Planet("Blowholia Prime", PlanetType.ocean, 1, 2, Sector.Blowholia);
+        public static Planet Atlantis = new Planet("Atlantis", PlanetType.storm, 3, 4, Sector.DeegosBogeySphere);
+        public static Planet Coralton = new Planet("Coralton", PlanetType.barren, 4, 5, Sector.Krupula);
+        public static Planet Blubbernot = new Planet("Blubbernot", PlanetType.lava, 1, 5, Sector.Morhann);
+        public static Planet Trench = new Planet("Marianna Trench", PlanetType.ice, 3, 4, Sector.Morhann);
+
         public static void startGame()
         {
+            //Fastwrite("Whale Wars!", "blue\n");
+          //  Console.WriteLine("\nPress Space to continue...");
             Console.ReadKey();
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
@@ -15,6 +28,8 @@ namespace WhaleWars
             Fastwrite("\nYou wake up floating through space...", "dialog");
             Console.WriteLine("\nPress the Spacebar to continue...");
             Console.ReadKey();
+           // nameCharacter();
+
         }
 
         public static string PlayerName()
@@ -26,7 +41,7 @@ namespace WhaleWars
             return name;
         }
 
-        //ask player for a name and save it
+        //ask plaer for a name and save it
         public static Whale nameCharacter(string name)
         {
             Console.Clear();            
@@ -86,7 +101,7 @@ namespace WhaleWars
             }
             else
             {
-                ConsoleInterface.ShipIntro(Player);
+                ConsoleInterface.Ship(Player);
             }
 
         }
@@ -112,6 +127,7 @@ namespace WhaleWars
 
         public static void BlowholiaDialog(Whale Player)
         {
+            Player.currentPlanet = Blowholia;
             ConsoleInterface.HUD(Player);
             Enemies enemy = Enemies.EnemyGenerator();
  
@@ -237,6 +253,7 @@ namespace WhaleWars
 
         public static void AtlantisDialog(Whale Player)
         {
+            Player.currentPlanet = Atlantis;
             Enemies enemy = Enemies.EnemyGenerator();
             ConsoleInterface.HUD(Player);
             Typewrite("\nYour ship lands on ","dialog");
@@ -329,6 +346,7 @@ namespace WhaleWars
 
         public static void CoraltonDialog(Whale Player)
         {
+            Player.currentPlanet = Coralton;
             Enemies enemy = Enemies.EnemyGenerator();
             Console.Clear();
             ConsoleInterface.HUD(Player);
@@ -414,6 +432,7 @@ namespace WhaleWars
 
         public static void BlubbernotDialog(Whale Player)
         {
+            Player.currentPlanet = Blubbernot;
             Enemies enemy = Enemies.EnemyGenerator();
             Console.Clear();
             ConsoleInterface.HUD(Player);
@@ -515,6 +534,7 @@ namespace WhaleWars
 
         public static void trenchDialog(Whale Player)
         {
+            Player.currentPlanet = Trench;
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Fastwrite("\nYour ship arrives at the", "dialog");

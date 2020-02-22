@@ -42,4 +42,6 @@ namespace WhaleWars
             sector = aSector;
         }
     }
+
+    
 }
