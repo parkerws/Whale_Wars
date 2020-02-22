@@ -576,7 +576,7 @@ namespace WhaleWars
         }
         public static void trenchDialog1(Whale Player)
         {
-            Enemies enemy = Enemies.EnemyGenerator();
+            Enemies enemy = new Enemies("Dolf Lundfin", CharClass.fighter,40,5,9,10);
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Typewrite("\nYou exit your ship", "dialog");
@@ -599,7 +599,7 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Combat.Battle(Player, enemy);
+            Combat.EndBattle(Player, enemy);
 
         }
         public static void posttrenchDialog(Whale Player)
