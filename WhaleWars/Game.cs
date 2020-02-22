@@ -604,6 +604,26 @@ namespace WhaleWars
         }
         public static void posttrenchDialog(Whale Player)
         {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nYou emerge triumphant over ", "dialog");
+            Fastwrite("Lundphin", "enemy");
+            Typewrite("\n. The galaxy is once again at peace.", "dialog");
+            Fastwrite("\nI think I will get something to drink.", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nThe the boot trodden peoples of ", "dialog");
+            Typewrite($"{Player.currentPlanet}", "location");
+            Fastwrite(" realize that their dictator has be vanquished", "dialog");
+            Typewrite("\nHail Dorthy! The wicked witch is dead!!!!", "friend");
+            Typewrite($"\nI mean, Hali {Player.Name}, we are free from Lundfin's tyranical reign! ", "friend");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            ConsoleInterface.EndGameWin();
 
         }
         private static void Typewrite(string message, string color)

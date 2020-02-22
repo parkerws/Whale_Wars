@@ -70,6 +70,44 @@ namespace WhaleWars
             if (input != "e" || input != "o") { PlayerDied(Player, target); } 
             
         }
+
+        public static void EndGameWin()
+        {
+            string asciiText = @"
+        _________________________________________________________________________________________________
+        
+
+                                                      *
+                                                      *
+                                             *        *         *
+                                              *  _____*_______ *
+                                                /             \
+                                                |             |
+                                         *****  |             | *****
+&&&&&&&&&&^^^^^&&&&&&&^^^^^^^^^^^^&&&&&&&&&&&&&&&&&^^^^^^^^^^&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&^^^&&&&&&&&&^^^^^^^^^^&&&&&&&&&&&&&&&&&&&^^^^^^^^&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&^&&&&&&&&&&&^^^^^^^^&&&&&&&&&&&&&&&&&&&&&^^^^^^&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&^^^^^^&&&&&&&&&&&&&&&&&&&&&&&^^^^&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+==============================================================================================================
+                                Victory! It tastes like 9-minute miles!!!
+
+";
+            Console.Write(asciiText);
+            Console.WriteLine("Would you like to play again?");
+            Console.WriteLine("[Y]es or [N]o.");
+            string getResponse = Console.ReadLine();
+            if (getResponse.ToLower() == "yes" || getResponse.ToLower() == "y")
+            {
+                Program.Main();
+            }
+            else
+            {
+                Console.WriteLine("Thanks for stopping by. Thanks for all the fish.");
+                Environment.Exit(0);
+            }
+
+
+        }
         public static void WinArt(Whale Player, Enemies target)
         {
             Console.Clear();
