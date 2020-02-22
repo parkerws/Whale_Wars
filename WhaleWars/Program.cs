@@ -10,7 +10,9 @@ namespace WhaleWars
        public static void Main()
         {
             NetCoreAudio.Player WWTheme = new NetCoreAudio.Player();            
-                WWTheme.Play("WW_Background.wav");            
+                WWTheme.Play("WW_Background.wav");
+
+           
 
             Management.Title();
 
@@ -19,7 +21,7 @@ namespace WhaleWars
             string name = Game.PlayerName();
 
             Whale Player = Game.nameCharacter(name);
-
+            
             Game.Choice(Player);
 
             Game.preBlowholiaDialog(Player);
