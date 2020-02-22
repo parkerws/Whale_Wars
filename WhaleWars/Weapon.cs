@@ -106,7 +106,7 @@ namespace WhaleWars
         public Blowhole() : base()
         {
             Name = "Blowhole";
-            Damage = 15;
+            Damage = 22;
         }
     }
     public class Chimichanga : Weapon
@@ -114,7 +114,7 @@ namespace WhaleWars
         public Chimichanga() : base()
         {
             Name = "Chimichanga";
-            Damage = 8;
+            Damage = 55;
         }
     }
     public class Wand : Weapon
@@ -130,7 +130,7 @@ namespace WhaleWars
         public UltraBoof() : base()
         {
             Name = "UltraBoof";
-            Damage = 10;
+            Damage = 32;
         }
     }
     public class Fork : Weapon
