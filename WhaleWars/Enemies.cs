@@ -35,7 +35,7 @@ namespace WhaleWars
         public static int EnemyAI(Whale Player, Enemies target)
         {
             Random r = new Random();
-            int ai = r.Next(1, 6);
+            int ai = r.Next(1, 5);
 
             switch (ai)
             {
@@ -43,7 +43,24 @@ namespace WhaleWars
                 case 2: return EnemySmash(Player, target);
                 case 3: return EnemyUnleashedRage(Player, target);
                 case 4: return EnemySyphonLife(Player,target);
-                //case 5: return SpawnMinion(Player, target);
+                
+                default: break;
+            }
+
+            return 0;
+        }
+        public static int LundfinAI(Whale Player, Enemies target)
+        {
+            Random r = new Random();
+            int ai = r.Next(1, 6);
+
+            switch (ai)
+            {
+                case 1: return EnemyBasicATK(Player, target);
+                case 2: return EnemySmash(Player, target);
+                case 3: return EnemyUnleashedRage(Player, target);
+                case 4: return EnemySyphonLife(Player, target);
+                case 5: return SpawnMinion(Player,target);
                 default: break;
             }
 
@@ -102,19 +119,19 @@ namespace WhaleWars
            
             return user.Health;
         }
-        //public static int SpawnMinion(Whale Player, Enemies target)
-        //{
-        //    Console.Clear();
-        //    ConsoleInterface.HUD(Player);
+        public static int SpawnMinion(Whale Player, Enemies target)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
 
-        //    Enemies target2 = EnemyGenerator();
+            Enemies target2 = EnemyGenerator();
 
-        //    Console.WriteLine($"{target.Name} Yells: I NEED HELP! {target2.Name} rushes you from out of the shadows.");
-            
-        //    Thread.Sleep(2000);
+            Console.WriteLine($"{target.Name} Yells: I NEED HELP! {target2.Name} rushes you from out of the shadows.");
 
-        //    Combat.Battle(Player, target, target2);
-        //    return 0;
-        //} //boss move used to add another monster into combat. 3 person Combat WOOO! 
+            Thread.Sleep(2000);
+
+            Combat.Battle(Player, target, target2);
+            return 0;
+        } //boss move used to add another monster into combat. 3 person Combat WOOO! 
     }
 }
