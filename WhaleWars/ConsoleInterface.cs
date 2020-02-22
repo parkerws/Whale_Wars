@@ -192,7 +192,7 @@ namespace WhaleWars
            List<Weapon> Weaps = ShopListGenerator(Player);
            
             Goose1();
-            Thread.Sleep(2500);
+            Thread.Sleep(5000);
 
             Console.Clear();
             HUD(Player);
@@ -203,10 +203,10 @@ namespace WhaleWars
             foreach (Weapon W in Weaps)
             {
                 
-                if (i == 1) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 5 Doubloons   "); }
-                if (i == 2) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 1 Doubloons   "); }
-                if (i == 3) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 4 Doubloons   "); }
-                if (i == 4) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 3 Doubloons   "); }
+                if (i == 1) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 5 Doubloon   "); }
+                if (i == 2) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 1 Doubloon   "); }
+                if (i == 3) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 4 Doubloon   "); }
+                if (i == 4) { Console.WriteLine($"Item {i})  {W.Name}, {W.Damage} damage, Cost 3 Doubloon   "); }
                 i++;
             };
 
@@ -214,14 +214,14 @@ namespace WhaleWars
             foreach (Item it in Items)
             {
 
-                if (j == 5) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloons"); }
-                if (j == 6) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloons"); }
-                if (j == 7) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloons"); }
-                if (j == 8) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloons"); }
+                if (j == 5) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 6) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 7) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
+                if (j == 8) { Console.WriteLine($"Item {j})  {it.Name}  Cost {it.cost} Doubloon"); }
                 j++;
             };
             Fork fork = new Fork();
-            Console.WriteLine($"Item 9)  fork Cost 32 Doubloon");
+            Console.WriteLine($"Item 9)  Fork Cost 32 Doubloon");
 
             Console.WriteLine("[E] to [E]xit, [S] to [S]ell");
 
@@ -240,6 +240,10 @@ namespace WhaleWars
                 case "s": { Sell(Player); Shop1(Player); return; }
                 default: return ;
             }
+        }
+        public static void Shop2(Whale Player)
+        {
+
         }
 
         public static void HUD(Whale player)
@@ -277,7 +281,7 @@ namespace WhaleWars
             Console.ResetColor();
             Console.Write(" :: ");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("Doubloons " + Gold);
+            Console.Write("Doubloon " + Gold);
             Console.ResetColor();
             Console.Write(" :: ");
             Console.ForegroundColor = ConsoleColor.Red;
@@ -414,8 +418,8 @@ namespace WhaleWars
             Console.WriteLine("                  `.`.<");
             Console.WriteLine("                    `-'");
             Console.WriteLine("Well Hello, Stranger.");
-            Console.WriteLine("I'm Bobo the whale, i know what your thinking...");
-            Console.WriteLine("How could i be a whale, well ill tell you a secret");
+            Console.WriteLine("I'm Bobo the whale, i know what you're thinking...");
+            Console.WriteLine("How could I be a whale, well I'll tell you a secret");
             Console.WriteLine("Im Dolf-lundfins first and only child, lucky for you i have some pretty nice wears.");
         }
         public static void Goose2()
