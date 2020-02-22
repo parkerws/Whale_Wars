@@ -113,7 +113,7 @@ namespace WhaleWars
 
             Typewrite("\nMeanwhie on Blowholia...", "dialog");
             Fastwrite("\nThe sounds of exploading space cannons and dolphin's laugh tear through the thin Blowholia morning air","red");
-            Typewrite("\nBrave Blowholian solders are trudging through the mud of the battle field","dialog");
+            Typewrite("\nBrave Blowholian solders are trudging through the mud of the battle field.","dialog");
             Typewrite("\n\"Is the day lost sir?\"", "friend");
             Typewrite("one Blowholian sergeant says to", "dialog");
             Typewrite(" Captain Whalord-Hookfin", "friend");
@@ -143,7 +143,7 @@ namespace WhaleWars
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Fastwrite("\nYou quickly exit your ship and gaze upon the ruins of ", "dialog");
-            Typewrite("Pier-182", "location");
+            Typewrite("Pier-182.", "location");
             Typewrite("\nWhat happened here?", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
@@ -233,7 +233,7 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Fastwrite("\nThat's the next planet he planned to take on path to conquer the Galaxy!", "friend");
+            Fastwrite("\nThat's the next planet he planned to take on his path to conquer the Galaxy!", "friend");
             Typewrite("\nThen thats where I'm headed, thanks for your help, ", "self");
             Typewrite("Cpt.Hookfin.", "friend");
             Typewrite("\nYou start to walk towards the ship.", "dialog");
