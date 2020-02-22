@@ -326,6 +326,87 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
 
         }
+        public static void CoraltonDialog(Whale Player)
+        {
+            Enemies enemy = Enemies.EnemyGenerator();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nYour ship lands on ", "dialog");
+            Typewrite("Coralton.", "location");
+            Typewrite("\n I wonder where ", "self");
+            Fastwrite("Lundphin's,", "enemy");
+            Typewrite(" run off to this time.", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nYou exit your ship and see Coraltonians fleeing the City", "dialog");
+            Fastwrite("\nLundfin!", "enemy");
+            Typewrite(" Theres no doubt in my mind!", "self");
+            Typewrite("\nYou charge into the city of ", "dialog");
+            Typewrite("Coraltundon.", "location");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nYou see ", "dialog");
+            Fastwrite("Dolph Lunphin", "enemy");
+            Typewrite(" and his ", "dialog");
+            Fastwrite("Henchmen", "yellow");
+            Typewrite(" destroying everything in sight.", "dialog");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nALRIGHT ", "self");
+            Fastwrite("LUNPHIN!", "enemy");
+            Typewrite("\nLundphin: It's about time you showed up!, ", "enemy");
+            Typewrite($"{Player.Name}?", "self");
+            Fastwrite($"\n{enemy.Name}, ", "yellow");
+            Fastwrite("MAKE HIM WISH HE WAS NEVER BORN!", "enemy");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Combat.Battle(Player, enemy);
+        }
+        public static void postCoraltondialog(Whale Player)
+        {
+            Fastwrite("\nNOW YOU'RE STARTING TO ANGER ME!", "enemy");
+            Typewrite("\nLundphin", "enemy");
+            Typewrite(" shouts as he runs to his ship.", "dialog");
+            Fastwrite("\nYOU CAN'T STOP ME ", "enemy");
+            Fastwrite($"{Player.Name}!", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nHis ship takes off and disapears into the Atmosphere.", "dialog");
+            Typewrite("\nI think he's starting to get scared.", "self");
+            Typewrite("\nHe's just hopping from planet to closest planet.", "self");
+            Typewrite("\nI bet he goes to ", "self");
+            Typewrite("Blubbernot-6", "location");
+            Typewrite(" next.","self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nYou turn to get back on your ship feeling confident that you've solved ", "dialog");
+            Typewrite("LundPhin's ", "enemy");
+            Typewrite("little ruse", "dialog");
+            Typewrite("\nI've got him on the ropes now.", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nYou climb aboard your ship and depart for ", "dialog");
+            Typewrite("Blubbernot-6.", "location");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            
+        }
+
 
         private static void Typewrite(string message, string color)
         {
