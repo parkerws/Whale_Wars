@@ -32,6 +32,8 @@ namespace WhaleWars
 
             Game.AtlantisDialog(Player);
 
+            Game.postAtlantisDialog(Player);
+
         }
 
     }
