@@ -131,7 +131,8 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Enemies enemy = Enemies.EnemyGenerator();
  
-            Fastwrite("\nYour ship comes to a halt on the outskirts of Blowholia's capital city: Pier-182", "dialog");
+            Fastwrite("\nYour ship comes to a halt on the outskirts of Blowholia's capital city: ", "dialog");
+            Typewrite("\nPier-182", "location");
             Typewrite("\nTime to get some answers.", "self");
             Fastwrite("\n\"Arrived: Blowholia Prime\"", "friend");
             Typewrite(" the ships AI says over the inter-com.", "dialog");
@@ -141,7 +142,8 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Fastwrite("\nYou quickly exit your ship and gaze upon the ruins of Pier-182", "dialog");
+            Fastwrite("\nYou quickly exit your ship and gaze upon the ruins of ", "dialog");
+            Typewrite("\nPier-182", "location");
             Typewrite("\nWhat happened here?", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
