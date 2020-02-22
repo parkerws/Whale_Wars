@@ -6,10 +6,16 @@ namespace WhaleWars
 {
     class Game
     {
-        
+
         //Character name
         //static string characterName = "";
         //Print out game title and setup
+
+        public static Planet Blowholia = new Planet("Blowholia Prime", PlanetType.ocean, 1, 2, Sector.Blowholia);
+        public static Planet Atlantis = new Planet("Atlantis", PlanetType.storm, 3, 4, Sector.DeegosBogeySphere);
+        public static Planet Coralton = new Planet("Coralton", PlanetType.barren, 4, 5, Sector.Krupula);
+        public static Planet Blubbernot = new Planet("Blubbernot", PlanetType.lava, 1, 5, Sector.Morhann);
+        public static Planet Trench = new Planet("Marianna Trench", PlanetType.ice, 3, 4, Sector.Morhann);
 
         public static void startGame()
         {
@@ -121,6 +127,7 @@ namespace WhaleWars
 
         public static void BlowholiaDialog(Whale Player)
         {
+            Player.currentPlanet = Blowholia;
             ConsoleInterface.HUD(Player);
             Enemies enemy = Enemies.EnemyGenerator();
  
@@ -246,6 +253,7 @@ namespace WhaleWars
 
         public static void AtlantisDialog(Whale Player)
         {
+            Player.currentPlanet = Atlantis;
             Enemies enemy = Enemies.EnemyGenerator();
             ConsoleInterface.HUD(Player);
             Typewrite("\nYour ship lands on ","dialog");
@@ -338,6 +346,7 @@ namespace WhaleWars
 
         public static void CoraltonDialog(Whale Player)
         {
+            Player.currentPlanet = Coralton;
             Enemies enemy = Enemies.EnemyGenerator();
             Console.Clear();
             ConsoleInterface.HUD(Player);
@@ -423,6 +432,7 @@ namespace WhaleWars
 
         public static void BlubbernotDialog(Whale Player)
         {
+            Player.currentPlanet = Blubbernot;
             Enemies enemy = Enemies.EnemyGenerator();
             Console.Clear();
             ConsoleInterface.HUD(Player);
@@ -524,6 +534,7 @@ namespace WhaleWars
 
         public static void trenchDialog(Whale Player)
         {
+            Player.currentPlanet = Trench;
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Fastwrite("\nYour ship arrives at the", "dialog");
