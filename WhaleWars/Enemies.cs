@@ -91,7 +91,7 @@ namespace WhaleWars
             }
 
             user.Health -= (target.Offense-user.Defense) + 2;
-            Console.WriteLine($"\n{target.Name} uses Smash dealing {ed} danage.");
+            Console.WriteLine($"\n{target.Name} uses Smash dealing {ed} damage.");
 
             return user.Health;
         }
