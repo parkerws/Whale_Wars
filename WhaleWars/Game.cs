@@ -238,6 +238,20 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
 
         }
+        public static void AtlantisDialog(Whale Player)
+        {
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nYour ship lands on ","dialog");
+            Typewrite("Atlantis.", "location");
+            Typewrite("\n Alright ", "self");
+            Fastwrite("Lundphin,", "enemy");
+            Typewrite(" lets see what you've got next,", "self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
+        }
 
         private static void Typewrite(string message, string color)
         {
