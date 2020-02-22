@@ -478,6 +478,7 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Combat.Battle(Player, enemy);
         }
+
         public static void postBlubbernotDialog(Whale Player)
         {
             Console.Clear();
@@ -519,8 +520,59 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-        }    
+        }
 
+        public static void trenchDialog(Whale Player)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Fastwrite("\nYour ship arrives at the", "dialog");
+            Typewrite("Marriana Trench", "location");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("\nI would've thought it to be harder to land here...", "self");
+            Typewrite("\nWhat sort of trick is ", "self");
+            Fastwrite("Lundphin ", "enemy");
+            Typewrite("trying to pull here?", "self");
+            Typewrite("\nI better make sure I'm prepared.","self");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+
+        }
+
+        public static void PreTrenchChoice(Whale Player)
+        {
+
+            
+            Typewrite($"\n{Player.Name}", "yellow");
+            Typewrite("do you want to visit the shop?","dialog");
+            Console.WriteLine("\nY) Yes" +
+                "\nN) No");
+            string input = Console.ReadLine();
+            input = input.ToUpper();
+            if (input == "Y")
+            {
+                ConsoleInterface.Shop1();
+            }
+            else
+            {
+                trenchDialog1(Player);
+            }
+        }
+        private static void trenchDialog1(Whale Player)
+        {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
+            Typewrite("You exit your ship", "dialog");
+            Fastwrite("I've been waiting for you ", "enemy");
+            Typewrite($"{Player.Name}.", "self");
+
+
+        }
         private static void Typewrite(string message, string color)
         {
             if (color == "enemy")

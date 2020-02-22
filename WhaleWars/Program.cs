@@ -46,6 +46,11 @@ namespace WhaleWars
 
             Game.postBlubbernotDialog(Player);
 
+            ConsoleInterface.Ship(Player);
+
+            Game.trenchDialog(Player);
+
+
         }
 
     }
