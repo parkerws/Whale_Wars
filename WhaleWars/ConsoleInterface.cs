@@ -516,7 +516,7 @@ namespace WhaleWars
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
-                case "1": { Shop5(Player);Ship1(Player); return; }
+                case "1": { Shop3(Player);Ship1(Player); return; }
                 //case "2": { Whale.changeWeapon(Player); Ship1(Player); return; }
                 case "2": { PlayerInventory(Player); Ship1(Player); return; }
                 case "3": { break; }
@@ -540,7 +540,7 @@ namespace WhaleWars
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
-                case "1": { Shop5(Player); Ship2(Player); return; }
+                case "1": { Shop3(Player); Ship2(Player); return; }
                 //case "2": { Whale.changeWeapon(Player); Ship2(Player); return; }
                 case "2": { PlayerInventory(Player); Ship2(Player); return; }
                 case "3": { break; }
@@ -565,7 +565,7 @@ namespace WhaleWars
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
-                case "1": { Shop5(Player); Ship3(Player); return; }
+                case "1": { Shop3(Player); Ship3(Player); return; }
                 //case "2": { Whale.changeWeapon(Player); Ship3(Player); return; }
                 case "2": { PlayerInventory(Player); Ship3(Player); return; }
                 case "3": { break; }
@@ -590,7 +590,7 @@ namespace WhaleWars
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
-                case "1": { Shop5(Player); Ship4(Player); return; }
+                case "1": { Shop3(Player); Ship4(Player); return; }
                 //case "2": { Whale.changeWeapon(Player); Ship4(Player); return; }
                 case "2": { PlayerInventory(Player); Ship4(Player); return; }
                 case "3": { break; }
@@ -758,7 +758,7 @@ namespace WhaleWars
             Console.WriteLine("|                                                                |");
             Console.WriteLine("Hi! I are Lenard");
             Console.WriteLine("I cover the shop for Bobo, when hes out doing Whale knows what.");
-            Console.WriteLine("Press ENTER to continue");
+            Console.WriteLine("\nPress ENTER to continue");
             Console.ReadLine();
 
         }
