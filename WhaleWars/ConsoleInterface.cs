@@ -753,21 +753,9 @@ namespace WhaleWars
             Console.WriteLine("   ;      |      .-'       `-.       |      ;");
             Console.WriteLine("   :      :     /             \'     :      :");
             Console.WriteLine("  :      /     /               \'     \'     :");
-            Console.WriteLine("  ;    .'     :                 :      '.    ;");
-            Console.WriteLine("  ;   :      :                   :       :   ;");
-            Console.WriteLine("  ;   :      :                   :       :   ;");
-            Console.WriteLine("  :  /       :                   :        \' :");
-            Console.WriteLine("   ;;         \'                /          ;;");
-            Console.WriteLine("    ;-.        '-.     ,     .-'         .-;");
-            Console.WriteLine("     ;;'-...      '-..___..-'       ...-';;");
-            Console.WriteLine("            ';, \'''--....________....--'' /  ,; '");
-            Console.WriteLine("           '.       .'    '.      .'");
-            Console.WriteLine("             \'    /        \'   /");
-            Console.WriteLine("              :   :          :  :");
-            Console.WriteLine("              :    \'       /   :");
-            Console.WriteLine("             /      '.    .'     \"");
-            Console.WriteLine("           .' _.  /  :   :        '.");
-            Console.WriteLine("____________________'/_) : ') \'_/ (' : ( \"_______________");
+            Console.WriteLine("_________________________________________________________________");
+            Console.WriteLine("|                                                                |");
+            Console.WriteLine("|                                                                |");
             Console.WriteLine("Hi! I are Lenard");
             Console.WriteLine("I cover the shop for Bobo, when hes out doing Whale knows what.");
             Console.WriteLine("Press ENTER to continue");
@@ -776,9 +764,6 @@ namespace WhaleWars
         }
         public static void Cousin2(Whale Player)
         {
-            Console.Clear();
-            HUD(Player);
-
             Console.Clear();
             HUD(Player);
 
@@ -798,21 +783,9 @@ namespace WhaleWars
             Console.WriteLine("   ;      |      .-'       `-.       |      ;");
             Console.WriteLine("   :      :     /             \'     :      :");
             Console.WriteLine("  :      /     /               \'     \'     :");
-            Console.WriteLine("  ;    .'     :                 :      '.    ;");
-            Console.WriteLine("  ;   :      :                   :       :   ;");
-            Console.WriteLine("  ;   :      :                   :       :   ;");
-            Console.WriteLine("  :  /       :                   :        \' :");
-            Console.WriteLine("   ;;         \'                /          ;;");
-            Console.WriteLine("    ;-.        '-.     ,     .-'         .-;");
-            Console.WriteLine("     ;;'-...      '-..___..-'       ...-';;");
-            Console.WriteLine("            ';, \'''--....________....--'' /  ,; '");
-            Console.WriteLine("           '.       .'    '.      .'");
-            Console.WriteLine("             \'    /        \'   /");
-            Console.WriteLine("              :   :          :  :");
-            Console.WriteLine("              :    \'       /   :");
-            Console.WriteLine("             /      '.    .'     \"");
-            Console.WriteLine("           .' _.  /  :   :        '.");
-            Console.WriteLine("____________________'/_) : ') \'_/ (' : ( \"_______________");
+            Console.WriteLine("_________________________________________________________________");
+            Console.WriteLine("|                                                                |");
+            Console.WriteLine("|                                                                |");
             Console.WriteLine("What would you like to buy?");
         }
         public static void BigWhale(Whale Player)
