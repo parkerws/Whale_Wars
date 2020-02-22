@@ -770,7 +770,8 @@ namespace WhaleWars
             Console.WriteLine("____________________'/_) : ') \'_/ (' : ( \"_______________");
             Console.WriteLine("Hi! I are Lenard");
             Console.WriteLine("I cover the shop for Bobo, when hes out doing Whale knows what.");
-            Thread.Sleep(10000);
+            Console.WriteLine("Press ENTER to continue");
+            Console.ReadLine();
 
         }
         public static void Cousin2(Whale Player)
