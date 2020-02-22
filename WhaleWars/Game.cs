@@ -480,8 +480,6 @@ namespace WhaleWars
         }
         public static void postBlubbernotDialog(Whale Player)
         {
-
-
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Typewrite("\nYou look around and ", "dialog");

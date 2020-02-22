@@ -44,6 +44,8 @@ namespace WhaleWars
             
             Game.BlubbernotDialog(Player);
 
+            Game.postBlubbernotDialog(Player);
+
         }
 
     }
