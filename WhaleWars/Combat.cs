@@ -40,20 +40,19 @@ namespace WhaleWars
                 if (Player.CC == CharClass.fighter) { Fighter.FighterMoves(Player, target); }
                 if (Player.CC == CharClass.ranger) { Ranger.RangerMoves(Player, target); }
 
-                Thread.Sleep(2500);
-                if (Player.Health <= 0) { ConsoleInterface.PlayerDied(Player, target); }
+                Thread.Sleep(2700);
                 if (target.Health <= 0) { Player.Wallet += 3; Battle(Player, target2); return; }
                 if (target2.Health <= 0) { Player.Wallet += 3; Battle(Player, target); return; }
                 ConsoleInterface.HUD(Player);
 
                 Enemies.EnemyAI(Player, target);
-                Thread.Sleep(2500);
+                Thread.Sleep(2700);
                 if (Player.Health <= 0) { ConsoleInterface.PlayerDied(Player, target); }
                 if (target.Health <= 0) { Player.Wallet = +3; Battle(Player, target2); return; }
                 if (target2.Health <= 0) { Player.Wallet = +3; Battle(Player, target); return; }
 
                 Enemies.EnemyAI(Player, target2);
-                Thread.Sleep(2500);
+                Thread.Sleep(2700);
                 if (Player.Health <= 0) { ConsoleInterface.PlayerDied(Player, target); }
                 if (target.Health <= 0) { Player.Wallet = +3; Battle(Player, target2); return; }
                 if (target2.Health <= 0) { Player.Wallet = +3; Battle(Player, target); return; }
