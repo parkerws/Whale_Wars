@@ -30,25 +30,25 @@ namespace WhaleWars
 
             Game.postBlowholiaDialog(Player);
 
-            ConsoleInterface.Ship(Player);
+            ConsoleInterface.Ship1(Player);
 
             Game.AtlantisDialog(Player);
 
             Game.postAtlantisDialog(Player);
 
-            ConsoleInterface.Ship(Player);
+            ConsoleInterface.Ship2(Player);
 
             Game.CoraltonDialog(Player);
 
             Game.postCoraltonDialog(Player);
             
-            ConsoleInterface.Ship(Player);
+            ConsoleInterface.Ship3(Player);
             
             Game.BlubbernotDialog(Player);
 
             Game.postBlubbernotDialog(Player);
 
-            ConsoleInterface.Ship(Player);
+            ConsoleInterface.Ship4(Player);
 
             Game.trenchDialog(Player);
 

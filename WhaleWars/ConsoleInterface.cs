@@ -477,29 +477,128 @@ namespace WhaleWars
 
         }
 
-        public static void Ship(Whale Player)
+        public static void ShipIntro(Whale Player)
+        {
+            Console.Clear();
+
+            HUD(Player);
+
+            Console.WriteLine("Ship HUB\n" +
+                "1) Shop\n" +
+                "2) Equip weapons\n" +
+                "3) Inventory\n" +
+                "4) Go to Blowholia Prime\n");
+            string input = Console.ReadLine().ToLower();
+            switch (input)
+            {
+                case "1": { Shop5(Player); ShipIntro(Player); return; }
+                case "2": { Whale.changeWeapon(Player); ShipIntro(Player); return; }
+                case "3": { PlayerInventory(Player); ShipIntro(Player); return; }
+                case "4": { break; }
+
+                default:
+                    Console.WriteLine("Please choose a destination"); ShipIntro(Player);
+                    break;
+            }
+
+        }
+        public static void Ship1(Whale Player)
         {
            Console.Clear();
-
-            ConsoleInterface.HUD(Player);
-
-            Console.WriteLine("Ship HUB" +
-               "\nEnter I for [I]nventory\n" +
-               //"Enter C for [C]ombat\n" +
-               "Enter S for [S]hop\n" +
-               "Enter e for [E]quip different weapon\n");
-            string input = Input();
-            switch (input.ToLower())
+            HUD(Player);
+            
+            Console.WriteLine("Ship HUB\n" +
+               "1) Shop\n" +
+               "2) Equip weapons\n" +
+               "3) Inventory\n" +
+               "4) Go to Atlantis\n");
+            string input = Console.ReadLine().ToLower();
+            switch (input)
             {
-                case "i": {PlayerInventory(Player); return; }
-               // case "c": { Combat.Battle(Player, Enemies.EnemyGenerator()); return; }
-                case "s": { ConsoleInterface.Shop5(Player); return; }
-                case "e": { Whale.changeWeapon(Player); Ship(Player); return ;  }
+                case "1": { Shop5(Player);Ship1(Player); return; }
+                case "2": { Whale.changeWeapon(Player); Ship1(Player); return; }
+                case "3": { PlayerInventory(Player); Ship1(Player); return; }
+                case "4": { break; }
 
-                        default:
+                        default: Console.WriteLine("Please choose a destination"); Ship1(Player);
                     break;
             }
             
+        }
+        public static void Ship2(Whale Player)
+        {
+            Console.Clear();
+
+            HUD(Player);
+
+            Console.WriteLine("Ship HUB\n" +
+               "1) Shop\n" +
+               "2) Equip weapons\n" +
+               "3) Inventory\n" +
+               "4) Go to Coralton\n");
+            string input = Console.ReadLine().ToLower();
+            switch (input)
+            {
+                case "1": { Shop5(Player); Ship2(Player); return; }
+                case "2": { Whale.changeWeapon(Player); Ship2(Player); return; }
+                case "3": { PlayerInventory(Player); Ship2(Player); return; }
+                case "4": { break; }
+
+                default:
+                    Console.WriteLine("Please choose a destination"); Ship2(Player);
+                    break;
+            }
+
+        }
+        public static void Ship3(Whale Player)
+        {
+            Console.Clear();
+
+            HUD(Player);
+
+            Console.WriteLine("Ship HUB\n" +
+               "1) Shop\n" +
+               "2) Equip weapons\n" +
+               "3) Inventory\n" +
+               "4) Go to Blubbernot\n");
+            string input = Console.ReadLine().ToLower();
+            switch (input)
+            {
+                case "1": { Shop5(Player); Ship3(Player); return; }
+                case "2": { Whale.changeWeapon(Player); Ship3(Player); return; }
+                case "3": { PlayerInventory(Player); Ship3(Player); return; }
+                case "4": { break; }
+
+                default:
+                    Console.WriteLine("Please choose a destination"); Ship3(Player);
+                    break;
+            }
+
+        }
+        public static void Ship4(Whale Player)
+        {
+            Console.Clear();
+
+            HUD(Player);
+
+            Console.WriteLine("Ship HUB\n" +
+                "1) Shop\n" +
+                "2) Equip weapons\n" +
+                "3) Inventory\n" +
+                "4) Go to trench\n");
+            string input = Console.ReadLine().ToLower();
+            switch (input)
+            {
+                case "1": { Shop5(Player); Ship4(Player); return; }
+                case "2": { Whale.changeWeapon(Player); Ship4(Player); return; }
+                case "3": { PlayerInventory(Player); Ship4(Player); return; }
+                case "4": { break; }
+
+                default:
+                    Console.WriteLine("Please choose a destination"); Ship4(Player);
+                    break;
+            }
+
         }
 
         public static void PlayerInventory(Whale Player)
@@ -508,8 +607,6 @@ namespace WhaleWars
 
             HUD(Player);
             Console.WriteLine($"{Player.Name}'s Inventory\n");
-
-            //Console.WriteLine(Player.GetInventory());
 
             foreach (var item in Player.EquipedWeapon)
             {
@@ -526,9 +623,7 @@ namespace WhaleWars
             }
 
             Console.WriteLine("\nPress [ENTER] to return to the ship");
-            Input();
-            Console.Clear();
-            Ship(Player);
+            Console.ReadLine(); 
         }
         public static void Sell(Whale Player)
         {
