@@ -20,19 +20,21 @@ namespace WhaleWars
                 "4) Crippling Blow  MP -2\n" +
                 "5) Shadow Step     MP -3\n");
 
-            int Input = Convert.ToInt32(Console.ReadLine());
+            string Input = ConsoleInterface.Input().ToLower();
 
             switch (Input)
             {
-                case 1: {  Player.MagicPoints += 2; return Fighter.BasicAtk(Player, target); }
-                case 2: if (Player.MagicPoints >= 2) { Player.MagicPoints -= 2; return Pierce(Player, target); }
+                case "1": {  Player.MagicPoints += 2; return Fighter.BasicAtk(Player, target); }
+                case "2": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 2; return Pierce(Player, target); }
                     else {OutofMP(Player, target); return 0;}
-                case 3: if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Multiattack(Player, target); }
+                case "3": if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Multiattack(Player, target); }
                     else { OutofMP(Player, target); return 0; }
-                case 4: if (Player.MagicPoints >= 2) { Player.MagicPoints -= 2; return CriplingBlow(Player, target); }
+                case "4": if (Player.MagicPoints >= 2) { Player.MagicPoints -= 2; return CriplingBlow(Player, target); }
                     else { OutofMP(Player, target); return 0; }
-                case 5: if (Player.MagicPoints >= 3) { Player.MagicPoints -= 3; return ShadowStep(Player, target); }
+                case "5": if (Player.MagicPoints >= 3) { Player.MagicPoints -= 3; return ShadowStep(Player, target); }
                     else { OutofMP(Player, target); return 0; }
+                case "6": if (Player.inventory.Count == 0) { Console.WriteLine("You have no more items to use."); Thread.Sleep(2500); FighterMoves(Player, target); return 0; }
+                    else { Whale.UseItem(Player); return 0; }
                 default: return Fighter.BasicAtk(Player, target);
             }                       
         }

@@ -17,21 +17,24 @@ namespace WhaleWars
                 "2) Lung     -2 MP\n" +
                 "3) Slam     -3 MP\n" +
                 "4) Execute  -4 MP\n" +
-                "5) Berserk  -4 MP\n");
+                "5) Berserk  -4 MP\n" +
+                "6} Inventory\n");
 
-            int Input = Convert.ToInt32(Console.ReadLine());
+            string Input = ConsoleInterface.Input().ToLower();
 
             switch (Input)
             {
-                case 1: { Player.MagicPoints += 1; return Fighter.BasicAtk(Player, target);} 
-                case 2: if (Player.MagicPoints >= 2) {Player.MagicPoints -= 2; return Fighter.Lung(Player, target); }
+                case "1": { Player.MagicPoints += 1; return Fighter.BasicAtk(Player, target);} 
+                case "2": if (Player.MagicPoints >= 2) {Player.MagicPoints -= 2; return Fighter.Lung(Player, target); }
                     else { OutofMP(Player, target); return 0; }
-                case 3: if (Player.MagicPoints >= 3) { Player.MagicPoints -= 3; return Fighter.ShieldSlam(Player, target); }
+                case "3": if (Player.MagicPoints >= 3) { Player.MagicPoints -= 3; return Fighter.ShieldSlam(Player, target); }
                     else { OutofMP(Player, target); return 0; }
-                case 4: if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Fighter.Execute(Player, target); }
+                case "4": if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Fighter.Execute(Player, target); }
                     else { OutofMP(Player, target); return 0; }
-                case 5: if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Fighter.Berserk(Player, target); }
+                case "5": if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return Fighter.Berserk(Player, target); }
                     else { OutofMP(Player, target); return 0; }
+                case "6": if (Player.inventory.Count == 0) { Console.WriteLine("You have no more items to use."); Thread.Sleep(2500); FighterMoves(Player, target); return 0; }
+                    else { Whale.UseItem(Player); return 0; }
                 default: return BasicAtk(Player, target);
             }
         }

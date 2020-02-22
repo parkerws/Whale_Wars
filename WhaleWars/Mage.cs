@@ -19,9 +19,10 @@ namespace WhaleWars
                 "2) Magic Missle    MP -2\n" +
                 "3) Fire Ball       MP -3\n" +
                 "4) Blood Syphon    MP -5\n" +
-                "5) Arcane Blast    MP -4\n");
+                "5) Arcane Blast    MP -4\n" +
+                "6) Inventory\n");
 
-            string Input = Console.ReadLine();
+            string Input = ConsoleInterface.Input().ToLower();
 
             switch (Input)
             {
@@ -34,6 +35,8 @@ namespace WhaleWars
                     else { OutofMP(Player, target); return 0; }
                 case "5": if (Player.MagicPoints >= 4) { Player.MagicPoints -= 4; return ArcaneBlast(Player, target); }
                     else { OutofMP(Player, target); return 0; }
+                case "6": if (Player.inventory.Count == 0) { Console.WriteLine("You have no more items to use."); Thread.Sleep(2500); FighterMoves(Player, target); return 0; }
+                    else { Whale.UseItem(Player); return 0; }
                 default: break;
             }
 
