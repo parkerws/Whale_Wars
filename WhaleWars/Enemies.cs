@@ -97,6 +97,13 @@ namespace WhaleWars
         }
         public static int EnemyUnleashedRage(Whale Player, Enemies target)
         {
+            int ed = (target.Offense - Player.Defense);
+            if (ed <= 0)
+            {
+                Console.WriteLine($"\n{target.Name} Unleashes Rage, increasing base ATK by 5");
+                target.Offense += 5;
+                return target.Offense;
+            }
             Console.WriteLine($"\n{target.Name} Unleashes Rage, increasing base ATK by 3 and dealing {target.Offense - Player.Defense} damage.");
             target.Offense += 3;
             Player.Health -= (target.Offense - Player.Defense);
