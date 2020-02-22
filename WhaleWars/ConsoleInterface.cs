@@ -680,9 +680,9 @@ namespace WhaleWars
             Console.WriteLine("                  `.`.<");
             Console.WriteLine("                    `-'");
             Console.WriteLine("Well Hello, Stranger.");
-            Console.WriteLine("I'm Bobo the whale, i know what you're thinking...");
+            Console.WriteLine("I'm Bobo the whale, I know what you're thinking...");
             Console.WriteLine("How could I be a whale, well I'll tell you a secret");
-            Console.WriteLine("Im Dolf-lundfins first and only child, lucky for you i have some pretty nice wears.");
+            Console.WriteLine("I'm Dolf Lundphin's first and only child, lucky for you I have some pretty nice wears.");
             Console.WriteLine("Press ENTER to continue");
             Console.ReadLine();
             
