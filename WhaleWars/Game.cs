@@ -250,6 +250,15 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
+            Typewrite("\nAs you exit the ship you can hear the sounds of screaming Atlantians", "Dialog");
+            Fastwrite("\nLundfin!", "Enemy");
+            Typewrite(" I've got to stop him!", "self");
+            Typewrite("\nYou charge into the city of ", "dialog");
+            Typewrite("Atlantis", "location");
+            Console.WriteLine("\nPress Space to continue.");
+            Console.ReadKey();
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
 
         }
 
