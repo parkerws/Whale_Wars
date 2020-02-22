@@ -187,8 +187,9 @@ namespace WhaleWars
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Typewrite("\nCpt. Whalord-Hookfin steps into view.", "dialog");
-            Typewrite("\nYes, sir! you lead the defence of Blowholia.", "friend");
+            Typewrite("\nCpt. Whalord-Hookfin", "friend");
+            Typewrite(" steps into view.", "dialog");
+            Typewrite("\nCpt. Hookfin: Yes, sir! you lead the defence of Blowholia.", "friend");
             Typewrite("\nYou look around at the world in ruins.", "dialog");
             Typewrite("\nWell, what a bang up job I did...", "self");
             Console.WriteLine("\nPress Space to continue.");
@@ -203,23 +204,23 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Typewrite("\nYes, sir. About halfway through the battle. They loaded you up on that ship there.", "friend");
             Typewrite("\nHe gestures to the ship you arrived on.", "dialog");
-            Typewrite("\nI wasn't worried though, sir. I knew youd make it back. Just a matter of time","friend");
+            Typewrite("\nI wasn't worried though, sir. I knew youd make it back. Just a matter of time.","friend");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
             Typewrite("\nWell I guess that explains that. I need to go after ", "self");
             Fastwrite("Lundfin.", "enemy");
-            Typewrite("\nHe's probably halfway to ", "friend");
+            Typewrite("\nWell, He's probably halfway to ", "friend");
             Fastwrite("Atlantis", "location");
-            Typewrite(" by now", "friend");
+            Typewrite(" by now!", "friend");
             Typewrite("\nAtlantis", "location");
-            Typewrite("?", "self");
+            Typewrite("? Whats that?", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
             ConsoleInterface.HUD(Player);
-            Fastwrite("\nYup, the next planet he planned to take on his plan of attack", "friend");
+            Fastwrite("\nThat's the next planet he planned to take on path to conquer the Galaxy!", "friend");
             Typewrite("\nThen thats where I'm headed, thanks for your help, ", "self");
             Typewrite("Cpt.Hookfin.", "friend");
             Typewrite("\nYou start to walk towards the ship.", "dialog");
@@ -283,6 +284,8 @@ namespace WhaleWars
         }
         public static void postAtlantisDialog(Whale Player)
         {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
             Fastwrite("\nYOU FOOL! I just needed him to buy me time to escape!","enemy");
             Typewrite("\nLundphin", "enemy");
             Typewrite(" shouts from atop his ship.", "dialog");
@@ -313,7 +316,7 @@ namespace WhaleWars
             Typewrite("\nNo, thank you, Mr.", "friend");
             Typewrite("\nThe little girl runs away and into the arms of he parents","dialog");
             Typewrite("\nShe was safe. For now.","dialog");
-            Typewrite("\nI've got to stop him...", "slef");
+            Typewrite("\nI've got to stop him...", "self");
             Console.WriteLine("\nPress Space to continue.");
             Console.ReadKey();
             Console.Clear();
@@ -359,8 +362,8 @@ namespace WhaleWars
             ConsoleInterface.HUD(Player);
             Fastwrite("\nALRIGHT ", "self");
             Fastwrite("LUNPHIN!", "enemy");
-            Typewrite("\nLundphin: It's about time you showed up!, ", "enemy");
-            Typewrite($"{Player.Name}?", "self");
+            Typewrite("\nLundphin: It's about time you showed up, ", "enemy");
+            Typewrite($"{Player.Name}!", "self");
             Fastwrite($"\n{enemy.Name}, ", "yellow");
             Fastwrite("MAKE HIM WISH HE WAS NEVER BORN!", "enemy");
             Console.WriteLine("\nPress Space to continue.");
@@ -371,6 +374,8 @@ namespace WhaleWars
         }
         public static void postCoraltondialog(Whale Player)
         {
+            Console.Clear();
+            ConsoleInterface.HUD(Player);
             Fastwrite("\nNOW YOU'RE STARTING TO ANGER ME!", "enemy");
             Typewrite("\nLundphin", "enemy");
             Typewrite(" shouts as he runs to his ship.", "dialog");

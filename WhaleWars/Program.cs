@@ -34,6 +34,8 @@ namespace WhaleWars
 
             Game.postAtlantisDialog(Player);
 
+            ConsoleInterface.Ship(Player);
+
             Game.CoraltonDialog(Player);
 
             Game.postCoraltondialog(Player);
