@@ -20,7 +20,7 @@ namespace WhaleWars
                 "4) Crippling Blow  MP -2\n" +
                 "5) Shadow Step     MP -3\n");
 
-            string Input = ConsoleInterface.Input().ToLower();
+            string Input = Console.ReadLine().ToLower();
 
             switch (Input)
             {

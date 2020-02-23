@@ -20,7 +20,7 @@ namespace WhaleWars
                 "5) Berserk  -4 MP\n" +
                 "6} Inventory\n");
 
-            string Input = ConsoleInterface.Input().ToLower();
+            string Input = Console.ReadLine().ToLower();
 
             switch (Input)
             {
