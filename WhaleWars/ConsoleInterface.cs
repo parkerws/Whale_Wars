@@ -207,31 +207,31 @@ namespace WhaleWars
             {
                 case "1":
                     if (Player.Wallet >= 5) { Whale.UpgradeWeapon(Player, Weaps.ElementAt(0)); Player.Wallet -= 5; Shop1(Player); return; }
-                    else { Console.WriteLine("You dont have enough money"); Shop1(Player); return; }
+                    else { Console.WriteLine("You dont have enough money"); Thread.Sleep(2500); Shop1(Player); return; }
                 case "2":
                     if (Player.Wallet >= 4) { Whale.UpgradeWeapon(Player, Weaps.ElementAt(1)); Player.Wallet -= 4; Shop1(Player); return; }
-                    else { Console.WriteLine("You dont have enough money"); Shop1(Player); return; }
+                    else { Console.WriteLine("You dont have enough money"); Thread.Sleep(2500); Shop1(Player); return; }
                 case "3":
                     if (Player.Wallet >= 4) { Whale.UpgradeWeapon(Player, Weaps.ElementAt(2)); Player.Wallet -= 4; Shop1(Player); return; }
-                    else { Console.WriteLine("You dont have enough money"); Shop1(Player); return; }
+                    else { Console.WriteLine("You dont have enough money"); Thread.Sleep(2500); Shop1(Player); return; }
                 case "4":
                     if (Player.Wallet >= 3) { Whale.UpgradeWeapon(Player, Weaps.ElementAt(3)); Player.Wallet -= 3; Shop1(Player); return; }
-                    else { Console.WriteLine("You dont have enough money"); Shop1(Player); return; }
+                    else { Console.WriteLine("You dont have enough money"); Thread.Sleep(2500); Shop1(Player); return; }
                 case "5":
                     if (Player.Wallet >= Items[0].cost) { Player.inventory.Add(Items[0]); Player.Wallet -= Items[0].cost; Shop1(Player); return; }
-                    else { Console.WriteLine("You dont have enough money"); Shop1(Player); return; }
+                    else { Console.WriteLine("You dont have enough money"); Thread.Sleep(2500); Shop1(Player); return; }
                 case "6":
                     if (Player.Wallet >= Items[1].cost) { Player.inventory.Add(Items[1]); Player.Wallet -= Items[1].cost; Shop1(Player); return; }
-                    else { Console.WriteLine("You dont have enough money"); Shop1(Player); return; }
+                    else { Console.WriteLine("You dont have enough money"); Thread.Sleep(2500); Shop1(Player); return; }
                 case "7":
                     if (Player.Wallet >= Items[2].cost) { Player.inventory.Add(Items[2]); Player.Wallet -= Items[2].cost; Shop1(Player); return; }
-                    else { Console.WriteLine("You dont have enough money"); Shop1(Player); return; }
+                    else { Console.WriteLine("You dont have enough money"); Thread.Sleep(2500); Shop1(Player); return; }
                 case "8":
                     if (Player.Wallet >= Items[3].cost) { Player.inventory.Add(Items[3]); Player.Wallet -= Items[3].cost; Shop1(Player); return; }
-                    else { Console.WriteLine("You dont have enough money"); Shop1(Player); return; }
+                    else { Console.WriteLine("You dont have enough money"); Thread.Sleep(2500); Shop1(Player); return; }
                 case "9":
                     if (Player.Wallet >= 1) { Whale.UpgradeWeapon(Player, fork); Player.Wallet -= 1; Shop1(Player); return; }
-                    else { Console.WriteLine("You dont have enough money"); Shop1(Player); return; }
+                    else { Console.WriteLine("You dont have enough money"); Thread.Sleep(2500); Shop1(Player); return; }
                 case "s": { Sell(Player); Shop1(Player); return; }
                 default: Console.WriteLine("You leave Bobo's stand and head back to the ship"); return;
             }
