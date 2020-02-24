@@ -45,7 +45,7 @@ namespace WhaleWars
 
         }
 
-        private List<Item> inventory = new List<Item>();
+        public List<Item> inventory = new List<Item>();
         public List<Weapon> EquipedWeapon = new List<Weapon>();
         public List<Armor> EquipedArmor = new List<Armor>();
 
@@ -79,82 +79,6 @@ namespace WhaleWars
         {
             inventory.Remove(item);
         }
-        //public void BuyWeapon(int money, WeaponList weap)
-        //{
-        //    int cost;
-        //    switch (weap)
-        //    {
-        //        case WeaponList.Sword:
-        //            cost = 3;
-        //            if (Wallet >= cost)
-        //            {
-        //                Wallet -= cost;
-        //                SetWeapon(weap);
-        //            }
-        //            else Console.WriteLine("Not enough money!");
-        //            break;
-
-        //        case WeaponList.Wand:
-        //            cost = 3;
-        //            if (Wallet >= cost)
-        //            {
-        //                Wallet -= cost;
-        //                SetWeapon(weap);
-        //            }
-        //            else Console.WriteLine("Not enough money!");
-        //            break;
-
-        //        case WeaponList.Bow:
-        //            cost = 3;
-        //            if (Wallet >= cost)
-        //            {
-        //                Wallet -= cost;
-        //                SetWeapon(weap);
-        //            }
-        //            else Console.WriteLine("Not enough money!");
-        //            break;
-
-        //        case WeaponList.Knife:
-        //            cost = 4;
-        //            if (Wallet >= cost)
-        //            {
-        //                Wallet -= cost;
-        //                SetWeapon(weap);
-        //            }
-        //            else Console.WriteLine("Not enough money!");
-        //            break;
-
-        //        case WeaponList.Chimichanga:
-        //            cost = 6;
-        //            if (Wallet >= cost)
-        //            {
-        //                Wallet -= cost;
-        //                SetWeapon(weap);
-        //            }
-        //            else Console.WriteLine("Not enough money!");
-        //            break;
-
-        //        case WeaponList.Blowhole:
-        //            cost = 6;
-        //            if (Wallet >= cost)
-        //            {
-        //                Wallet -= cost;
-        //                SetWeapon(weap);
-        //            }
-        //            else Console.WriteLine("Not enough money!");
-        //            break;
-
-        //        case WeaponList.UltraBoof:
-        //            cost = 20;
-        //            if (Wallet >= cost)
-        //            {
-        //                Wallet -= cost;
-        //                SetWeapon(weap);
-        //            }
-        //            else Console.WriteLine("Not enough money!");
-        //            break;
-        //    }
-        //} //Need to bind the cost to weapon?
 
         public static int ArmoryOffense(Whale Player)
         {
@@ -246,6 +170,7 @@ namespace WhaleWars
         {
             SetArmor(Player);
             SetWeapon(Player);
+            SetItems(Player);
 
         } // assignes the starting items to the player to help expand the inventory.
         public static void SetWeapon(Whale Player)
@@ -290,5 +215,98 @@ namespace WhaleWars
                 Player.EquipedArmor.Add(shirt);
             }
         } //used to add a starting Armor bassed off of starting class.
+        public static void SetItems(Whale Player)
+        {
+            if (Player.CC == CharClass.fighter) 
+            {
+                Player.inventory.Add(Item.ItemGen("health"));
+                Player.inventory.Add(Item.ItemGen("health"));
+                Player.inventory.Add(Item.ItemGen("health"));
+            }
+            if (Player.CC == CharClass.mage)
+            {
+                Player.inventory.Add(Item.ItemGen("magic"));
+                Player.inventory.Add(Item.ItemGen("magic"));
+                Player.inventory.Add(Item.ItemGen("magic"));
+            }
+            if (Player.CC == CharClass.ranger)
+            {
+                Player.inventory.Add(Item.ItemGen("health"));
+                Player.inventory.Add(Item.ItemGen("health"));
+                Player.inventory.Add(Item.ItemGen("magic"));
+            }
+        }
+
+        public static void UpgradeWeapon(Whale Player, Weapon newWeap) 
+        {
+            Weapon oldWeapon = Player.EquipedWeapon.Last();
+            Player.EquipedWeapon.Remove(oldWeapon);
+            Player.inventory.Add(oldWeapon);
+            Player.EquipedWeapon.Add(newWeap);
+        }
+
+        public static void UpgradeArmor(Whale Player, Armor newArmor)
+        {
+            Armor oldArmor = Player.EquipedArmor.Last();
+            Player.inventory.Add(oldArmor);
+            Player.EquipedArmor.Remove(oldArmor);
+            Player.EquipedArmor.Add(newArmor);
+        }
+
+        //public static void changeWeapon(Whale player)
+        //{
+        //    int counter = 1;
+        //    int weapSelection;
+        //    List<Weapon> weapList = new List<Weapon>();
+        //    Console.WriteLine();
+        //    foreach(Weapon weap in player.inventory)
+        //    {
+        //        Console.WriteLine($"{counter}. {weap}");
+        //        weapList.Add(weap);
+        //        counter++;
+        //    }
+        //    Console.WriteLine("Select which weapon you wish to equip.");
+        //    if (int.TryParse(Console.ReadLine(), out weapSelection))
+        //    {
+        //        weapSelection -= 1;
+        //    }
+        //    else Console.WriteLine("Invalid input. Please select from the above list.");
+
+        //    UpgradeWeapon(player, weapList.ElementAt(weapSelection));
+        //    player.RemoveItem(weapList.ElementAt(weapSelection));
+        //}
+
+        public static void UseItem(Whale Player)
+        {
+            int counter = 1;
+            int itemSelection;
+            Console.WriteLine("Which item would you like to use?");
+            foreach (var i in Player.inventory)
+            {
+                Console.WriteLine($"{counter++}: {i.Name}");
+            }
+
+            if (int.TryParse(Console.ReadLine(), out itemSelection))
+            {
+                if (Player.inventory.ElementAt(itemSelection - 1) is HealthPotion)
+                {
+                    Player.Health += Player.inventory[itemSelection - 1].attributeIncrease;
+                    Player.inventory.Remove(Player.inventory.ElementAt(itemSelection - 1));
+                }
+
+                else if (Player.inventory.ElementAt(itemSelection - 1) is ArmorPotion)
+                {
+                    Player.Offense += Player.inventory[itemSelection - 1].attributeIncrease;
+                    Player.inventory.Remove(Player.inventory.ElementAt(itemSelection - 1));
+                }
+
+                else if (Player.inventory.ElementAt(itemSelection - 1) is MagicPotion)
+                {
+                    Player.MagicPoints += Player.inventory[itemSelection - 1].attributeIncrease;
+                    Player.inventory.Remove(Player.inventory.ElementAt(itemSelection - 1));
+                }
+            }
+
+        }
     }
 }

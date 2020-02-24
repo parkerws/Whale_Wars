@@ -6,7 +6,7 @@ namespace WhaleWars
     public class Management
     {
 
-        const int TYPESPEED = 30;
+        const int TYPESPEED = 15;
 
 
        
@@ -27,12 +27,12 @@ namespace WhaleWars
             Console.WriteLine("Press Enter To continue");
             ConsoleInterface.Input();
         }
-        static void Typewrite(string message, int speed)
+        private static void Typewrite(string message, int speed)
         {
             for (int i = 0; i < message.Length; i++)
             {
                 Console.Write(message[i]);
-                System.Threading.Thread.Sleep(speed);
+                System.Threading.Thread.Sleep(5);
             }
         }
         static void PrintTitle()
@@ -46,12 +46,12 @@ namespace WhaleWars
   \__/\  / |___|  (____  /____/\___  >   \__/\  /  (____  /__|  /____  >
        \/       \/     \/          \/         \/        \/           \/                                  
                                                                  ";
-            Typewrite(title, 5);
+            Console.WriteLine(title, 5);
         }
         
         static void Welcome()
         {
-            Typewrite("A Group-One production.\n\t\t\t\t\t\t\t\t A Chartreuse Dysentery Amoeba Game.\n", TYPESPEED);
+            Typewrite("A Group-One Production.\n\t\t\t\t\t\t\t\t A Chartreuse Dysentery Amoeba Game.\n", TYPESPEED);
         }
 
       

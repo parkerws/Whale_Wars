@@ -25,7 +25,7 @@ namespace WhaleWars
 
         public override string ToString()
         {
-            return Name + " in the sector " + location.sector.ToString();
+            return Name;
         }
     }
 
@@ -42,4 +42,6 @@ namespace WhaleWars
             sector = aSector;
         }
     }
+
+    
 }

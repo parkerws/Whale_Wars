@@ -1,4 +1,6 @@
 using System;
+using WhaleWars;
+
 namespace WhaleWars
 {
     public class Weapon : Item
@@ -17,43 +19,6 @@ namespace WhaleWars
             Name = "Will's Mustache";
             Damage = 0;
         }
-
-        //public static Weapon CreateWeapon(WeaponList weap) //Method that uses a list of type Weapon to create all weapons necessary for the game.
-        //{
-        //    switch (weap)
-        //    {
-        //        case WeaponList.Sword:
-        //            Weapon Sword = new Weapon(weap, 6);
-        //            return Sword;
-
-        //        case WeaponList.Knife:
-        //            Weapon Knife = new Weapon(weap, 7);
-        //            return Knife;
-
-        //        case WeaponList.Bow:
-        //            Weapon Bow = new Weapon(weap, 2);
-        //            return Bow;
-
-        //        case WeaponList.Blowhole:
-        //            Weapon Blowhole = new Weapon(weap, 9);
-        //            return Blowhole;
-
-        //        case WeaponList.Chimichanga:
-        //            Weapon Chimichanga = new Weapon(weap, 8);
-        //            return Chimichanga;
-
-        //        case WeaponList.Wand:
-        //            Weapon Wand = new Weapon(weap, 5);
-        //            return Wand;
-
-        //        case WeaponList.UltraBoof:
-        //            Weapon UltraBoof = new Weapon(weap, 10);
-        //            return UltraBoof;
-
-        //        default:
-        //            return null;
-        //    }
-        //}
 
         public static Weapon WeaponGen(Whale Player)
         {
@@ -81,6 +46,7 @@ namespace WhaleWars
         {
             Name = "Sword";
             Damage = 6;
+            cost = 3;
         }
     } 
     public class Knife : Weapon
@@ -97,6 +63,7 @@ namespace WhaleWars
         {
             Name = "Bow";
             Damage = 2;
+            cost = 3;
         }
     }
     public class Blowhole : Weapon
@@ -104,7 +71,7 @@ namespace WhaleWars
         public Blowhole() : base()
         {
             Name = "Blowhole";
-            Damage = 9;
+            Damage = 22;
         }
     }
     public class Chimichanga : Weapon
@@ -112,7 +79,8 @@ namespace WhaleWars
         public Chimichanga() : base()
         {
             Name = "Chimichanga";
-            Damage = 8;
+            Damage = 55;
+            cost = 120;
         }
     }
     public class Wand : Weapon
@@ -121,6 +89,7 @@ namespace WhaleWars
         {
             Name = "Wand";
             Damage = 5;
+            cost = 5;
         }
     }
     public class UltraBoof : Weapon
@@ -128,7 +97,17 @@ namespace WhaleWars
         public UltraBoof() : base()
         {
             Name = "UltraBoof";
-            Damage = 10;
+            Damage = 32;
+            cost = 12;
+        }
+    }
+    public class Fork : Weapon
+    {
+        public Fork() : base()
+        {
+            Name = "Mind Fork of Endless Suffering";
+            Damage = 75;
+            cost = 100;
         }
     }
 

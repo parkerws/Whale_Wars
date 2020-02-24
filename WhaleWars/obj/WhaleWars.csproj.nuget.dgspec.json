@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\diego\\source\\repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj": {}
+    "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\WhaleWars.csproj": {}
   },
   "projects": {
-    "C:\\Users\\diego\\source\\repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj": {
+    "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\WhaleWars.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\diego\\source\\repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
+        "projectUniqueName": "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
         "projectName": "WhaleWars",
-        "projectPath": "C:\\Users\\diego\\source\\repos\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
-        "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\diego\\source\\repos\\Whale_Wars\\WhaleWars\\obj\\",
+        "projectPath": "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\WhaleWars.csproj",
+        "packagesPath": "C:\\Users\\Cryptlogic\\.nuget\\packages\\",
+        "outputPath": "D:\\MSSA\\VS Projects\\Whale_Wars\\WhaleWars\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cryptlogic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -37,6 +40,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "NetCoreAudio": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -52,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
