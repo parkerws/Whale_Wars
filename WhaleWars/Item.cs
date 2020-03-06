@@ -23,17 +23,19 @@ namespace WhaleWars
 
         string[] HealthItems =
         {
-            "Health Potion"
+            "Fat Slug", "Donkey Teeth", "Ibrahim Moizoos' Bubblegum", "Hardunkichud's Cereal"
         };
 
         string[] ArmorItems =
         {
-            "Armor Buff"
+            "Smoochie-Wallace Dinner Plate", "D'Jasper Probincrux Raincoat Juice",
+            "Davoin Shower-Handel's Secret Helmet Sweat", "Quatro Quatro's Thick Skin Serum"
         };
 
         string[] MagicItems =
         {
-            "Magic Potion"
+            "Saggitariutt Jefferspin's Chapstick", "Hingle McCringleberry's Super Serum",
+            "Scoisch \"Velociraptor\" Maloish's Popcorn", "Beezer Twelve Washingbeard's Grand Soup"
         };
 
 
